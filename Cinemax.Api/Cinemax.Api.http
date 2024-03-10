@@ -1,0 +1,6 @@
+@Cinemax.Api_HostAddress = http://localhost:5250
+
+GET {{Cinemax.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

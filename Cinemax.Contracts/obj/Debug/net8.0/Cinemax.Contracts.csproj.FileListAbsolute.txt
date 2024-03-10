@@ -1,0 +1,12 @@
+C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Contracts\bin\Debug\net8.0\Cinemax.Contracts.deps.json
+C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Contracts\bin\Debug\net8.0\Cinemax.Contracts.dll
+C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Contracts\bin\Debug\net8.0\Cinemax.Contracts.pdb
+C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Contracts\obj\Debug\net8.0\Cinemax.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Contracts\obj\Debug\net8.0\Cinemax.Contracts.AssemblyInfoInputs.cache
+C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Contracts\obj\Debug\net8.0\Cinemax.Contracts.AssemblyInfo.cs
+C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Contracts\obj\Debug\net8.0\Cinemax.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Contracts\obj\Debug\net8.0\Cinemax.Contracts.sourcelink.json
+C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Contracts\obj\Debug\net8.0\Cinemax.Contracts.dll
+C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Contracts\obj\Debug\net8.0\refint\Cinemax.Contracts.dll
+C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Contracts\obj\Debug\net8.0\Cinemax.Contracts.pdb
+C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Contracts\obj\Debug\net8.0\ref\Cinemax.Contracts.dll

@@ -1,0 +1,12 @@
+C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Domain\bin\Debug\net8.0\Cinemax.Domain.deps.json
+C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Domain\bin\Debug\net8.0\Cinemax.Domain.dll
+C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Domain\bin\Debug\net8.0\Cinemax.Domain.pdb
+C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Domain\obj\Debug\net8.0\Cinemax.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Domain\obj\Debug\net8.0\Cinemax.Domain.AssemblyInfoInputs.cache
+C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Domain\obj\Debug\net8.0\Cinemax.Domain.AssemblyInfo.cs
+C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Domain\obj\Debug\net8.0\Cinemax.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Domain\obj\Debug\net8.0\Cinemax.Domain.sourcelink.json
+C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Domain\obj\Debug\net8.0\Cinemax.Domain.dll
+C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Domain\obj\Debug\net8.0\refint\Cinemax.Domain.dll
+C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Domain\obj\Debug\net8.0\Cinemax.Domain.pdb
+C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Domain\obj\Debug\net8.0\ref\Cinemax.Domain.dll
