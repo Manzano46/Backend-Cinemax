@@ -26,7 +26,7 @@ public class AuthenticationService : IAuthenticationService
         return new AuthenticationResult(user, token);   
     }
 
-    public AuthenticationResult Register(string firstName, string lastName, string email, string password)
+    public AuthenticationResult Register(string firstName, string lastName, string email, string password, DateTime birth)
     {
         if(_userRepository.GetUserByEmail(email) is not null){
             throw new Exception("User with given email alredy exists");
@@ -36,7 +36,8 @@ public class AuthenticationService : IAuthenticationService
             FirstName = firstName,
             LastName = lastName,
             Email = email,
-            Password = password
+            Password = password,
+            Birth = birth,
         };
 
         _userRepository.Add(user);

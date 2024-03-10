@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "poBVBPjuylp5JHcAKU/0DyP4BNSS8+gfwSY5RfA4dM5894RhZuTvy8Yh8C8HzLoeq+ZAwrMkA1Dyqw1t+YfpaA==",
+  "dgSpecHash": "h+DMrnBCDrmRCt0hfd5Jxa1ub8+4HQw0tFDkYtb3MVzS6cCZUF1nE1+cFkl1YPf5uXQlL82cVFKa3zwdXYScnw==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\Cinemax.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\Cinemax.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.configuration\\8.0.0\\microsoft.extensions.configuration.8.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",

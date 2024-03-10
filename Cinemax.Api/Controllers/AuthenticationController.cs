@@ -12,9 +12,9 @@ public class AuthenticationController : ControllerBase{
 
     [HttpPost("register")]
     public IActionResult Register(RegisterRequest registerRequest){
-        var authResult = _authenticationService.Register(registerRequest.FirstName, registerRequest.LastName, registerRequest.Email, registerRequest.Password);
+        var authResult = _authenticationService.Register(registerRequest.FirstName, registerRequest.LastName, registerRequest.Email, registerRequest.Password, registerRequest.Birth);
 
-        var response = new AuthenticationResponse(authResult.User.Id, authResult.User.FirstName, authResult.User.LastName, authResult.User.Email, authResult.Token);
+        var response = new AuthenticationResponse(authResult.User.Id, authResult.User.FirstName, authResult.User.LastName, authResult.User.Email, authResult.User.Birth, authResult.User.Points, authResult.Token);
 
         return Ok(response);
     }
@@ -23,7 +23,7 @@ public class AuthenticationController : ControllerBase{
     public IActionResult Login(LoginRequest loginRequest){
         var authResult = _authenticationService.Login(loginRequest.Email, loginRequest.Password);
 
-        var response = new AuthenticationResponse(authResult.User.Id, authResult.User.FirstName, authResult.User.LastName, authResult.User.Email, authResult.Token);
+        var response = new AuthenticationResponse(authResult.User.Id, authResult.User.FirstName, authResult.User.LastName, authResult.User.Email, authResult.User.Birth, authResult.User.Points, authResult.Token);
 
         return Ok(response);
     }

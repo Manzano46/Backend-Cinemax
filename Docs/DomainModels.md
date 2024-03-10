@@ -8,6 +8,8 @@
     "firstName": "kevin",
     "lastName": "manzano",
     "email": "kevin@gmail.com",
-    "password":"kevin123!"
+    "password":"kevin123!",
+    "birth":"2002-06-10",
+    "points":"20"
 }
 ```
