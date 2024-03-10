@@ -34,3 +34,8 @@ C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Api\
 C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Api\obj\Debug\net8.0\Cinemax.Api.pdb
 C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Api\obj\Debug\net8.0\Cinemax.Api.genruntimeconfig.cache
 C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Api\obj\Debug\net8.0\ref\Cinemax.Api.dll
+C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Api\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Api\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
