@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "FDSObRpL8PYUeL0AeJCgppU47QKRG9fGE8YZPZMi5a9om4z8aA/+Gjsf5g4O20ryab2dXcrsTY4ReCWskgCydg==",
+  "dgSpecHash": "cFTb8PavFEPxiKdpedjRT8ShG3MniLTXapp+rbMmCd269HEv0ewA0Ga4KtlPBd86X995QIgcd4WvbzrzKBSaHQ==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\Cinemax.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\Cinemax.Infrastructure.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.configuration\\8.0.0\\microsoft.extensions.configuration.8.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.configuration.binder\\8.0.0\\microsoft.extensions.configuration.binder.8.0.0.nupkg.sha512",

@@ -1,5 +1,8 @@
-using Cinemax.Application.Services.Authentication;
+using Cinemax.Application.Authentication.Commands.Register;
+using Cinemax.Application.Authentication.Common;
+using Cinemax.Application.Authentication.Queries.Login;
 using Cinemax.Contracts.Authentication;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cinemax.Api.Controllers;
@@ -7,12 +10,14 @@ namespace Cinemax.Api.Controllers;
 [ApiController]
 [Route("auth")]
 public class AuthenticationController : ControllerBase{
-    private readonly IAuthenticationService _authenticationService;
-    public AuthenticationController(IAuthenticationService authenticationService) => _authenticationService = authenticationService;
-
+    private readonly IMediator _mediator;
+    public AuthenticationController(IMediator mediator) => _mediator = mediator;
+    
     [HttpPost("register")]
-    public IActionResult Register(RegisterRequest registerRequest){
-        var authResult = _authenticationService.Register(registerRequest.FirstName, registerRequest.LastName, registerRequest.Email, registerRequest.Password, registerRequest.Birth);
+    public async Task<IActionResult> Register(RegisterRequest registerRequest){
+        var command = new RegisterCommand(registerRequest.FirstName, registerRequest.LastName, registerRequest.Email, registerRequest.Password, registerRequest.Birth);
+
+        AuthenticationResult authResult = await _mediator.Send(command);
 
         var response = new AuthenticationResponse(authResult.User.Id, authResult.User.FirstName, authResult.User.LastName, authResult.User.Email, authResult.User.Birth, authResult.User.Points, authResult.Token);
 
@@ -20,8 +25,10 @@ public class AuthenticationController : ControllerBase{
     }
 
     [HttpPost("login")]
-    public IActionResult Login(LoginRequest loginRequest){
-        var authResult = _authenticationService.Login(loginRequest.Email, loginRequest.Password);
+    public async Task<IActionResult> Login(LoginRequest loginRequest){
+        var query = new LoginQuery(loginRequest.Email, loginRequest.Password);
+
+        AuthenticationResult authResult = await _mediator.Send(query);
 
         var response = new AuthenticationResponse(authResult.User.Id, authResult.User.FirstName, authResult.User.LastName, authResult.User.Email, authResult.User.Birth, authResult.User.Points, authResult.Token);
 

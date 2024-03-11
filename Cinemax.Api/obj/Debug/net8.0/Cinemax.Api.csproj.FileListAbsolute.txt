@@ -39,3 +39,5 @@ C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Api\
 C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
 C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Api\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Api\bin\Debug\net8.0\MediatR.dll
+C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Api\bin\Debug\net8.0\MediatR.Contracts.dll

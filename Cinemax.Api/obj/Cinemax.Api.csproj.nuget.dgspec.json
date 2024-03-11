@@ -39,8 +39,8 @@
               "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Contracts\\Cinemax.Contracts.csproj": {
                 "projectPath": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Contracts\\Cinemax.Contracts.csproj"
               },
-              "c:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\Cinemax.Infrastructure.csproj": {
-                "projectPath": "c:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\Cinemax.Infrastructure.csproj"
+              "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\Cinemax.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\Cinemax.Infrastructure.csproj"
               }
             }
           }
@@ -111,8 +111,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Domain\\Cinemax.Domain.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Domain\\Cinemax.Domain.csproj"
+              "c:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Domain\\Cinemax.Domain.csproj": {
+                "projectPath": "c:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Domain\\Cinemax.Domain.csproj"
               }
             }
           }
@@ -132,6 +132,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.2.0, )"
+            },
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
               "target": "Package",
               "version": "[8.0.0, )"
@@ -222,14 +226,14 @@
         }
       }
     },
-    "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Domain\\Cinemax.Domain.csproj": {
+    "c:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Domain\\Cinemax.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Domain\\Cinemax.Domain.csproj",
+        "projectUniqueName": "c:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Domain\\Cinemax.Domain.csproj",
         "projectName": "Cinemax.Domain",
-        "projectPath": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Domain\\Cinemax.Domain.csproj",
+        "projectPath": "c:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Domain\\Cinemax.Domain.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Domain\\obj\\",
+        "outputPath": "c:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -287,14 +291,14 @@
         }
       }
     },
-    "c:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\Cinemax.Infrastructure.csproj": {
+    "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\Cinemax.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\Cinemax.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\Cinemax.Infrastructure.csproj",
         "projectName": "Cinemax.Infrastructure",
-        "projectPath": "c:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\Cinemax.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\Cinemax.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Domain\\Cinemax.Domain.csproj": {}
+    "c:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Domain\\Cinemax.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Domain\\Cinemax.Domain.csproj": {
+    "c:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Domain\\Cinemax.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Domain\\Cinemax.Domain.csproj",
+        "projectUniqueName": "c:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Domain\\Cinemax.Domain.csproj",
         "projectName": "Cinemax.Domain",
-        "projectPath": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Domain\\Cinemax.Domain.csproj",
+        "projectPath": "c:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Domain\\Cinemax.Domain.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Domain\\obj\\",
+        "outputPath": "c:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
