@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "91qT3/F72gowk1aVdIuoy1FqTwXgTGFf55Ln7KLZBTGgwsP+Ko4ZtfiWnmKSoItFwXMYXLt1s2cUMDOj/2+tNQ==",
+  "dgSpecHash": "U/9Kzt9t8nkC2e87/Lks1vx2lufnpquyzxogEgnlcfH8xDG5t97yyGbY1ajctYHoi72ifsI96S033prgieuThw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Application\\Cinemax.Application.csproj",
+  "projectFilePath": "c:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Application\\Cinemax.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
   ],

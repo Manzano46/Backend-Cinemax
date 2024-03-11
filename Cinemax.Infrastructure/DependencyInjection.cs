@@ -7,7 +7,7 @@ using Cinemax.Infrastructure.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace BuberDinner.Infrastructure;
+namespace Cinemax.Infrastructure;
 public static class DependencyInjection{
     public static IServiceCollection AddInfrastructure(this IServiceCollection services, ConfigurationManager configurationManager){
         services.Configure<JwtSettings>(configurationManager.GetSection(JwtSettings.SectionName));
