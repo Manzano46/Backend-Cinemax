@@ -1,6 +1,7 @@
 
 using Cinemax.Application.Movies.Commands.Create;
 using Cinemax.Application.Movies.Common;
+using Cinemax.Application.Movies.Queries.Read;
 using Cinemax.Contracts.Movies;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -28,11 +29,44 @@ public class MovieController : ControllerBase{
 
         return Ok(response);
     }
+
+    // GET: api/movies
+    [HttpGet]
+    public async Task<IActionResult> Read()
+    {
+        var command = new ReadMoviesQuery();
+
+        IEnumerable<MovieResult> movieResults = await _mediator.Send(command);
+
+        IEnumerable<MovieResponse> responses = movieResults.Select(movieResult => new MovieResponse
+            (
+                movieResult.Movie.Id,
+                movieResult.Movie.Name,
+                movieResult.Movie.Description,
+                movieResult.Movie.Duration,
+                movieResult.Movie.Premiere,
+                movieResult.Movie.IconURL,
+                movieResult.Movie.TrailerURL
+            )
+        );
+        
+    
+        return Ok(responses);
+    }
+
+
     /*
     // GET: api/movies/{id}
     [HttpGet("{id}")]
     public async Task<IActionResult> Get(int id)
     {
+        var query = new GetMovieQuery(id);
+
+        MovieResult movieResult = await _mediator.Send(command);
+
+        var response = new MovieResponse(movieResult.Movie.Id, movieResult.Movie.Name, movieResult.Movie.Description, movieResult.Movie.Duration, movieResult.Movie.Premiere, movieResult.Movie.IconURL, movieResult.Movie.TrailerURL);
+
+        return Ok(response);
         var movie = await _mediator.Send(new GetMovieQuery { Id = id });
         if (movie == null)
         {
@@ -41,6 +75,7 @@ public class MovieController : ControllerBase{
         return Ok(movie);
     }
 
+    /*
     // PUT: api/movies/{id}
     [HttpPut("{id}")]
     public async Task<IActionResult> Update(int id, UpdateMovieCommand command)
