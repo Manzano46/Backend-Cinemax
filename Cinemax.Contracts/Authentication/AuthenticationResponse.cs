@@ -5,7 +5,7 @@ public record AuthenticationResponse(
     string FirstName,
     string LastName,
     string Email,
-    DateTime Birth,
+    DateOnly Birth,
     int Points,
     string Token 
 );

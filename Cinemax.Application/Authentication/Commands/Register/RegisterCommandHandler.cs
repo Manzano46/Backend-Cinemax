@@ -25,8 +25,7 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, Authentic
             FirstName = command.FirstName,
             LastName = command.LastName,
             Email = command.Email,
-            Password = command.Password,
-            Birth = command.Birth
+            Password = command.Password
         };
 
         _userRepository.Add(user);

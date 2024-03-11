@@ -5,6 +5,6 @@ public class User{
     public string LastName {get; set;} = null!;
     public string Email {get; set;} = null!;
     public string Password {get; set;} = null!;
-    public DateTime Birth {get; set;}
+    public DateOnly Birth {get; set;}
     public int Points {get; set;} = 0;
 }

@@ -16,6 +16,8 @@ public static class DependencyInjection{
         services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
         
         services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<IMovieRepository, MovieRepository>();
+
 
         return services;
     }
