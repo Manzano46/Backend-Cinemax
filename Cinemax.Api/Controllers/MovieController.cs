@@ -4,6 +4,7 @@ using Cinemax.Application.Movies.Common;
 using Cinemax.Application.Movies.Queries.Read;
 using Cinemax.Contracts.Movies;
 using MediatR;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cinemax.Api.Controllers;

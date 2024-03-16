@@ -79,14 +79,17 @@ POST {{host}}/auth/login
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjYzNjNGYwMS0wMDBkLTRlNzAtOTcwYi04ZjlhZDVhNzUzOTMiLCJnaXZlbl9uYW1lIjoia2V2aW4iLCJmYW1pbHlfbmFtZSI6Im1hbnphbm8iLCJqdGkiOiJlODFiMDI4Mi1lMzk5LTRkOTYtOTAyYy0yNzk5YjhiMGRlZjEiLCJleHAiOjE3MTAxMTc1ODYsImlzcyI6IkNpbmVtYXgiLCJhdWQiOiJDaW5lbWF4In0.T-c8BFgti1ofdxWwswG_zQCD69Yc8bdMXRU3cx6s4N8"
 }
 ```
+
 ## Movies
 
 ### Create
+
 ```js
 POST {{host}}/movies
 ```
 
 #### Create Request
+
 ```json
 {
     "name":"Lucy3",
@@ -116,13 +119,14 @@ POST {{host}}/movies
 }
 ```
 
-
 ### Read
+
 ```js
 GET {{host}}/movies
 ```
 
 #### Read Request
+
 ```json
 {
 }
