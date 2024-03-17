@@ -1,11 +1,10 @@
 using Cinemax.Infrastructure;
 using Cinemax.Application;
+using Cinemax.Api;
 
 var builder = WebApplication.CreateBuilder(args);
 { 
-    builder.Services.AddApplication().AddInfrastructure(builder.Configuration);
-    builder.Services.AddControllers();
-
+    builder.Services.AddApplication().AddInfrastructure(builder.Configuration).AddPresentation();
     // Add CORS services
     builder.Services.AddCors(options =>
     {

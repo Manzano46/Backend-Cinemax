@@ -15,6 +15,7 @@ public class ReadMoviesQueryHandler : IRequestHandler<ReadMoviesQuery, IEnumerab
     }
     public async Task<IEnumerable<MovieResult>> Handle(ReadMoviesQuery command, CancellationToken cancellationToken)
     {
+        await Task.CompletedTask;
         return _movieRepository.GetAllMovies().Select(x => new MovieResult(x));
     }
 }
