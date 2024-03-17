@@ -1,7 +1,6 @@
 using Cinemax.Application.Common.Interfaces.Persistence;
 using Cinemax.Application.Movies.Common;
 using Cinemax.Application.Movies.Queries.Read;
-using Cinemax.Domain.Entities;
 using MediatR;
 
 namespace Cinemax.Application.Movies.Query.Read;

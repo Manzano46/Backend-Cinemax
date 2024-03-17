@@ -1,5 +1,5 @@
 using Cinemax.Application.Common.Interfaces.Persistence;
-using Cinemax.Domain.Entities;
+using Cinemax.Domain.User;
 
 namespace Cinemax.Infrastructure.Persistence;
 public class UserRepository : IUserRepository{

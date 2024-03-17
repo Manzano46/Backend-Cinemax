@@ -1,7 +1,7 @@
 using Cinemax.Application.Authentication.Common;
 using Cinemax.Application.Common.Interfaces.Authentication;
 using Cinemax.Application.Common.Interfaces.Persistence;
-using Cinemax.Domain.Entities;
+using Cinemax.Domain.User;
 using MediatR;
 
 namespace Cinemax.Application.Authentication.Commands.Register;

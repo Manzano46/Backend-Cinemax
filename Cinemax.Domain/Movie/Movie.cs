@@ -1,4 +1,4 @@
-namespace Cinemax.Domain.Entities;
+namespace Cinemax.Domain.Movie;
 public class Movie{
     public Guid Id {get; set;} = Guid.NewGuid();
     public string Name {get; set;} = null!;

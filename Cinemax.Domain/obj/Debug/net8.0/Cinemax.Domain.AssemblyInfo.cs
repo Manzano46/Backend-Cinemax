@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Cinemax.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9f40527627585e88a68f1bd078f47d6d6e6e109d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+77d83396da9359d3e97c709f0897f81f1a5fc39e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Cinemax.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Cinemax.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

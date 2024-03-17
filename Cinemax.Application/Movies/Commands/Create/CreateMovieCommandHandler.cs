@@ -1,6 +1,6 @@
 using Cinemax.Application.Common.Interfaces.Persistence;
 using Cinemax.Application.Movies.Common;
-using Cinemax.Domain.Entities;
+using Cinemax.Domain.Movie;
 using MediatR;
 
 namespace Cinemax.Application.Movies.Commands.Create;

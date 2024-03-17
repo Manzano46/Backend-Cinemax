@@ -1,4 +1,4 @@
-using Cinemax.Domain.Entities;
+using Cinemax.Domain.User;
 
 namespace Cinemax.Application.Common.Interfaces.Authentication;
 public interface IJwtTokenGenerator{

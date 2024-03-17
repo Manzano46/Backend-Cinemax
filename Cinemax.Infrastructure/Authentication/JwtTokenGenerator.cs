@@ -3,7 +3,7 @@ using System.Security.Claims;
 using System.Text;
 using Cinemax.Application.Common.Interfaces.Authentication;
 using Cinemax.Application.Common.Interfaces.Services;
-using Cinemax.Domain.Entities;
+using Cinemax.Domain.User;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 

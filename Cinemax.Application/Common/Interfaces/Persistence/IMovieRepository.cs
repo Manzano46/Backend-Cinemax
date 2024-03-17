@@ -1,4 +1,4 @@
-using Cinemax.Domain.Entities;
+using Cinemax.Domain.Movie;
 
 namespace Cinemax.Application.Common.Interfaces.Persistence;
 public interface IMovieRepository{

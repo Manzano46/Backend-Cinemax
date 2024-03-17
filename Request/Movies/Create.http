@@ -4,7 +4,7 @@ POST {{host}}/movies
 Content-Type: application/json
 
 {
-    "name":"Lucy1",
+    "name":"Lucys1",
     "description":"Best peli",
     "Duration":"02:30:00",
     "Premiere":"2024-04-01T00:00:00",
