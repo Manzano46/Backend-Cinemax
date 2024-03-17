@@ -1,5 +1,7 @@
 using Cinemax.Application.Common.Interfaces.Persistence;
-using Cinemax.Domain.Movie;
+using Cinemax.Domain.Movie.Entities;
+using Cinemax.Domain.Movie.ValueObjects;
+
 
 namespace Cinemax.Infrastructure.Persistence;
 public class MovieRepository : IMovieRepository{
@@ -10,10 +12,10 @@ public class MovieRepository : IMovieRepository{
         _movies.Add(movie);
     }
 
-    public void Delete(Guid id)
+    public void Delete(MovieId id)
     {
         var movie = _movies.SingleOrDefault(m => m.Id == id);
-        if (movie != null)
+        if (movie is not null)
         {
             _movies.Remove(movie);
         }
@@ -32,7 +34,7 @@ public class MovieRepository : IMovieRepository{
     public void Update(Movie movie)
     {
         var existingMovie = _movies.SingleOrDefault(m => m.Id == movie.Id);
-        if (existingMovie != null)
+        if (existingMovie is not null)
         {
             existingMovie.Name = movie.Name;
             existingMovie.Description = movie.Description;

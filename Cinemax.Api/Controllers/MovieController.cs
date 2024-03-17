@@ -25,7 +25,7 @@ public class MovieController : ControllerBase{
 
         MovieResult movieResult = await _mediator.Send(command);
 
-        var response = new MovieResponse(movieResult.Movie.Id, movieResult.Movie.Name, movieResult.Movie.Description, movieResult.Movie.Duration, movieResult.Movie.Premiere, movieResult.Movie.IconURL, movieResult.Movie.TrailerURL);
+        var response = new MovieResponse(movieResult.Movie.Id.Value, movieResult.Movie.Name, movieResult.Movie.Description, movieResult.Movie.Duration, movieResult.Movie.Premiere, movieResult.Movie.IconURL, movieResult.Movie.TrailerURL);
 
         return Ok(response);
     }
@@ -40,7 +40,7 @@ public class MovieController : ControllerBase{
 
         IEnumerable<MovieResponse> responses = movieResults.Select(movieResult => new MovieResponse
             (
-                movieResult.Movie.Id,
+                movieResult.Movie.Id.Value,
                 movieResult.Movie.Name,
                 movieResult.Movie.Description,
                 movieResult.Movie.Duration,

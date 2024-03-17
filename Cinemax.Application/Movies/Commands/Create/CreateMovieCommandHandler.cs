@@ -1,6 +1,6 @@
 using Cinemax.Application.Common.Interfaces.Persistence;
 using Cinemax.Application.Movies.Common;
-using Cinemax.Domain.Movie;
+using Cinemax.Domain.Movie.Entities;
 using MediatR;
 
 namespace Cinemax.Application.Movies.Commands.Create;
@@ -19,14 +19,14 @@ public class RegisterCommandHandler : IRequestHandler<CreateMovieCommand, MovieR
             throw new Exception("Movie with given name alredy exists");
         }
 
-        Movie movie = new Movie{
-            Name = command.Name,
-            Description = command.Description,
-            Duration = command.Duration,
-            Premiere = command.Premiere,
-            IconURL = command.IconURL,
-            TrailerURL = command.TrailerURL,
-        };
+        Movie movie = Movie.Create(
+            command.Name,
+            command.Description,
+            command.Duration,
+            command.Premiere,
+            command.IconURL,
+            command.TrailerURL
+        );
 
         _movieRepository.Add(movie);
 

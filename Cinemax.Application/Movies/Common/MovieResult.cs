@@ -1,4 +1,4 @@
-using Cinemax.Domain.Movie;
+using Cinemax.Domain.Movie.Entities;
 
 namespace Cinemax.Application.Movies.Common;
 public record MovieResult(
