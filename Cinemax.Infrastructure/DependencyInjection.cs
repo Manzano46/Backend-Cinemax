@@ -5,8 +5,10 @@ using Cinemax.Application.Common.Interfaces.Persistence;
 using Cinemax.Application.Common.Interfaces.Services;
 using Cinemax.Infrastructure.Authentication;
 using Cinemax.Infrastructure.Persistence;
+using Cinemax.Infrastructure.Persistence.Repositories;
 using Cinemax.Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
@@ -26,6 +28,8 @@ public static class DependencyInjection{
     }
 
     public static IServiceCollection AddPersistance(this IServiceCollection services){
+        
+        services.AddDbContext<CinemaxDbContext>(options => options.UseSqlServer("Server=KEVIN\\SQLEXPRESS;Database=cinemax;User Id=cinemax;Password=cinemax;TrustServerCertificate=true"));
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IMovieRepository, MovieRepository>();
 

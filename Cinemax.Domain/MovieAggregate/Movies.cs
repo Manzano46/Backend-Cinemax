@@ -8,6 +8,9 @@ public class Movies : AggregateRoot<MoviesId>
     public string Description {get;}
     private readonly List<Movie> _items = new();
     public IReadOnlyList<Movie> Items => _items.AsReadOnly();
+    #pragma warning disable CS8618
+    private Movies(){}
+    #pragma warning restore CS8618
     private Movies(MoviesId moviesId, string description) 
         : base(moviesId){
         Description = description;

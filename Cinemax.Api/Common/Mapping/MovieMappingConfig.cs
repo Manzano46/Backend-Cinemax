@@ -8,9 +8,10 @@ public class MovieMappingConfig : IRegister
 {
     public void Register(TypeAdapterConfig config){
         config.NewConfig<MovieResult, MovieResponse>()
-            .Map(dest => dest, src => src.Movie)
+            .Map(dest => dest.Id, src => src.Movie.Id.Value )
             .Map(dest => dest.IconURL, src => src.Movie.IconURL)
-            .Map(dest => dest.TrailerURL, src => src.Movie.TrailerURL);
+            .Map(dest => dest.TrailerURL, src => src.Movie.TrailerURL)
+            .Map(dest => dest, src => src.Movie);
             
 
         config.NewConfig<CreateMovieRequest, CreateMovieCommand>()
