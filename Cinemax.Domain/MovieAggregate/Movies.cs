@@ -1,12 +1,13 @@
 using Cinemax.Domain.Common.Models;
-using Cinemax.Domain.Movie.ValueObjects;
+using Cinemax.Domain.MovieAggregate.ValueObjects;
+using Cinemax.Domain.MovieAggregate.Entities;
 
-namespace Cinemax.Domain.Movie;
+namespace Cinemax.Domain.MovieAggregate;
 public class Movies : AggregateRoot<MoviesId>
 {
     public string Description {get;}
-    private readonly List<Entities.Movie> _items = new();
-    public IReadOnlyList<Entities.Movie> Items => _items.AsReadOnly();
+    private readonly List<Movie> _items = new();
+    public IReadOnlyList<Movie> Items => _items.AsReadOnly();
     private Movies(MoviesId moviesId, string description) 
         : base(moviesId){
         Description = description;

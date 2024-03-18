@@ -1,7 +1,7 @@
 namespace Cinemax.Contracts.Movies;
 
 public record MovieResponse(
-    Guid Id,
+    string Id,
     string Name,
     string Description,
     TimeSpan Duration,

@@ -1,5 +1,5 @@
 using Cinemax.Domain.Common.Models;
-namespace Cinemax.Domain.Movie.ValueObjects;
+namespace Cinemax.Domain.MovieAggregate.ValueObjects;
 public sealed class MovieId : ValueObject
 {
     public Guid Value {get;}

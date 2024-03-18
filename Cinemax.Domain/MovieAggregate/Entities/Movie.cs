@@ -1,7 +1,7 @@
 using Cinemax.Domain.Common.Models;
-using Cinemax.Domain.Movie.ValueObjects;
+using Cinemax.Domain.MovieAggregate.ValueObjects;
 
-namespace Cinemax.Domain.Movie.Entities;
+namespace Cinemax.Domain.MovieAggregate.Entities;
 public sealed class Movie: Entity<MovieId>{
     public string Name {get; set;} = null!;
     public string Description {get; set;} = null!;

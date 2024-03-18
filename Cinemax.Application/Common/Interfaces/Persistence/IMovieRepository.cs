@@ -1,5 +1,5 @@
-using Cinemax.Domain.Movie.Entities;
-using Cinemax.Domain.Movie.ValueObjects;
+using Cinemax.Domain.MovieAggregate.Entities;
+using Cinemax.Domain.MovieAggregate.ValueObjects;
 
 namespace Cinemax.Application.Common.Interfaces.Persistence;
 public interface IMovieRepository{

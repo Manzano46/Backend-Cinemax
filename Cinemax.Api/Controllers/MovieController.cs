@@ -3,6 +3,7 @@ using Cinemax.Application.Movies.Commands.Create;
 using Cinemax.Application.Movies.Common;
 using Cinemax.Application.Movies.Queries.Read;
 using Cinemax.Contracts.Movies;
+using MapsterMapper;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -14,22 +15,23 @@ namespace Cinemax.Api.Controllers;
 
 public class MovieController : ControllerBase{
     private readonly IMediator _mediator;
+    private readonly IMapper _mapper;
 
-    public MovieController(IMediator mediator) => _mediator = mediator;
+    public MovieController(IMediator mediator, IMapper mapper){
+        _mediator = mediator;
+        _mapper = mapper;
+    } 
 
     // POST: api/movies
     [HttpPost]
     [Authorize] 
     public async Task<IActionResult> Create(CreateMovieRequest createMovieRequest)
     {
-        var command = new CreateMovieCommand(createMovieRequest.Name, createMovieRequest.Description, createMovieRequest.Duration, createMovieRequest.Premiere, createMovieRequest.IconURL,
-        createMovieRequest.TrailerURL
-        );
+        var command = _mapper.Map<CreateMovieCommand>(createMovieRequest);
 
         MovieResult movieResult = await _mediator.Send(command);
 
-        var response = new MovieResponse(movieResult.Movie.Id.Value, movieResult.Movie.Name, movieResult.Movie.Description, movieResult.Movie.Duration, movieResult.Movie.Premiere, movieResult.Movie.IconURL, movieResult.Movie.TrailerURL);
-
+        var response = _mapper.Map<MovieResponse>(movieResult);
         return Ok(response);
     }
 
@@ -41,19 +43,8 @@ public class MovieController : ControllerBase{
 
         IEnumerable<MovieResult> movieResults = await _mediator.Send(command);
 
-        IEnumerable<MovieResponse> responses = movieResults.Select(movieResult => new MovieResponse
-            (
-                movieResult.Movie.Id.Value,
-                movieResult.Movie.Name,
-                movieResult.Movie.Description,
-                movieResult.Movie.Duration,
-                movieResult.Movie.Premiere,
-                movieResult.Movie.IconURL,
-                movieResult.Movie.TrailerURL
-            )
-        );
+        IEnumerable<MovieResponse> responses = movieResults.Select(movieResult => _mapper.Map<MovieResponse>(movieResult));
         
-    
         return Ok(responses);
     }
 
