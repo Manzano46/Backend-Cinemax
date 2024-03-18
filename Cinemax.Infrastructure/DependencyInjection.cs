@@ -16,13 +16,22 @@ namespace Cinemax.Infrastructure;
 public static class DependencyInjection{
     public static IServiceCollection AddInfrastructure(this IServiceCollection services, ConfigurationManager configurationManager){
         
-        services.AddAuth(configurationManager);
+        services
+                .AddAuth(configurationManager)
+                .AddPersistance();
+
         services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
+
+        return services;
+    }
+
+    public static IServiceCollection AddPersistance(this IServiceCollection services){
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IMovieRepository, MovieRepository>();
 
         return services;
     }
+
 
     public static IServiceCollection AddAuth(this IServiceCollection services, ConfigurationManager configurationManager){
         var jwtSettings = new JwtSettings();
