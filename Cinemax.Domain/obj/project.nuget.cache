@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OnR7tBQSH45IAszeQCQiQhxuSPtz1QiPuM3Z2h3XN9kn5Fm8+lERNGzUnI5UmealnCU8ADp13aaqFyyuGRJO4A==",
+  "dgSpecHash": "DYhEd3crQzka6eVVoYtjog41so3CGfqzJDgElSWRBYYoLsYWH2ziLA8zAPqnA7DAkG/Qw5ZkvKSz6aM7LxAZaQ==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Domain\\Cinemax.Domain.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Domain\\Cinemax.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -44,3 +44,6 @@ C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Api\
 C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Api\bin\Debug\net8.0\Mapster.dll
 C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Api\bin\Debug\net8.0\Mapster.Core.dll
 C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Api\bin\Debug\net8.0\Mapster.DependencyInjection.dll
+C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll

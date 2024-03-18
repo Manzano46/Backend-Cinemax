@@ -23,6 +23,9 @@ var app = builder.Build();
     // Use CORS middleware with the policy
     app.UseCors("AllowAll");
 
+    app.UseAuthentication();
+    app.UseAuthorization();
+
     app.MapControllers();
     app.Run();
 }

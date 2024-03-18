@@ -1,7 +1,8 @@
 @host = http://localhost:5250
-
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlYWNhZjFmYy1mMTc5LTRmZTEtYjczYi0xZTJhZmIxZDBlMjYiLCJnaXZlbl9uYW1lIjoia2V2aW4iLCJmYW1pbHlfbmFtZSI6Im1hbnphbm8iLCJqdGkiOiIyOTU2YTBiZi1mZDFjLTQwNDMtOGMwYi0wOThjZDliNzRlYmMiLCJleHAiOjE3MTA3Mjc4MzcsImlzcyI6IkNpbmVtYXgiLCJhdWQiOiJDaW5lbWF4In0.Rife-FMX488IhERwTNAz2cwr_up2DWIyGxUMX9URy1g
 POST {{host}}/movies
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
     "name":"Lucys3",

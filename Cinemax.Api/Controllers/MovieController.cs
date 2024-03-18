@@ -4,12 +4,14 @@ using Cinemax.Application.Movies.Common;
 using Cinemax.Application.Movies.Queries.Read;
 using Cinemax.Contracts.Movies;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cinemax.Api.Controllers;
 
 [ApiController]
 [Route("movies")]
+
 public class MovieController : ControllerBase{
     private readonly IMediator _mediator;
 
@@ -17,6 +19,7 @@ public class MovieController : ControllerBase{
 
     // POST: api/movies
     [HttpPost]
+    [Authorize] 
     public async Task<IActionResult> Create(CreateMovieRequest createMovieRequest)
     {
         var command = new CreateMovieCommand(createMovieRequest.Name, createMovieRequest.Description, createMovieRequest.Duration, createMovieRequest.Premiere, createMovieRequest.IconURL,

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RF2sHyDQfE7kzCPTdIxxW+e66MFgypqE05mB8lafCryL9nmMHn4Thzaw/5qvJgghbEty6SJzMSBQu05m7nQPOA==",
+  "dgSpecHash": "r9rdo64IPR8AyQrW6yGKkOlt1VjTeu6yE/gA5rZrfiol7uQhVkQMsJXjK9mAKfcmS3grrjuTT/2KFdiczTZ4Vg==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Application\\Cinemax.Application.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Application\\Cinemax.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
