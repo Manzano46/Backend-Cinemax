@@ -1,4 +1,3 @@
-
 using Cinemax.Application.Movies.Commands.Create;
 using Cinemax.Application.Movies.Common;
 using Cinemax.Application.Movies.Queries.Read;

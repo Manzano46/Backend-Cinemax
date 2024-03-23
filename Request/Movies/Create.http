@@ -1,11 +1,11 @@
 @host = http://localhost:5250
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMDY1ZDBiNi0xNDFmLTRmMjEtOGM5OS02YTQ0NTcwYzUwOTIiLCJnaXZlbl9uYW1lIjoia2V2aW4iLCJmYW1pbHlfbmFtZSI6Im1hbnphbm8iLCJqdGkiOiI1NDlmODkxNy1mMjZhLTRkMTEtOTRkZS00ZTU4ODgzMjE2NmUiLCJleHAiOjE3MTA3NDM1NjQsImlzcyI6IkNpbmVtYXgiLCJhdWQiOiJDaW5lbWF4In0.fHtJD_k66S2swrBlSQkb5W_ZWx8EVY3pwYWVDV3mWus
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0NmIwODE1Mi05NTg0LTQyYWMtYjFjMi05YjA0ZTI3YjhiOWEiLCJnaXZlbl9uYW1lIjoia2V2aW4iLCJmYW1pbHlfbmFtZSI6Im1hbnphbm8iLCJqdGkiOiIyYjJlNGE3Ny00NjllLTQwNTItYjNiYy1iZmRmYTA0NmUyNjciLCJleHAiOjE3MTA3NzMyMzcsImlzcyI6IkNpbmVtYXgiLCJhdWQiOiJDaW5lbWF4In0.5Z03bGEJ9xmAQat46-ahq0Hq8xE-VFnl4yqVv5M7smo
 POST {{host}}/movies
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
 {
-    "name":"Lucys3",
+    "name":"ASD",
     "description":"Best peli",
     "Duration":"02:30:00",
     "Premiere":"2024-04-01T00:00:00",

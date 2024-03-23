@@ -1,4 +1,5 @@
 using Cinemax.Domain.MovieAggregate.Entities;
+using Cinemax.Domain.User.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Cinemax.Infrastructure.Persistence;
@@ -7,7 +8,8 @@ public class CinemaxDbContext : DbContext{
         : base(options) {}
     
     public DbSet<Movie> Movies {get; set;}
-
+    public DbSet<User> Users {get; set;}
+    
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

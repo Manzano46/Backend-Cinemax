@@ -1,4 +1,4 @@
-using Cinemax.Domain.User;
+using Cinemax.Domain.User.Entities;
 
 namespace Cinemax.Application.Authentication.Common;
 public record AuthenticationResult(

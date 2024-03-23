@@ -5,6 +5,8 @@ using Cinemax.Api;
 var builder = WebApplication.CreateBuilder(args);
 { 
     builder.Services.AddApplication().AddInfrastructure(builder.Configuration).AddPresentation();
+    builder.Services.AddControllers();
+
     // Add CORS services
     builder.Services.AddCors(options =>
     {
@@ -17,14 +19,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 var app = builder.Build();
 {
+    // Use CORS middleware with the policy
+    app.UseCors("AllowAll");
     app.UseExceptionHandler("/error");
     app.UseHttpsRedirection();
 
-    // Use CORS middleware with the policy
-    app.UseCors("AllowAll");
-
-    app.UseAuthentication();
-    app.UseAuthorization();
+    app.UseRouting();
+    // app.UseAuthentication();
+    // app.UseAuthorization();
 
     app.MapControllers();
     app.Run();

@@ -1,7 +1,5 @@
 using Cinemax.Application.Common.Interfaces.Persistence;
 using Cinemax.Domain.MovieAggregate.Entities;
-using Cinemax.Domain.MovieAggregate.ValueObjects;
-
 
 namespace Cinemax.Infrastructure.Persistence.Repositories;
 public class MovieRepository : IMovieRepository{
@@ -13,7 +11,7 @@ public class MovieRepository : IMovieRepository{
 
     public void Add(Movie movie)
     {
-        _cinemaxDbContext.Add(movie);
+        _cinemaxDbContext.Movies.Add(movie);
         _cinemaxDbContext.SaveChanges();
     }
 

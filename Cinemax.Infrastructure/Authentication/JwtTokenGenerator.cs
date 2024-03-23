@@ -3,7 +3,7 @@ using System.Security.Claims;
 using System.Text;
 using Cinemax.Application.Common.Interfaces.Authentication;
 using Cinemax.Application.Common.Interfaces.Services;
-using Cinemax.Domain.User;
+using Cinemax.Domain.User.Entities;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
@@ -22,7 +22,7 @@ public class JwtTokenGenerator : IJwtTokenGenerator
         var signingCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.Secret)), SecurityAlgorithms.HmacSha256);
 
         var claims = new[]{
-            new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
+            new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()!),
             new Claim(JwtRegisteredClaimNames.GivenName, user.FirstName),
             new Claim(JwtRegisteredClaimNames.FamilyName, user.LastName),
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())

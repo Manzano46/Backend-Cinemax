@@ -1,14 +1,18 @@
 using Cinemax.Application.Common.Interfaces.Persistence;
-using Cinemax.Domain.User;
+using Cinemax.Domain.User.Entities;
 
 namespace Cinemax.Infrastructure.Persistence.Repositories;
 public class UserRepository : IUserRepository{
-    private static readonly List<User> _users = new();
+    private readonly CinemaxDbContext _cinemaxDbContext;
+    public UserRepository(CinemaxDbContext cinemaxDbContext){
+        _cinemaxDbContext = cinemaxDbContext;
+    }
     public void Add(User user){
-        _users.Add(user);
+        _cinemaxDbContext.Users.Add(user);
+        _cinemaxDbContext.SaveChanges();
     }
 
     public User? GetUserByEmail(string Email){
-        return _users.SingleOrDefault(user => user.Email == Email); 
+        return _cinemaxDbContext.Users.SingleOrDefault(user => user.Email == Email); 
     }
 }

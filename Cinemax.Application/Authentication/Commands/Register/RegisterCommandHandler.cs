@@ -1,7 +1,8 @@
 using Cinemax.Application.Authentication.Common;
 using Cinemax.Application.Common.Interfaces.Authentication;
 using Cinemax.Application.Common.Interfaces.Persistence;
-using Cinemax.Domain.User;
+using Cinemax.Domain.MovieAggregate.Entities;
+using Cinemax.Domain.User.Entities;
 using MediatR;
 
 namespace Cinemax.Application.Authentication.Commands.Register;
@@ -22,12 +23,14 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, Authentic
             throw new Exception("User with given email alredy exists");
         }
 
-        User user = new User{
-            FirstName = command.FirstName,
-            LastName = command.LastName,
-            Email = command.Email,
-            Password = command.Password
-        };
+        User user = User.Create(
+            command.FirstName,
+            command.LastName,
+            command.Email,
+            command.Password,
+            // poner la fecha
+            DateOnly.MaxValue
+        );
 
         _userRepository.Add(user);
 
