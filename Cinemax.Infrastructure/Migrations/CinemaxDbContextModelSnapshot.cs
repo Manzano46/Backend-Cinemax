@@ -22,13 +22,12 @@ namespace Cinemax.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Cinemax.Domain.Genre.Entities.Genre", b =>
+           // modelBuilder.Entity("Cinemax.Domain.Genre.Entities.Genre", b =>
             modelBuilder.Entity("Cinemax.Domain.Actor.Entities.Actor", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Name")
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -41,8 +40,22 @@ namespace Cinemax.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Genres", (string)null);
                     b.ToTable("Actors", (string)null);
+                });
+
+                modelBuilder.Entity("Cinemax.Domain.Genre.Entities.Genre", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Genres", (string)null);
                 });
 
             modelBuilder.Entity("Cinemax.Domain.MovieAggregate.Entities.Movie", b =>

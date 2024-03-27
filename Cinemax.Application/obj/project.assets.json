@@ -137,23 +137,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\53552\\.nuget\\packages\\": {},
+    "C:\\Users\\Admin\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\53552\\Desktop\\Comp. Science\\3er año\\Ingeniería de Software\\clon kevin\\Backend-Cinemax\\Cinemax.Application\\Cinemax.Application.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Application\\Cinemax.Application.csproj",
       "projectName": "Cinemax.Application",
-      "projectPath": "C:\\Users\\53552\\Desktop\\Comp. Science\\3er año\\Ingeniería de Software\\clon kevin\\Backend-Cinemax\\Cinemax.Application\\Cinemax.Application.csproj",
-      "packagesPath": "C:\\Users\\53552\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\53552\\Desktop\\Comp. Science\\3er año\\Ingeniería de Software\\clon kevin\\Backend-Cinemax\\Cinemax.Application\\obj\\",
+      "projectPath": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Application\\Cinemax.Application.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\53552\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -169,8 +169,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\53552\\Desktop\\Comp. Science\\3er año\\Ingeniería de Software\\clon kevin\\Backend-Cinemax\\Cinemax.Domain\\Cinemax.Domain.csproj": {
-              "projectPath": "C:\\Users\\53552\\Desktop\\Comp. Science\\3er año\\Ingeniería de Software\\clon kevin\\Backend-Cinemax\\Cinemax.Domain\\Cinemax.Domain.csproj"
+            "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Domain\\Cinemax.Domain.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Domain\\Cinemax.Domain.csproj"
             }
           }
         }

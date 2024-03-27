@@ -13,7 +13,7 @@ namespace Cinemax.Infrastructure.Migrations
 {
     [DbContext(typeof(CinemaxDbContext))]
     [Migration("20240327051208_addingactor")]
-    partial class addingactor
+    partial class Addingactor
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

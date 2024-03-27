@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Cinemax.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class addingactor : Migration
+    public partial class Addingactor : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
