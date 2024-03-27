@@ -10,3 +10,15 @@ C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Doma
 C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Domain\obj\Debug\net8.0\refint\Cinemax.Domain.dll
 C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Domain\obj\Debug\net8.0\Cinemax.Domain.pdb
 C:\Users\Admin\Documents\Programming\Proyecto de IS\Backend-Cinemax\Cinemax.Domain\obj\Debug\net8.0\ref\Cinemax.Domain.dll
+C:\Users\53552\Desktop\Comp. Science\3er año\Ingeniería de Software\clon kevin\Backend-Cinemax\Cinemax.Domain\bin\Debug\net8.0\Cinemax.Domain.deps.json
+C:\Users\53552\Desktop\Comp. Science\3er año\Ingeniería de Software\clon kevin\Backend-Cinemax\Cinemax.Domain\bin\Debug\net8.0\Cinemax.Domain.dll
+C:\Users\53552\Desktop\Comp. Science\3er año\Ingeniería de Software\clon kevin\Backend-Cinemax\Cinemax.Domain\bin\Debug\net8.0\Cinemax.Domain.pdb
+C:\Users\53552\Desktop\Comp. Science\3er año\Ingeniería de Software\clon kevin\Backend-Cinemax\Cinemax.Domain\obj\Debug\net8.0\Cinemax.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\53552\Desktop\Comp. Science\3er año\Ingeniería de Software\clon kevin\Backend-Cinemax\Cinemax.Domain\obj\Debug\net8.0\Cinemax.Domain.AssemblyInfoInputs.cache
+C:\Users\53552\Desktop\Comp. Science\3er año\Ingeniería de Software\clon kevin\Backend-Cinemax\Cinemax.Domain\obj\Debug\net8.0\Cinemax.Domain.AssemblyInfo.cs
+C:\Users\53552\Desktop\Comp. Science\3er año\Ingeniería de Software\clon kevin\Backend-Cinemax\Cinemax.Domain\obj\Debug\net8.0\Cinemax.Domain.csproj.CoreCompileInputs.cache
+C:\Users\53552\Desktop\Comp. Science\3er año\Ingeniería de Software\clon kevin\Backend-Cinemax\Cinemax.Domain\obj\Debug\net8.0\Cinemax.Domain.sourcelink.json
+C:\Users\53552\Desktop\Comp. Science\3er año\Ingeniería de Software\clon kevin\Backend-Cinemax\Cinemax.Domain\obj\Debug\net8.0\Cinemax.Domain.dll
+C:\Users\53552\Desktop\Comp. Science\3er año\Ingeniería de Software\clon kevin\Backend-Cinemax\Cinemax.Domain\obj\Debug\net8.0\refint\Cinemax.Domain.dll
+C:\Users\53552\Desktop\Comp. Science\3er año\Ingeniería de Software\clon kevin\Backend-Cinemax\Cinemax.Domain\obj\Debug\net8.0\Cinemax.Domain.pdb
+C:\Users\53552\Desktop\Comp. Science\3er año\Ingeniería de Software\clon kevin\Backend-Cinemax\Cinemax.Domain\obj\Debug\net8.0\ref\Cinemax.Domain.dll
