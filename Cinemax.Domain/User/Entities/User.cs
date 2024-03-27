@@ -1,5 +1,4 @@
 using Cinemax.Domain.Common.Models;
-using Cinemax.Domain.MovieAggregate.ValueObjects;
 using Cinemax.Domain.User.ValueObjects;
 
 namespace Cinemax.Domain.User.Entities;

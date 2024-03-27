@@ -91,6 +91,7 @@ POST {{host}}/movies
 #### Create Request
 
 ```json
+Authorization: Bearer {{token}}
 {
     "name":"Lucy3",
     "description":"Best peli",

@@ -3,6 +3,7 @@ using Cinemax.Application.Movies.Common;
 using Cinemax.Domain.MovieAggregate.Entities;
 using MediatR;
 
+
 namespace Cinemax.Application.Movies.Commands.Create;
 public class RegisterCommandHandler : IRequestHandler<CreateMovieCommand, MovieResult>
 {
