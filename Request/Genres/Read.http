@@ -1,7 +1,0 @@
-@host = http://localhost:5250
-
-GET  {{host}}/genres
-Content-Type: application/json
-
-{
-}
