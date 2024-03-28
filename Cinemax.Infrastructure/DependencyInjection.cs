@@ -33,7 +33,7 @@ public static class DependencyInjection{
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IMovieRepository, MovieRepository>();
         services.AddScoped<IGenreRepository, GenreRepository>();
-        
+        services.AddScoped<IRoomRepository, RoomRepository>();
         services.AddScoped<IActorRepository, ActorRepository>();
 
         return services;
