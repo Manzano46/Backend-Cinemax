@@ -4,6 +4,7 @@ using Cinemax.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Cinemax.Infrastructure.Migrations
 {
     [DbContext(typeof(CinemaxDbContext))]
-    partial class CinemaxDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240327163826_addingCountries")]
+    partial class addingCountries
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -22,7 +25,6 @@ namespace Cinemax.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-           // modelBuilder.Entity("Cinemax.Domain.Genre.Entities.Genre", b =>
             modelBuilder.Entity("Cinemax.Domain.Actor.Entities.Actor", b =>
                 {
                     b.Property<Guid>("Id")
@@ -41,21 +43,6 @@ namespace Cinemax.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Actors", (string)null);
-                });
-
-            modelBuilder.Entity("Cinemax.Domain.Genre.Entities.Genre", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Genres", (string)null);
                 });
 
             modelBuilder.Entity("Cinemax.Domain.Country.Entities.Country", b =>

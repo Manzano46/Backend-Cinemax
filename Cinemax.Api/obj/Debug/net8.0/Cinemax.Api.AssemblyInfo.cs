@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Cinemax.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0638edd75f8457c21ae81dcb01578e9dd672308d")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9e36760738d2cfbe2ad5429a28d54216c9fc2b90")]
+>>>>>>> origin/roger
 [assembly: System.Reflection.AssemblyProductAttribute("Cinemax.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Cinemax.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
