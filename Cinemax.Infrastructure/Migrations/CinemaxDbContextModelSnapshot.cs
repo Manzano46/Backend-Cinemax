@@ -42,6 +42,21 @@ namespace Cinemax.Infrastructure.Migrations
                     b.ToTable("Actors", (string)null);
                 });
 
+            modelBuilder.Entity("Cinemax.Domain.Country.Entities.Country", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Countries", (string)null);
+                });
+
             modelBuilder.Entity("Cinemax.Domain.MovieAggregate.Entities.Movie", b =>
                 {
                     b.Property<Guid>("Id")
