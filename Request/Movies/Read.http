@@ -1,0 +1,7 @@
+@host = http://localhost:5250
+
+GET  {{host}}/movies
+Content-Type: application/json
+
+{
+}
