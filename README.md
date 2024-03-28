@@ -1,3 +1,0 @@
-# Backend-Cinemax
-
-Clean Architecture

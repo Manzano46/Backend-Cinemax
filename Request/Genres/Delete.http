@@ -1,9 +1,0 @@
-@host = http://localhost:5250
-@name = Triller
-DELETE  {{host}}/genres/{{name}}
-Content-Type: application/json
-//Authorization: Bearer {{token}}
-
-{
-    "name" : "{{name}}"
-}

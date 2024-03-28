@@ -1,7 +1,0 @@
-@host = http://localhost:5250
-
-GET  {{host}}/actors
-Content-Type: application/json
-
-{
-}

@@ -1,9 +1,0 @@
-@host = http://localhost:5250
-@countryId = c364de09-7a17-4c2b-8a2d-5d138a003231
-
-DELETE {{host}}/countries/{{countryId}}
-Content-Type: application/json
-
-{
-    "id": "{{countryId}}"
-}
