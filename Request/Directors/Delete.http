@@ -1,0 +1,9 @@
+@host = http://localhost:5250
+@directorId = fd2894b2-4676-4a3d-9997-99768c32af94
+
+DELETE {{host}}/directors/{{directorId}}
+Content-Type: application/json
+
+{
+    "id": "{{directorId}}"
+}

@@ -13,11 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Cinemax.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0638edd75f8457c21ae81dcb01578e9dd672308d")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9e36760738d2cfbe2ad5429a28d54216c9fc2b90")]
->>>>>>> origin/roger
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+56b85bf934664cdeb59e251b57b3ff5d35b99e55")]
 [assembly: System.Reflection.AssemblyProductAttribute("Cinemax.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Cinemax.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

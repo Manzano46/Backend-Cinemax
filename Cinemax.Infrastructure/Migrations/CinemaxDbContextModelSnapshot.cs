@@ -22,7 +22,6 @@ namespace Cinemax.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-           // modelBuilder.Entity("Cinemax.Domain.Genre.Entities.Genre", b =>
             modelBuilder.Entity("Cinemax.Domain.Actor.Entities.Actor", b =>
                 {
                     b.Property<Guid>("Id")
@@ -43,21 +42,6 @@ namespace Cinemax.Infrastructure.Migrations
                     b.ToTable("Actors", (string)null);
                 });
 
-            modelBuilder.Entity("Cinemax.Domain.Genre.Entities.Genre", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Genres", (string)null);
-                });
-
             modelBuilder.Entity("Cinemax.Domain.Country.Entities.Country", b =>
                 {
                     b.Property<Guid>("Id")
@@ -71,6 +55,41 @@ namespace Cinemax.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Countries", (string)null);
+                });
+
+            modelBuilder.Entity("Cinemax.Domain.Director.Entities.Director", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Directors", (string)null);
+                });
+
+            modelBuilder.Entity("Cinemax.Domain.Genre.Entities.Genre", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Genres", (string)null);
                 });
 
             modelBuilder.Entity("Cinemax.Domain.MovieAggregate.Entities.Movie", b =>
@@ -107,6 +126,22 @@ namespace Cinemax.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Movies", (string)null);
+                });
+
+            modelBuilder.Entity("Cinemax.Domain.Room.Entities.Room", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Height")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Width")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Rooms", (string)null);
                 });
 
             modelBuilder.Entity("Cinemax.Domain.User.Entities.User", b =>

@@ -1,6 +1,7 @@
 using Cinemax.Domain.Genre.Entities;
 using Cinemax.Domain.Actor.Entities;
 using Cinemax.Domain.Country.Entities;
+using Cinemax.Domain.Director.Entities;
 using Cinemax.Domain.MovieAggregate.Entities;
 using Cinemax.Domain.User.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -17,6 +18,7 @@ public class CinemaxDbContext : DbContext{
     public DbSet<Actor> Actors {get; set;}
     public DbSet<Room> Rooms {get; set;}
     public DbSet<Country> Countries {get; set;}
+    public DbSet<Director> Directors {get; set;}
     
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

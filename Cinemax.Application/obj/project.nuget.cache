@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "zkDb8R156I8erRV8SKM5jFTg5VEfhC+Mt8LcOUQQjwcuUD3Fx5AEMy4kXtau/s9uZsibZz0VF/cEYIwUbS2ZFw==",
+  "dgSpecHash": "m1TG7Zx0HIleI+QsEp+VBlXgRLN+SdRnz7Lu+JxO8GkgyX/P5je8Krevjt8XbBDtmZjbxGMLvLzLH6BeUbym5w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Application\\Cinemax.Application.csproj",
+  "projectFilePath": "C:\\Users\\53552\\Desktop\\Comp. Science\\3er año\\Ingeniería de Software\\clon kevin\\Backend-Cinemax\\Cinemax.Application\\Cinemax.Application.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Admin\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+    "C:\\Users\\53552\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
+    "C:\\Users\\53552\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\53552\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
   ],
   "logs": []
 }
