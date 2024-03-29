@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Cinemax.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3358fc30a6b4afe4279fb347b791198b54ed846a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fff6716fb6165e7ab59fcb5788100691305378b4")]
 [assembly: System.Reflection.AssemblyProductAttribute("Cinemax.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Cinemax.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,0 +1,8 @@
+@host = http://localhost:5250
+
+GET  {{host}}/paymentTypes
+Content-Type: application/json
+
+{
+}
+

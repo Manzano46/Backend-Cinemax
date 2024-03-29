@@ -7,6 +7,8 @@ using Cinemax.Domain.User.Entities;
 using Microsoft.EntityFrameworkCore;
 using Cinemax.Domain.Room.Entities;
 using Cinemax.Domain.Role.Entities;
+using Cinemax.Domain.PaymentType.Entities;
+using Cinemax.Domain.Discount.Entities;
 
 namespace Cinemax.Infrastructure.Persistence;
 public class CinemaxDbContext : DbContext{
@@ -21,6 +23,8 @@ public class CinemaxDbContext : DbContext{
     public DbSet<Country> Countries {get; set;}
     public DbSet<Director> Directors {get; set;}
     public DbSet<Role> Roles {get; set;}
+    public DbSet<PaymentType> PaymentTypes {get; set;}
+    public DbSet<Discount> Discounts {get; set;}
     
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -1,0 +1,9 @@
+@host = http://localhost:5250
+@paymentTypeId = f22f2435-cd10-4255-ba5b-852b7c5026b1
+
+DELETE {{host}}/paymentTypes/{{paymentTypeId}}
+Content-Type: application/json
+
+{
+    "id": "{{paymentTypeId}}"
+}

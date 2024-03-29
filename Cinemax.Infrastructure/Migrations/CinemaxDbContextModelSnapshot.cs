@@ -77,6 +77,21 @@ namespace Cinemax.Infrastructure.Migrations
                     b.ToTable("Directors", (string)null);
                 });
 
+            modelBuilder.Entity("Cinemax.Domain.Discount.Entities.Discount", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Discounts", (string)null);
+                });
+
             modelBuilder.Entity("Cinemax.Domain.Genre.Entities.Genre", b =>
                 {
                     b.Property<Guid>("Id")
@@ -126,6 +141,21 @@ namespace Cinemax.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Movies", (string)null);
+                });
+
+            modelBuilder.Entity("Cinemax.Domain.PaymentType.Entities.PaymentType", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PaymentTypes", (string)null);
                 });
 
             modelBuilder.Entity("Cinemax.Domain.Role.Entities.Role", b =>
