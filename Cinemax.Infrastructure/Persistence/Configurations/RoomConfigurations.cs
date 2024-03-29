@@ -22,6 +22,8 @@ public class RoomConfigurations : IEntityTypeConfiguration<Room>
                 value => RoomId.Create(value));
         builder.Property(m => m.Height);
         builder.Property(m => m.Width);
-        
+        builder.HasMany(m => m.RoomTypes)
+                .WithMany(m => m.Rooms)
+                .UsingEntity(m => m.ToTable("RoomRoomType"));
     }
 }

@@ -1,7 +1,7 @@
 using Cinemax.Application.Genres.Commands.Create;
 using Cinemax.Application.Genres.Commands.Delete;
 using Cinemax.Application.Genres.Common;
-using Cinemax.Application.Genres.Queries.ReadGenres;
+using Cinemax.Application.Genres.Queries.Read;
 using Cinemax.Contracts.Genres;
 using MapsterMapper;
 using MediatR;

@@ -1,6 +1,7 @@
 using Cinemax.Application.Common.Interfaces.Persistence;
 using Cinemax.Domain.Room.Entities;
 using Cinemax.Domain.Room.ValueObjects;
+using Microsoft.EntityFrameworkCore;
 
 namespace Cinemax.Infrastructure.Persistence.Repositories;
 public class RoomRepository : IRoomRepository{
@@ -18,12 +19,12 @@ public class RoomRepository : IRoomRepository{
 
     public IEnumerable<Room> GetAll()
     {
-        return _cinemaxDbContext.Rooms;
+        return _cinemaxDbContext.Rooms.Include(r => r.RoomTypes);
     }
 
     public Room? GetById(RoomId id)
     {
-        return _cinemaxDbContext.Rooms.SingleOrDefault(m => m.Id == id);
+        return _cinemaxDbContext.Rooms.Include(r => r.RoomTypes).SingleOrDefault(m => m.Id == id);
     }
     
     public void Delete(RoomId id)

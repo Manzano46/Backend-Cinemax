@@ -5,6 +5,7 @@ using Cinemax.Domain.MovieAggregate.Entities;
 using Cinemax.Domain.User.Entities;
 using Microsoft.EntityFrameworkCore;
 using Cinemax.Domain.Room.Entities;
+using Cinemax.Domain.RoomType.Entities;
 
 namespace Cinemax.Infrastructure.Persistence;
 public class CinemaxDbContext : DbContext{
@@ -16,6 +17,7 @@ public class CinemaxDbContext : DbContext{
     public DbSet<Genre> Genres {get; set;}
     public DbSet<Actor> Actors {get; set;}
     public DbSet<Room> Rooms {get; set;}
+    public DbSet<RoomType> RoomTypes {get; set;}
     public DbSet<Country> Countries {get; set;}
     
 
