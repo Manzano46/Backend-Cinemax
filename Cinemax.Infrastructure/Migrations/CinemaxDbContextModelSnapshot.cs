@@ -128,6 +128,21 @@ namespace Cinemax.Infrastructure.Migrations
                     b.ToTable("Movies", (string)null);
                 });
 
+            modelBuilder.Entity("Cinemax.Domain.Role.Entities.Role", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Roles", (string)null);
+                });
+
             modelBuilder.Entity("Cinemax.Domain.Room.Entities.Room", b =>
                 {
                     b.Property<Guid>("Id")
