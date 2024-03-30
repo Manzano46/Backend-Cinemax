@@ -7,10 +7,9 @@ Content-Type: application/json
 {
     "height": "10",
     "width": "5",
-    "roomtypes":
+    "roomtypesids":
         [
-            {
-                "name":"8D"
-            }
+            "07c36151-12c1-4f78-9b56-d166ebf49911",
+            "7ebbfa40-5bf1-4ad7-b7cc-fffc60aab65d"
         ]
 }

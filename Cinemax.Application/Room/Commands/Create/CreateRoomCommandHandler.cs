@@ -5,12 +5,12 @@ using Cinemax.Domain.RoomType.Entities;
 using MediatR;
 
 namespace Cinemax.Application.Rooms.Commands.Create;
-public class CreateProjectionCommandHandler : IRequestHandler<CreateRoomCommand, RoomResult>
+public class CreateRoomCommandHandler : IRequestHandler<CreateRoomCommand, RoomResult>
 {
     private readonly IRoomRepository _RoomRepository;
     private readonly IRoomTypeRepository _RoomTypeRepository;
 
-    public CreateProjectionCommandHandler(IRoomRepository roomRepository, IRoomTypeRepository roomTypeRepository)
+    public CreateRoomCommandHandler(IRoomRepository roomRepository, IRoomTypeRepository roomTypeRepository)
     {
         _RoomRepository = roomRepository;
         _RoomTypeRepository = roomTypeRepository;
@@ -26,12 +26,12 @@ public class CreateProjectionCommandHandler : IRequestHandler<CreateRoomCommand,
 
         List<RoomType> roomTypes = new();
 
-        command.RoomTypes.ForEach(roomType =>
+        command.RoomTypesId.ForEach(Id =>
         {
-            RoomType existingRoomType = _RoomTypeRepository.GetByName(roomType.Name)!;
+            RoomType existingRoomType = _RoomTypeRepository.GetById(Id)!;
             if (existingRoomType is null)
             {
-                throw new Exception($"RoomType '{roomType.Name}' does not exist in the database");
+                throw new Exception($"RoomType '{Id}' does not exist in the database");
             }
             roomTypes.Add(existingRoomType);
         });

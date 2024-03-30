@@ -1,6 +1,5 @@
 using Cinemax.Domain.Common.Models;
 using Cinemax.Domain.ProjectionAggregate.ValueObjects;
-using Cinemax.Domain.RoomType.Entities;
 
 namespace Cinemax.Domain.ProjectionAggregate.Entities;
 public class Room: Entity<RoomId>{

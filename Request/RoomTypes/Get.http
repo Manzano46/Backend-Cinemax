@@ -1,6 +1,6 @@
 @host = http://localhost:5250
-@id = 53489f84-bbc8-444a-a857-7b0deea4add5
-DELETE  {{host}}/rooms/{{id}}
+@id = 07c36151-12c1-4f78-9b56-d166ebf49911
+GET  {{host}}/roomtypes/{{id}}
 Content-Type: application/json
 //Authorization: Bearer {{token}}
 

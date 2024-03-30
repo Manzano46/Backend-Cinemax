@@ -1,5 +1,6 @@
 ﻿using Cinemax.Contracts.RoomTypes;
 
+
 namespace Cinemax.Contracts.Rooms
 {
     public record RoomResponse
@@ -7,6 +8,6 @@ namespace Cinemax.Contracts.Rooms
         string Id,
         int Height,
         int Width,
-        List<CreateRoomTypeRequest> RoomTypes
+        List<RoomTypeResponse> RoomTypes
     );
 }

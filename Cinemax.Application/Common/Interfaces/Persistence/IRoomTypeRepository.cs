@@ -8,7 +8,7 @@ namespace Cinemax.Application.Common.Interfaces.Persistence
         RoomType? GetById(RoomTypeId roomTypeId);
         RoomType? GetByName(String name);       
         void Add(RoomType RoomType);
-        void Delete(String name);
+        void Delete(RoomTypeId roomTypeId);
         IEnumerable<RoomType> GetAllRoomTypes();
     }
 }

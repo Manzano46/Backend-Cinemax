@@ -1,9 +1,9 @@
 @host = http://localhost:5250
-@name = dolby
-DELETE  {{host}}/roomtypes/{{name}}
+@id = 07c36151-12c1-4f78-9b56-d166ebf49911
+DELETE  {{host}}/roomtypes/{{id}}
 Content-Type: application/json
 //Authorization: Bearer {{token}}
 
 {
-    "name" : "{{name}}"
+    "id" : "{{id}}"
 }
