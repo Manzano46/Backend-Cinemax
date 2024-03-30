@@ -1,0 +1,12 @@
+@host = http://localhost:5250
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0NmIwODE1Mi05NTg0LTQyYWMtYjFjMi05YjA0ZTI3YjhiOWEiLCJnaXZlbl9uYW1lIjoia2V2aW4iLCJmYW1pbHlfbmFtZSI6Im1hbnphbm8iLCJqdGkiOiIyYjJlNGE3Ny00NjllLTQwNTItYjNiYy1iZmRmYTA0NmUyNjciLCJleHAiOjE3MTA3NzMyMzcsImlzcyI6IkNpbmVtYXgiLCJhdWQiOiJDaW5lbWF4In0.5Z03bGEJ9xmAQat46-ahq0Hq8xE-VFnl4yqVv5M7smo
+POST {{host}}/projections
+Content-Type: application/json
+//Authorization: Bearer {{token}}
+
+{
+    "movieid": "104192f1-cba6-4284-baa5-1bf5a033e2fd",
+    "roomid": "44be52f9-f821-4a65-a899-b8253bde80db",
+    "date": "2024-04-01T00:00:00",
+    "price": "10"
+}

@@ -1,5 +1,5 @@
-using Cinemax.Domain.MovieAggregate.Entities;
-using Cinemax.Domain.MovieAggregate.ValueObjects;
+using Cinemax.Domain.ProjectionAggregate.Entities;
+using Cinemax.Domain.ProjectionAggregate.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

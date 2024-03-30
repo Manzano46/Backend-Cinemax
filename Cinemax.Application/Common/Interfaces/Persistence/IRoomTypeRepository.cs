@@ -5,6 +5,7 @@ namespace Cinemax.Application.Common.Interfaces.Persistence
 {
     public interface IRoomTypeRepository
     {
+        RoomType? GetById(RoomTypeId roomTypeId);
         RoomType? GetByName(String name);       
         void Add(RoomType RoomType);
         void Delete(String name);

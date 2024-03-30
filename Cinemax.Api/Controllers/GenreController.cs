@@ -48,11 +48,11 @@ public class GenreController : ControllerBase{
         return Ok(responses);
     }
 
-    // DELETE: api/genres/{name}
-    [HttpDelete("{name}")]
-    public async Task<IActionResult> Delete(string name)
-    {
-        var command = new DeleteGenreCommand(name);
+    // DELETE: api/genres/{id}
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(DeleteGenreRequest deleteGenreRequest)
+    {;
+        var command = _mapper.Map<DeleteGenreCommand>(deleteGenreRequest);
 
         GenreResult genreResult = await _mediator.Send(command);
 

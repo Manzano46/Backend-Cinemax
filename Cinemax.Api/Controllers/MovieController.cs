@@ -23,7 +23,7 @@ public class MovieController : ControllerBase{
 
     // POST: api/movies
     [HttpPost]
-    [Authorize] 
+    //[Authorize] 
     public async Task<IActionResult> Create(CreateMovieRequest createMovieRequest)
     {
         var command = _mapper.Map<CreateMovieCommand>(createMovieRequest);

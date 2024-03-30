@@ -1,5 +1,5 @@
-﻿using Cinemax.Domain.Room.ValueObjects;
-using Cinemax.Domain.Room.Entities;
+﻿using Cinemax.Domain.ProjectionAggregate.ValueObjects;
+using Cinemax.Domain.ProjectionAggregate.Entities;
 
 namespace Cinemax.Application.Common.Interfaces.Persistence
 {

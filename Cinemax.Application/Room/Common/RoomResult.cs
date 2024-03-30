@@ -1,4 +1,4 @@
-﻿using Cinemax.Domain.Room.Entities;
+﻿using Cinemax.Domain.ProjectionAggregate.Entities;
 
 namespace Cinemax.Application.Rooms.Common
 {

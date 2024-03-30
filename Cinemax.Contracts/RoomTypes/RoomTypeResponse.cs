@@ -2,7 +2,7 @@
 
 namespace Cinemax.Contracts.RoomTypes
 {
-    public record RoomTypeResponse
+    public record ProjectionResponse
     (
         string Id,
         string Name,

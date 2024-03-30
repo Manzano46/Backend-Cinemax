@@ -25,13 +25,13 @@ public class RoomTypeController : ControllerBase{
     // POST: api/roomtypes
     [HttpPost]
    
-    public async Task<IActionResult> Create(CreateRoomTypeRequest createRoomTypeRequest)
+    public async Task<IActionResult> Create(CreateProjectionRequest createRoomTypeRequest)
     {
         var command = _mapper.Map<CreateRoomTypeCommand>(createRoomTypeRequest);
 
         RoomTypeResult RoomTypeResult = await _mediator.Send(command);
 
-        var response = _mapper.Map<RoomTypeResponse>(RoomTypeResult);
+        var response = _mapper.Map<ProjectionResponse>(RoomTypeResult);
         return Ok(response);
     }
 
@@ -43,7 +43,7 @@ public class RoomTypeController : ControllerBase{
 
         IEnumerable<RoomTypeResult> RoomTypeResults = await _mediator.Send(command);
 
-        IEnumerable<RoomTypeResponse> responses = RoomTypeResults.Select(_mapper.Map<RoomTypeResponse>);
+        IEnumerable<ProjectionResponse> responses = RoomTypeResults.Select(_mapper.Map<ProjectionResponse>);
         
         return Ok(responses);
     }
@@ -56,7 +56,7 @@ public class RoomTypeController : ControllerBase{
 
         RoomTypeResult RoomTypeResult = await _mediator.Send(command);
 
-        var response = _mapper.Map<RoomTypeResponse>(RoomTypeResult);
+        var response = _mapper.Map<ProjectionResponse>(RoomTypeResult);
 
         return Ok(response);
     }

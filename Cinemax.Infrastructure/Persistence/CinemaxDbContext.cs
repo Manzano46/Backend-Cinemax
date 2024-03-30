@@ -1,11 +1,11 @@
 using Cinemax.Domain.Genre.Entities;
 using Cinemax.Domain.Actor.Entities;
 using Cinemax.Domain.Country.Entities;
-using Cinemax.Domain.MovieAggregate.Entities;
 using Cinemax.Domain.User.Entities;
 using Microsoft.EntityFrameworkCore;
-using Cinemax.Domain.Room.Entities;
 using Cinemax.Domain.RoomType.Entities;
+using Cinemax.Domain.ProjectionAggregate.Entities;
+using Cinemax.Domain.ProjectionAggregate;
 
 namespace Cinemax.Infrastructure.Persistence;
 public class CinemaxDbContext : DbContext{
@@ -19,6 +19,7 @@ public class CinemaxDbContext : DbContext{
     public DbSet<Room> Rooms {get; set;}
     public DbSet<RoomType> RoomTypes {get; set;}
     public DbSet<Country> Countries {get; set;}
+    public DbSet<Projection> Projections { get; set;}
     
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

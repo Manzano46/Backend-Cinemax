@@ -14,12 +14,12 @@ public class DeleteGenreCommandHandler : IRequestHandler<DeleteGenreCommand, Gen
     public async Task<GenreResult> Handle(DeleteGenreCommand command, CancellationToken cancellationToken)
     {
         await Task.CompletedTask;
-        if (_genreRepository.GetByName(command.Name) is not Genre genre)
+        if (_genreRepository.GetById(command.GenreId) is not Genre genre)
         {
             throw new Exception("Genre with given name does not exist");
         }
 
-        _genreRepository.Delete(command.Name);
+        _genreRepository.Delete(command.GenreId);
 
         return new GenreResult(genre);
     }

@@ -1,5 +1,6 @@
 using Cinemax.Application.Common.Interfaces.Persistence;
 using Cinemax.Domain.RoomType.Entities;
+using Cinemax.Domain.RoomType.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 
 namespace Cinemax.Infrastructure.Persistence.Repositories;
@@ -34,5 +35,10 @@ public class RoomTypeRepository : IRoomTypeRepository{
             _cinemaxDbContext.RoomTypes.Remove(RoomType);
         }
         _cinemaxDbContext.SaveChanges();
+    }
+
+    public RoomType? GetById(RoomTypeId roomTypeId)
+    {
+         return _cinemaxDbContext.RoomTypes.Include(r => r.Rooms).SingleOrDefault(m => m.Id == roomTypeId);
     }
 }

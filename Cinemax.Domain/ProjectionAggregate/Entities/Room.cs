@@ -1,8 +1,8 @@
 using Cinemax.Domain.Common.Models;
-using Cinemax.Domain.Room.ValueObjects;
+using Cinemax.Domain.ProjectionAggregate.ValueObjects;
 using Cinemax.Domain.RoomType.Entities;
 
-namespace Cinemax.Domain.Room.Entities;
+namespace Cinemax.Domain.ProjectionAggregate.Entities;
 public class Room: Entity<RoomId>{
     public int Height {get; set;} 
     public int Width {get; set;}

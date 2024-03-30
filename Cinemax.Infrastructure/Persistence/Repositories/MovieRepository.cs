@@ -1,5 +1,6 @@
 using Cinemax.Application.Common.Interfaces.Persistence;
-using Cinemax.Domain.MovieAggregate.Entities;
+using Cinemax.Domain.ProjectionAggregate.Entities;
+using Cinemax.Domain.ProjectionAggregate.ValueObjects;
 
 namespace Cinemax.Infrastructure.Persistence.Repositories;
 public class MovieRepository : IMovieRepository{
@@ -15,38 +16,28 @@ public class MovieRepository : IMovieRepository{
         _cinemaxDbContext.SaveChanges();
     }
 
-    public IEnumerable<Movie> GetAllMovies()
+    public IEnumerable<Movie> GetAll()
     {
         return _cinemaxDbContext.Movies;
     }
 
-    public Movie? GetMovieByName(string name)
+    public Movie? GetById(MovieId movieId)
+    {
+        return _cinemaxDbContext.Movies.SingleOrDefault(m => m.Id == movieId);
+    }
+    
+    public void Delete(MovieId id)
+    {
+        var movie = _cinemaxDbContext.Movies.SingleOrDefault(m => m.Id == id);
+        if (movie is not null)
+        {
+            _cinemaxDbContext.Movies.Remove(movie);
+        }
+        _cinemaxDbContext.SaveChanges();
+    }
+
+    public Movie? GetByName(string name)
     {
         return _cinemaxDbContext.Movies.SingleOrDefault(m => m.Name == name);
     }
-    /*
-    public void Delete(MovieId id)
-    {
-        var movie = _movies.SingleOrDefault(m => m.Id == id);
-        if (movie is not null)
-        {
-            _movies.Remove(movie);
-        }
-    }
-
-
-
-    public void Update(Movie movie)
-    {
-        var existingMovie = _movies.SingleOrDefault(m => m.Id == movie.Id);
-        if (existingMovie is not null)
-        {
-            existingMovie.Name = movie.Name;
-            existingMovie.Description = movie.Description;
-            existingMovie.Duration = movie.Duration;
-            existingMovie.Premiere = movie.Premiere;
-            existingMovie.IconURL = movie.IconURL;
-            existingMovie.TrailerURL = movie.TrailerURL;
-        }
-    }*/
 }

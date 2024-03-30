@@ -3,6 +3,7 @@ using System.Text;
 using Cinemax.Application.Common.Interfaces.Authentication;
 using Cinemax.Application.Common.Interfaces.Persistence;
 using Cinemax.Application.Common.Interfaces.Services;
+using Cinemax.Domain.ProjectionAggregate;
 using Cinemax.Infrastructure.Authentication;
 using Cinemax.Infrastructure.Persistence;
 using Cinemax.Infrastructure.Persistence.Repositories;
@@ -37,6 +38,8 @@ public static class DependencyInjection{
         services.AddScoped<IActorRepository, ActorRepository>();
         services.AddScoped<ICountryRepository, CountryRepository>(); 
         services.AddScoped<IRoomTypeRepository, RoomTypeRepository>();
+        services.AddScoped<IProjectionRepository, ProjectionRepository>();
+        
 
         return services;
     }

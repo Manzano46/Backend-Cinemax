@@ -1,7 +1,6 @@
 using Cinemax.Application.Authentication.Common;
 using Cinemax.Application.Common.Interfaces.Authentication;
 using Cinemax.Application.Common.Interfaces.Persistence;
-using Cinemax.Domain.MovieAggregate.Entities;
 using Cinemax.Domain.User.Entities;
 using MediatR;
 

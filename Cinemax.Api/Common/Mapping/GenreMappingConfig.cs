@@ -1,6 +1,8 @@
 using Cinemax.Application.Genres.Commands.Create;
+using Cinemax.Application.Genres.Commands.Delete;
 using Cinemax.Application.Genres.Common;
 using Cinemax.Contracts.Genres;
+using Cinemax.Domain.Genre.ValueObjects;
 using Mapster;
 
 namespace Cinemax.Api.Common.Mapping;
@@ -12,5 +14,7 @@ public class GenreMappingConfig : IRegister
             .Map(dest => dest.Name, src => src.Genre.Name );
             
         config.NewConfig<CreateGenreRequest, CreateGenreCommand>();
+        config.NewConfig<DeleteGenreRequest, DeleteGenreCommand>()
+            .Map(dest => dest.GenreId, src => GenreId.Create(new(src.GenreId)));
     }
 }

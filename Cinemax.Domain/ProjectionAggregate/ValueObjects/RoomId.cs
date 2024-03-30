@@ -1,16 +1,16 @@
 using Cinemax.Domain.Common.Models;
-namespace Cinemax.Domain.MovieAggregate.ValueObjects;
-public sealed class MoviesId : ValueObject
+namespace Cinemax.Domain.ProjectionAggregate.ValueObjects;
+public sealed class RoomId : ValueObject
 {
     public Guid Value {get;}
 
-    private MoviesId(Guid value){
+    private RoomId(Guid value){
         Value = value;
     }
-    public static MoviesId CreateUnique(){
+    public static RoomId CreateUnique(){
         return new(Guid.NewGuid());
     }
-    public static MoviesId Create(Guid value){
+    public static RoomId Create(Guid value){
         return new(value);
     }
     public override IEnumerable<object> GetEqualityComponents()

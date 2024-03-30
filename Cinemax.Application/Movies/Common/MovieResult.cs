@@ -1,4 +1,4 @@
-using Cinemax.Domain.MovieAggregate.Entities;
+using Cinemax.Domain.ProjectionAggregate.Entities;
 
 namespace Cinemax.Application.Movies.Common;
 public record MovieResult(

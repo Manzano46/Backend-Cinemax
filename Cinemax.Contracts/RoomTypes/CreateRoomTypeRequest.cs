@@ -1,6 +1,6 @@
 ﻿namespace Cinemax.Contracts.RoomTypes
 {
-    public record CreateRoomTypeRequest
+    public record CreateProjectionRequest
     (
         string Name
     );

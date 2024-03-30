@@ -1,6 +1,6 @@
 using Cinemax.Application.Common.Interfaces.Persistence;
-using Cinemax.Domain.Room.Entities;
-using Cinemax.Domain.Room.ValueObjects;
+using Cinemax.Domain.ProjectionAggregate.Entities;
+using Cinemax.Domain.ProjectionAggregate.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 
 namespace Cinemax.Infrastructure.Persistence.Repositories;

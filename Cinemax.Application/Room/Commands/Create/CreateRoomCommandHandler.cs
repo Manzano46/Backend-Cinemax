@@ -1,16 +1,16 @@
 using Cinemax.Application.Common.Interfaces.Persistence;
 using Cinemax.Application.Rooms.Common;
-using Cinemax.Domain.Room.Entities;
+using Cinemax.Domain.ProjectionAggregate.Entities;
 using Cinemax.Domain.RoomType.Entities;
 using MediatR;
 
 namespace Cinemax.Application.Rooms.Commands.Create;
-public class CreateRoomCommandHandler : IRequestHandler<CreateRoomCommand, RoomResult>
+public class CreateProjectionCommandHandler : IRequestHandler<CreateRoomCommand, RoomResult>
 {
     private readonly IRoomRepository _RoomRepository;
     private readonly IRoomTypeRepository _RoomTypeRepository;
 
-    public CreateRoomCommandHandler(IRoomRepository roomRepository, IRoomTypeRepository roomTypeRepository)
+    public CreateProjectionCommandHandler(IRoomRepository roomRepository, IRoomTypeRepository roomTypeRepository)
     {
         _RoomRepository = roomRepository;
         _RoomTypeRepository = roomTypeRepository;

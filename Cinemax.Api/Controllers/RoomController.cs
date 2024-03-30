@@ -3,12 +3,13 @@ using Cinemax.Application.Rooms.Commands.Delete;
 using Cinemax.Application.Rooms.Common;
 using Cinemax.Application.Rooms.Queries.Read;
 using Cinemax.Contracts.Rooms;
-using Cinemax.Domain.Room.Entities;
-using Cinemax.Domain.Room.ValueObjects;
+using Cinemax.Domain.ProjectionAggregate.Entities;
+using Cinemax.Domain.ProjectionAggregate;
 using MapsterMapper;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Cinemax.Domain.ProjectionAggregate.ValueObjects;
 
 namespace Cinemax.Api.Controllers;
 
@@ -41,7 +42,7 @@ public class RoomController : ControllerBase{
     [HttpGet]
     public async Task<IActionResult> Read()
     {
-        var command = new ReadRoomsQuery();
+        var command = new ReadProjectionQuery();
 
         IEnumerable<RoomResult> RoomResults = await _mediator.Send(command);
 
@@ -51,15 +52,15 @@ public class RoomController : ControllerBase{
     }
 
 
-    
+   /* 
     // DELETE: api/Rooms/{id}
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(string id)
     {
-        RoomId RoomId = RoomId.Create(new (id));
+        RoomId roomId = roomId.Create(new (id));
         var command = new DeleteRoomCommand(RoomId);
         RoomResult RoomResult = await _mediator.Send(command);
         var response = _mapper.Map<RoomResponse>(RoomResult);
         return Ok(response);
-    }
+    }*/
 }
