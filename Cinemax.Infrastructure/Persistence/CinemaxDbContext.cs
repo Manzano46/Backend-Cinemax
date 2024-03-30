@@ -9,6 +9,7 @@ using Cinemax.Domain.Room.Entities;
 using Cinemax.Domain.Role.Entities;
 using Cinemax.Domain.PaymentType.Entities;
 using Cinemax.Domain.Discount.Entities;
+using Cinemax.Domain.RoomType.Entities;
 
 namespace Cinemax.Infrastructure.Persistence;
 public class CinemaxDbContext : DbContext{
@@ -20,6 +21,7 @@ public class CinemaxDbContext : DbContext{
     public DbSet<Genre> Genres {get; set;}
     public DbSet<Actor> Actors {get; set;}
     public DbSet<Room> Rooms {get; set;}
+    public DbSet<RoomType> RoomTypes {get; set;}
     public DbSet<Country> Countries {get; set;}
     public DbSet<Director> Directors {get; set;}
     public DbSet<Role> Roles {get; set;}

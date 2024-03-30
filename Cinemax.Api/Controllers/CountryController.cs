@@ -23,7 +23,7 @@ public class CountryController : ControllerBase{
         _mapper = mapper;
     } 
 
-    // POST: api/Countries
+    // POST: api/countries
     [HttpPost]
     //[Authorize] 
     public async Task<IActionResult> Create(CreateCountryRequest createCountryRequest)
@@ -36,7 +36,7 @@ public class CountryController : ControllerBase{
         return Ok(response);
     }
 
-    // GET: api/Countries
+    // GET: api/countries
     [HttpGet]
     public async Task<IActionResult> Read()
     {
@@ -51,7 +51,7 @@ public class CountryController : ControllerBase{
 
 
     
-    // DELETE: api/Countries/{id}
+    // DELETE: api/countries/{id}
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(string id)
     {
