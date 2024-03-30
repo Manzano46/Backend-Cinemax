@@ -16,7 +16,7 @@ public class RegisterCommandHandler : IRequestHandler<CreateMovieCommand, MovieR
     public async Task<MovieResult> Handle(CreateMovieCommand command, CancellationToken cancellationToken)
     {
         await Task.CompletedTask;
-        if(_movieRepository.GetMovieByName(command.Name) is not null){
+        if(_movieRepository.GetByName(command.Name) is not null){
             throw new Exception("Movie with given name alredy exists");
         }
 

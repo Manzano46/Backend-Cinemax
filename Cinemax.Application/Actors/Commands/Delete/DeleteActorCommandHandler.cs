@@ -19,6 +19,7 @@ public class DeleteActorCommandHandler : IRequestHandler<DeleteActorCommand, Act
             throw new Exception("Actor not found");
         }
         _actorRepository.Delete(command.Id);
+        
         return new ActorResult(actor);
     }
 }

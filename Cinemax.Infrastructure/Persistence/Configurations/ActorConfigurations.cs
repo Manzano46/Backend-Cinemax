@@ -24,6 +24,9 @@ public class ActorConfigurations : IEntityTypeConfiguration<Actor>
             .HasMaxLength(100);
         builder.Property(m => m.LastName)
             .HasMaxLength(100);
+        builder.HasMany(m => m.Movies)
+                .WithMany(m => m.Actors)
+                .UsingEntity(m => m.ToTable("ActorMovies"));
         
     }
 }

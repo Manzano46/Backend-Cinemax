@@ -20,7 +20,7 @@ public class MovieRepository : IMovieRepository{
         return _cinemaxDbContext.Movies;
     }
 
-    public Movie? GetMovieByName(string name)
+    public Movie? GetByName(string name)
     {
         return _cinemaxDbContext.Movies.SingleOrDefault(m => m.Name == name);
     }
