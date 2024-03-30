@@ -4,13 +4,11 @@ using Cinemax.Domain.Country.Entities;
 using Cinemax.Domain.User.Entities;
 using Microsoft.EntityFrameworkCore;
 using Cinemax.Domain.Director.Entities;
-using Cinemax.Domain.MovieAggregate.Entities;
-using Cinemax.Domain.Room.Entities;
+using Cinemax.Domain.ProjectionAggregate.Entities;
 using Cinemax.Domain.Role.Entities;
 using Cinemax.Domain.PaymentType.Entities;
 using Cinemax.Domain.Discount.Entities;
 using Cinemax.Domain.RoomType.Entities;
-using Cinemax.Domain.ProjectionAggregate.Entities;
 using Cinemax.Domain.ProjectionAggregate;
 
 namespace Cinemax.Infrastructure.Persistence;

@@ -2,7 +2,7 @@ using Cinemax.Domain.Common.Models;
 using Cinemax.Domain.ProjectionAggregate.ValueObjects;
 
 namespace Cinemax.Domain.ProjectionAggregate.Entities;
-public sealed class Movie : Entity<MovieId>
+public class Movie : Entity<MovieId>
 {
     public string Name { get; private set; } = null!;
     public string Description { get; private set; } = null!;
@@ -10,6 +10,8 @@ public sealed class Movie : Entity<MovieId>
     public DateTime Premiere { get; private set; }
     public string IconURL { get; private set; } = null!;
     public string TrailerURL { get; private set; } = null!;
+    public virtual ICollection<Actor.Entities.Actor> Actors { get; set; } = new List<Actor.Entities.Actor>();
+
 
 #pragma warning disable CS8618
     private Movie() { }

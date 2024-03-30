@@ -1,7 +1,7 @@
 using Cinemax.Application.Common.Interfaces.Persistence;
 using Cinemax.Application.Actors.Common;
 using Cinemax.Domain.Actor.Entities;
-using Cinemax.Domain.MovieAggregate.Entities;
+using Cinemax.Domain.ProjectionAggregate.Entities;
 using MediatR;
 
 namespace Cinemax.Application.Actors.Commands.Create;
