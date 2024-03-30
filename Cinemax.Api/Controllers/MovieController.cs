@@ -1,5 +1,6 @@
 using Cinemax.Application.Movies.Commands.Create;
 using Cinemax.Application.Movies.Common;
+using Cinemax.Application.Movies.Queries.Get;
 using Cinemax.Application.Movies.Queries.Read;
 using Cinemax.Contracts.Movies;
 using MapsterMapper;
@@ -47,6 +48,18 @@ public class MovieController : ControllerBase{
         return Ok(responses);
     }
 
+    // GET: api/movies/{id}
+    [HttpGet("{id}")]
+    public async Task<IActionResult> Get(GetMovieRequest getMovieRequest)
+    {
+        var query = _mapper.Map<GetMovieQuery>(getMovieRequest);
+
+        MovieResult MovieResult = await _mediator.Send(query);
+
+        var response = _mapper.Map<MovieResponse>(MovieResult);
+
+        return Ok(response);
+    }
 
     /*
     // GET: api/movies/{id}

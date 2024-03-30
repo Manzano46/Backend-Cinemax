@@ -1,5 +1,6 @@
 using Cinemax.Application.Discounts.Commands.Create;
 using Cinemax.Application.Discounts.Common;
+using Cinemax.Application.Discounts.Queries.Get;
 using Cinemax.Application.Discounts.Queries.Read;
 using Cinemax.Contracts.Discounts;
 using Cinemax.Domain.Discount.Entities;
@@ -59,6 +60,19 @@ public class DiscountController : ControllerBase{
         var command = new DeleteDiscountCommand(discountId);
         DiscountResult discountResult = await _mediator.Send(command);
         var response = _mapper.Map<DiscountResponse>(discountResult);
+        return Ok(response);
+    }
+
+    // GET: api/discounts/{id}
+    [HttpGet("{id}")]
+    public async Task<IActionResult> Get(GetDiscountRequest getDiscountRequest)
+    {
+        var query = _mapper.Map<GetDiscountQuery>(getDiscountRequest);
+
+        DiscountResult DiscountResult = await _mediator.Send(query);
+
+        var response = _mapper.Map<DiscountResponse>(DiscountResult);
+
         return Ok(response);
     }
 

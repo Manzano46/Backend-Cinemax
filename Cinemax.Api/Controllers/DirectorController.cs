@@ -1,5 +1,6 @@
 using Cinemax.Application.Directors.Commands.Create;
 using Cinemax.Application.Directors.Common;
+using Cinemax.Application.Directors.Queries.Get;
 using Cinemax.Application.Directors.Queries.Read;
 using Cinemax.Contracts.Directors;
 using Cinemax.Domain.Director.Entities;
@@ -59,6 +60,19 @@ public class DirectorController : ControllerBase{
         var command = new DeleteDirectorCommand(directorId);
         DirectorResult directorResult = await _mediator.Send(command);
         var response = _mapper.Map<DirectorResponse>(directorResult);
+        return Ok(response);
+    }
+
+    // GET: api/directors/{id}
+    [HttpGet("{id}")]
+    public async Task<IActionResult> Get(GetDirectorRequest getDirectorRequest)
+    {
+        var query = _mapper.Map<GetDirectorQuery>(getDirectorRequest);
+
+        DirectorResult DirectorResult = await _mediator.Send(query);
+
+        var response = _mapper.Map<DirectorResponse>(DirectorResult);
+
         return Ok(response);
     }
 

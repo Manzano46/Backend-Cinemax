@@ -1,3 +1,8 @@
+using Cinemax.Contracts.Actors;
+using Cinemax.Contracts.Countries;
+using Cinemax.Contracts.Directors;
+using Cinemax.Contracts.Genres;
+
 namespace Cinemax.Contracts.Movies;
 
 public record MovieResponse(
@@ -7,5 +12,9 @@ public record MovieResponse(
     TimeSpan Duration,
     DateTime Premiere,
     string IconURL,
-    string TrailerURL
+    string TrailerURL,
+    List<ActorResponse> Actors,
+    List<CountryResponse> Countries,
+    List<DirectorResponse> Directors,
+    List<GenreResponse> Genres
 );

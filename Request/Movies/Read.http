@@ -4,4 +4,5 @@ GET  {{host}}/movies
 Content-Type: application/json
 
 {
+    
 }

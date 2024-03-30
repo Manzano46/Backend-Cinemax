@@ -1,5 +1,6 @@
 using Cinemax.Application.Actors.Commands.Create;
 using Cinemax.Application.Actors.Common;
+using Cinemax.Application.Actors.Queries.Get;
 using Cinemax.Application.Actors.Queries.Read;
 using Cinemax.Contracts.Actors;
 using Cinemax.Domain.Actor.Entities;
@@ -59,6 +60,19 @@ public class ActorController : ControllerBase{
         var command = new DeleteActorCommand(actorId);
         ActorResult actorResult = await _mediator.Send(command);
         var response = _mapper.Map<ActorResponse>(actorResult);
+        return Ok(response);
+    }
+
+    // GET: api/actors/{id}
+    [HttpGet("{id}")]
+    public async Task<IActionResult> Get(GetActorRequest getActorRequest)
+    {
+        var query = _mapper.Map<GetActorQuery>(getActorRequest);
+
+        ActorResult ActorResult = await _mediator.Send(query);
+
+        var response = _mapper.Map<ActorResponse>(ActorResult);
+
         return Ok(response);
     }
 

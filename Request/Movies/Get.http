@@ -1,0 +1,9 @@
+@host = http://localhost:5250
+@movieId = 2c58a956-9b48-4830-a8a2-0db3cac59858
+
+GET  {{host}}/movies/{{movieId}}
+Content-Type: application/json
+
+{
+    "id": "{{movieId}}"
+}

@@ -8,5 +8,9 @@ public record CreateMovieCommand(
     TimeSpan Duration,
     DateTime Premiere,
     string IconURL,
-    string TrailerURL
+    string TrailerURL,
+    List<string> Actors,
+    List<string> Countries,
+    List<string> Directors,
+    List<string> Genres
 ) : IRequest<MovieResult>;

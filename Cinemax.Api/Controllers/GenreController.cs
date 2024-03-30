@@ -1,6 +1,7 @@
 using Cinemax.Application.Genres.Commands.Create;
 using Cinemax.Application.Genres.Commands.Delete;
 using Cinemax.Application.Genres.Common;
+using Cinemax.Application.Genres.Queries.Get;
 using Cinemax.Application.Genres.Queries.Read;
 using Cinemax.Contracts.Genres;
 using MapsterMapper;
@@ -57,6 +58,19 @@ public class GenreController : ControllerBase{
         GenreResult genreResult = await _mediator.Send(command);
 
         var response = _mapper.Map<GenreResponse>(genreResult);
+
+        return Ok(response);
+    }
+
+    // GET: api/genres/{id}
+    [HttpGet("{id}")]
+    public async Task<IActionResult> Get(GetGenreRequest getGenreRequest)
+    {
+        var query = _mapper.Map<GetGenreQuery>(getGenreRequest);
+
+        GenreResult GenreResult = await _mediator.Send(query);
+
+        var response = _mapper.Map<GenreResponse>(GenreResult);
 
         return Ok(response);
     }

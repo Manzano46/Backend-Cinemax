@@ -13,5 +13,6 @@ public class PaymentTypeMappingConfig : IRegister
             
         config.NewConfig<CreatePaymentTypeRequest, CreatePaymentTypeCommand>()
         .Map(dest => dest.Name, src => src.Name);
+
     }
 }

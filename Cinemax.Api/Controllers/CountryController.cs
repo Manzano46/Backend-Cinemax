@@ -1,5 +1,6 @@
 using Cinemax.Application.Countries.Commands.Create;
 using Cinemax.Application.Countries.Common;
+using Cinemax.Application.Countries.Queries.Get;
 using Cinemax.Application.Countries.Queries.Read;
 using Cinemax.Contracts.Countries;
 using Cinemax.Domain.Country.Entities;
@@ -59,6 +60,19 @@ public class CountryController : ControllerBase{
         var command = new DeleteCountryCommand(CountryId);
         CountryResult CountryResult = await _mediator.Send(command);
         var response = _mapper.Map<CountryResponse>(CountryResult);
+        return Ok(response);
+    }
+
+    // GET: api/Countries/{id}
+    [HttpGet("{id}")]
+    public async Task<IActionResult> Get(GetCountryRequest getCountryRequest)
+    {
+        var query = _mapper.Map<GetCountryQuery>(getCountryRequest);
+
+        CountryResult CountryResult = await _mediator.Send(query);
+
+        var response = _mapper.Map<CountryResponse>(CountryResult);
+
         return Ok(response);
     }
 
