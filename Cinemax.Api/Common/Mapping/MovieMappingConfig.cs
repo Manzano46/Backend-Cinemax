@@ -1,4 +1,5 @@
 using Cinemax.Application.Movies.Commands.Create;
+using Cinemax.Application.Movies.Commands.Delete;
 using Cinemax.Application.Movies.Common;
 using Cinemax.Contracts.Movies;
 using Mapster;
@@ -21,5 +22,6 @@ public class MovieMappingConfig : IRegister
         .Map(dest => dest.Premiere, src => src.Premiere)
         .Map(dest => dest.IconURL, src => src.IconURL)
         .Map(dest => dest.TrailerURL, src => src.TrailerURL);
+
     }
 }

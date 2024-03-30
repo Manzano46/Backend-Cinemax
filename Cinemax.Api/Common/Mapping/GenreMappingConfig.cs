@@ -1,6 +1,7 @@
 using Cinemax.Application.Genres.Commands.Create;
 using Cinemax.Application.Genres.Commands.Delete;
 using Cinemax.Application.Genres.Common;
+using Cinemax.Application.Genres.Queries.Get;
 using Cinemax.Contracts.Genres;
 using Cinemax.Domain.Genre.ValueObjects;
 using Mapster;
@@ -15,6 +16,12 @@ public class GenreMappingConfig : IRegister
             
         config.NewConfig<CreateGenreRequest, CreateGenreCommand>();
         config.NewConfig<DeleteGenreRequest, DeleteGenreCommand>()
+            .Map(dest => dest.GenreId, src => GenreId.Create(new(src.GenreId)));
+
+        config.NewConfig<DeleteGenreRequest, DeleteGenreCommand>()
+            .Map(dest => dest.GenreId, src => GenreId.Create(new(src.GenreId)));
+
+        config.NewConfig<GetGenreRequest, GetGenreQuery>()
             .Map(dest => dest.GenreId, src => GenreId.Create(new(src.GenreId)));
     }
 }
