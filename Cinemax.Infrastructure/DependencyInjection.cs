@@ -30,13 +30,17 @@ public static class DependencyInjection{
 
     public static IServiceCollection AddPersistance(this IServiceCollection services){
         
-        services.AddDbContext<CinemaxDbContext>(options => options.UseSqlServer("Server=KEVIN\\SQLEXPRESS;Database=cinemax;User Id=cinemax;Password=cinemax;TrustServerCertificate=true"));
+        services.AddDbContext<CinemaxDbContext>(options => options.UseSqlServer("Server=LAPTOP-PO2FBC8G\\SQLEXPRESS;Database=cinemax;User Id=cinemax;Password=cinemax;TrustServerCertificate=true"));
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IMovieRepository, MovieRepository>();
         services.AddScoped<IGenreRepository, GenreRepository>();
         services.AddScoped<IRoomRepository, RoomRepository>();
         services.AddScoped<IActorRepository, ActorRepository>();
         services.AddScoped<ICountryRepository, CountryRepository>(); 
+        services.AddScoped<IDirectorRepository, DirectorRepository>();
+        services.AddScoped<IRoleRepository, RoleRepository>();
+        services.AddScoped<IPaymentTypeRepository, PaymentTypeRepository>();
+        services.AddScoped<IDiscountRepository, DiscountRepository>();
         services.AddScoped<IRoomTypeRepository, RoomTypeRepository>();
         services.AddScoped<IProjectionRepository, ProjectionRepository>();
         

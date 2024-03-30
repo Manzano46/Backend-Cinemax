@@ -1,0 +1,9 @@
+@host = http://localhost:5250
+@roleId = 2ec6f366-e66d-4b4c-bd9b-3f6d983b5532
+
+DELETE {{host}}/roles/{{roleId}}
+Content-Type: application/json
+
+{
+    "id": "{{roleId}}"
+}

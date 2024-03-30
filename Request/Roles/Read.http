@@ -1,0 +1,8 @@
+@host = http://localhost:5250
+
+GET  {{host}}/roles
+Content-Type: application/json
+
+{
+}
+

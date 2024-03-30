@@ -1,0 +1,9 @@
+@host = http://localhost:5250
+@discountId = 71067e4e-b08f-4cc6-98d0-9d337b4653f0
+
+DELETE {{host}}/discounts/{{discountId}}
+Content-Type: application/json
+
+{
+    "id": "{{discountId}}"
+}
