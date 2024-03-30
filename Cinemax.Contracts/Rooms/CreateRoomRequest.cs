@@ -6,6 +6,6 @@ namespace Cinemax.Contracts.Rooms
     (
         int Height,
         int Width,
-        List<CreateProjectionRequest> RoomTypes
+        List<CreateRoomTypeRequest> RoomTypes
     );
 }

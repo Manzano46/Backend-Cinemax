@@ -12,6 +12,6 @@ public class RoomTypeMappingConfig : IRegister
             .Map(dest => dest.Name, src => src.RoomType.Name )
             .Map(dest => dest.Rooms, src => src.RoomType.Rooms);
             
-        config.NewConfig<CreateProjectionRequest, CreateRoomTypeCommand>();
+        config.NewConfig<CreateRoomTypeRequest, CreateRoomTypeCommand>();
     }
 }
