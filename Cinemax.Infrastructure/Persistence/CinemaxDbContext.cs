@@ -10,6 +10,7 @@ using Cinemax.Domain.Role.Entities;
 using Cinemax.Domain.PaymentType.Entities;
 using Cinemax.Domain.Discount.Entities;
 using Cinemax.Domain.RoomType.Entities;
+using Cinemax.Domain.Card.Entities;
 
 namespace Cinemax.Infrastructure.Persistence;
 public class CinemaxDbContext : DbContext{
@@ -27,6 +28,7 @@ public class CinemaxDbContext : DbContext{
     public DbSet<Role> Roles {get; set;}
     public DbSet<PaymentType> PaymentTypes {get; set;}
     public DbSet<Discount> Discounts {get; set;}
+    public DbSet<Card> Cards {get; set;}
     
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
