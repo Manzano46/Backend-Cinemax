@@ -25,7 +25,7 @@ public class RoomTypeController : ControllerBase{
     // POST: api/roomtypes
     [HttpPost]
    
-    public async Task<IActionResult> Create(CreateProjectionRequest createRoomTypeRequest)
+    public async Task<IActionResult> Create(CreateRoomTypeRequest createRoomTypeRequest)
     {
         var command = _mapper.Map<CreateRoomTypeCommand>(createRoomTypeRequest);
 

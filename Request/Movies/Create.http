@@ -6,10 +6,10 @@ Content-Type: application/json
 //Authorization: Bearer {{token}}
 
 {
-    "name":"asdjbjygfvyha en la habana",
+    "name":"ajbjygfvyha en lfda habana",
     "description":"Best peli",
     "Duration":"02:30:00",
-    "Premiere":"2024-04-01T00:00:00",
+    "Premiere":"2020-04-01T00:00:00",
     "IconURL":"https://ejemplo.com/icon.png",
     "TrailerURL":"https://ejemplo.com/trailer.mp4"
 }

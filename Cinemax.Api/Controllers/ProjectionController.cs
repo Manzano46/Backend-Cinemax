@@ -3,14 +3,9 @@ using Cinemax.Application.Projections.Commands.Delete;
 using Cinemax.Application.Projections.Common;
 using Cinemax.Application.Projections.Queries.Read;
 using Cinemax.Contracts.Projections;
-using Cinemax.Domain.ProjectionAggregate.Entities;
-using Cinemax.Domain.ProjectionAggregate;
 using MapsterMapper;
 using MediatR;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Cinemax.Domain.ProjectionAggregate.ValueObjects;
-using Cinemax.Application.RoomTypes.Commands.Delete;
 using Cinemax.Application.Projections.Queries.Get;
 
 namespace Cinemax.Api.Controllers;
