@@ -19,15 +19,17 @@ public class UserConfigurations : IEntityTypeConfiguration<User>
             .HasConversion(
                 id => id.Value,
                 value => UserId.Create(value));
-        builder.Property(m => m.FirstName)
-            .HasMaxLength(100);
-        builder.Property(m => m.LastName)
+        builder.Property(m => m.Name)
             .HasMaxLength(100);
         builder.Property(m => m.Email)
             .HasMaxLength(100);
         builder.Property(m => m.Password)
             .HasMaxLength(100);
         builder.Property(m => m.Points);
-        builder.Property(m => m.Birth);
+        builder.Property(m => m.BirthDay);
+        builder.HasOne(m => m.Role);
+        builder.HasMany(m => m.Cards)
+                .WithMany(m => m.Users)
+                .UsingEntity(m => m.ToTable("UserCards"));
     }
 }

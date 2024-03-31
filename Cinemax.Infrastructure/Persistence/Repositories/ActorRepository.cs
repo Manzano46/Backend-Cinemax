@@ -1,6 +1,8 @@
 using Cinemax.Application.Common.Interfaces.Persistence;
 using Cinemax.Domain.Actor.Entities;
 using Cinemax.Domain.Actor.ValueObjects;
+using Cinemax.Domain.ProjectionAggregate.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace Cinemax.Infrastructure.Persistence.Repositories;
 public class ActorRepository : IActorRepository{
@@ -18,7 +20,7 @@ public class ActorRepository : IActorRepository{
 
     public IEnumerable<Actor> GetAllActors()
     {
-        return _cinemaxDbContext.Actors;
+        return _cinemaxDbContext.Actors.Include(a=>a.Movies);
     }
 
     public Actor? GetByName(string firstname, string lastname)
