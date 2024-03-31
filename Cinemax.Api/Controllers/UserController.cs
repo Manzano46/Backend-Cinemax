@@ -1,6 +1,7 @@
 using Cinemax.Application.Users.Commands.Create;
 using Cinemax.Application.Users.Common;
 using Cinemax.Application.Users.Queries.Get;
+using Cinemax.Application.Users.Queries.Login;
 using Cinemax.Application.Users.Queries.Read;
 using Cinemax.Contracts.Users;
 using Cinemax.Domain.User.Entities;
@@ -24,19 +25,6 @@ public class UserController : ControllerBase{
         _mapper = mapper;
     } 
 
-    // POST: api/Users
-    [HttpPost]
-    //[Authorize] 
-    public async Task<IActionResult> Create(CreateUserRequest createUserRequest)
-    {
-        var command = _mapper.Map<CreateUserCommand>(createUserRequest);
-
-        UserResult UserResult = await _mediator.Send(command);
-
-        var response = _mapper.Map<UserResponse>(UserResult);
-        return Ok(response);
-    }
-
     // GET: api/Users
     [HttpGet]
     public async Task<IActionResult> Read()
@@ -49,8 +37,6 @@ public class UserController : ControllerBase{
         
         return Ok(responses);
     }
-
-
     
     // DELETE: api/Users/{id}
     [HttpDelete("{id}")]
@@ -76,27 +62,23 @@ public class UserController : ControllerBase{
         return Ok(response);
     }
 
-    /*
-    // PUT: api/Users/{id}
-    [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, UpdateUserCommand command)
-    {
-        if (id != command.Id)
-        {
-            return BadRequest();
-        }
+    [HttpPost("register")]
+    public async Task<IActionResult> Register(RegisterRequest registerRequest){
+        var command = _mapper.Map<CreateUserCommand>(registerRequest);
+        AuthenticationResult authResult = await _mediator.Send(command);
 
-        await _mediator.Send(command);
-        return NoContent();
+        var response = _mapper.Map<AuthenticationResponse>(authResult);
+        return Ok(response);
     }
 
-    // DELETE: api/Users/{id}
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(int id)
-    {
-        await _mediator.Send(new DeleteUserCommand { Id = id });
-        return NoContent();
-    }
-    */
+    [HttpPost("login")]
+    public async Task<IActionResult> Login(LoginRequest loginRequest){
+        var query = _mapper.Map<LoginQuery>(loginRequest);
+
+        AuthenticationResult authResult = await _mediator.Send(query);
+
+        var response = _mapper.Map<AuthenticationResponse>(authResult);
+        return Ok(response);
+    }    
 
 }

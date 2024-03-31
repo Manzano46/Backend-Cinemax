@@ -1,10 +1,10 @@
-using Cinemax.Application.Authentication.Common;
 using Cinemax.Application.Common.Interfaces.Authentication;
 using Cinemax.Application.Common.Interfaces.Persistence;
+using Cinemax.Application.Users.Common;
 using Cinemax.Domain.User.Entities;
 using MediatR;
 
-namespace Cinemax.Application.Authentication.Queries.Login;
+namespace Cinemax.Application.Users.Queries.Login;
 public class LoginQueryHandler : IRequestHandler<LoginQuery, AuthenticationResult>
 {
     private readonly IJwtTokenGenerator _jwtTokenGenerator;

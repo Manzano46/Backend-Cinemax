@@ -1,3 +1,4 @@
+using Cinemax.Domain.Role.ValueObjects;
 using Cinemax.Domain.User.Entities;
 using Cinemax.Domain.User.ValueObjects;
 using Microsoft.EntityFrameworkCore;
@@ -19,15 +20,24 @@ public class UserConfigurations : IEntityTypeConfiguration<User>
             .HasConversion(
                 id => id.Value,
                 value => UserId.Create(value));
-        builder.Property(m => m.Name)
+        builder.Property(m => m.FirstName)
             .HasMaxLength(100);
+        builder.Property(m => m.LastName)
+            .HasMaxLength(100);
+            
         builder.Property(m => m.Email)
             .HasMaxLength(100);
         builder.Property(m => m.Password)
             .HasMaxLength(100);
         builder.Property(m => m.Points);
         builder.Property(m => m.BirthDay);
-        builder.HasOne(m => m.Role);
+        builder.Property(m=>m.RoleId)
+            .HasConversion(
+                id => id.Value,
+                value => RoleId.Create(value));
+        builder.HasOne(m => m.Role)
+            .WithMany(r=>r.Users)
+            .HasForeignKey(m=>m.RoleId);
         builder.HasMany(m => m.Cards)
                 .WithMany(m => m.Users)
                 .UsingEntity(m => m.ToTable("UserCards"));

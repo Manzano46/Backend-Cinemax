@@ -1,4 +1,4 @@
-namespace Cinemax.Contracts.Authentication;
+namespace Cinemax.Contracts.Users;
 
 public record LoginRequest(
     string Email,

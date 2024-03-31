@@ -15,6 +15,6 @@ public class ReadUsersQueryHandler : IRequestHandler<ReadUsersQuery, IEnumerable
     public async Task<IEnumerable<UserResult>> Handle(ReadUsersQuery command, CancellationToken cancellationToken)
     {
         await Task.CompletedTask;
-        return _UserRepository.GetAllUsers().Select(x => new UserResult(x));
+        return _UserRepository.GetAll().Select(x => new UserResult(x));
     }
 }

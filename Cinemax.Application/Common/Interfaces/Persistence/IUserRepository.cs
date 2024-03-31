@@ -6,4 +6,6 @@ public interface IUserRepository{
     User? GetById(UserId userId);
     User? GetUserByEmail(string Email);
     void Add(User user);
+    void Delete(UserId userId);
+    IEnumerable<User> GetAll();
 }
