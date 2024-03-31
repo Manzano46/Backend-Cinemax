@@ -1,11 +1,10 @@
-﻿using Cinemax.Contracts.RoomTypes;
-
-namespace Cinemax.Contracts.Rooms
+﻿namespace Cinemax.Contracts.Rooms
 {
     public record CreateRoomRequest
     (
         int Height,
         int Width,
-        List<CreateRoomTypeRequest> RoomTypes
+        string Name,
+        List<string> RoomTypes
     );
 }

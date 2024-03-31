@@ -27,9 +27,9 @@ public class RoomTypeRepository : IRoomTypeRepository{
         return _cinemaxDbContext.RoomTypes.Include(r => r.Rooms).SingleOrDefault(m => m.Name == name);
     }
     
-    public void Delete(string name)
+    public void Delete(RoomTypeId roomTypeId)
     {
-        var RoomType = _cinemaxDbContext.RoomTypes.SingleOrDefault(m => m.Name == name);
+        var RoomType = _cinemaxDbContext.RoomTypes.SingleOrDefault(m => m.Id == roomTypeId);
         if (RoomType is not null)
         {
             _cinemaxDbContext.RoomTypes.Remove(RoomType);
@@ -41,4 +41,5 @@ public class RoomTypeRepository : IRoomTypeRepository{
     {
          return _cinemaxDbContext.RoomTypes.Include(r => r.Rooms).SingleOrDefault(m => m.Id == roomTypeId);
     }
+
 }

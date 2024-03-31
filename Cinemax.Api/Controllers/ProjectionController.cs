@@ -50,8 +50,9 @@ public class ProjectionController : ControllerBase{
 
     // DELETE: api/projections/{id}
     [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(DeleteProjectionRequest deleteProjectionRequest)
+    public async Task<IActionResult> Delete(string id)
     {
+        DeleteProjectionRequest deleteProjectionRequest = new(id);
         var command = _mapper.Map<DeleteProjectionCommand>(deleteProjectionRequest);
 
         ProjectionResult ProjectionResult = await _mediator.Send(command);
@@ -63,8 +64,9 @@ public class ProjectionController : ControllerBase{
 
     // GET: api/projections/{id}
     [HttpGet("{id}")]
-    public async Task<IActionResult> Get(GetProjectionRequest getProjectionRequest)
+    public async Task<IActionResult> Get(string id)
     {
+        GetProjectionRequest getProjectionRequest = new(id);
         var query = _mapper.Map<GetProjectionQuery>(getProjectionRequest);
 
         ProjectionResult ProjectionResult = await _mediator.Send(query);

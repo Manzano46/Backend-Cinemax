@@ -51,8 +51,9 @@ public class GenreController : ControllerBase{
 
     // DELETE: api/genres/{id}
     [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(DeleteGenreRequest deleteGenreRequest)
-    {;
+    public async Task<IActionResult> Delete(string id)
+    {
+        DeleteGenreRequest deleteGenreRequest = new(id);
         var command = _mapper.Map<DeleteGenreCommand>(deleteGenreRequest);
 
         GenreResult genreResult = await _mediator.Send(command);

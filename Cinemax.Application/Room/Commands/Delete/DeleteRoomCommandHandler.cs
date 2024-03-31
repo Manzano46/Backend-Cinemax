@@ -4,23 +4,23 @@ using Cinemax.Domain.ProjectionAggregate.Entities;
 using MediatR;
 
 namespace Cinemax.Application.Rooms.Commands.Delete;
-public class DeleteProjectionCommandHandler : IRequestHandler<DeleteProjectionCommand, RoomResult>
+public class DeleteRoomCommandHandler : IRequestHandler<DeleteRoomCommand, RoomResult>
 {
     private readonly IRoomRepository _RoomRepository;
-    public DeleteProjectionCommandHandler(IRoomRepository RoomRepository)
+    public DeleteRoomCommandHandler(IRoomRepository RoomRepository)
     {
         _RoomRepository = RoomRepository;
     }
-    public async Task<RoomResult> Handle(DeleteProjectionCommand command, CancellationToken cancellationToken)
+    public async Task<RoomResult> Handle(DeleteRoomCommand command, CancellationToken cancellationToken)
     {
         await Task.CompletedTask;
-        if (_RoomRepository.GetById(command.Id) is not Room Room)
+        if (_RoomRepository.GetById(command.Id) is not Room room)
         {
             throw new Exception("Room with given name does not exist");
         }
 
         _RoomRepository.Delete(command.Id);
 
-        return new RoomResult(Room);
+        return new RoomResult(room);
     }
 }

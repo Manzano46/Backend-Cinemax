@@ -1,4 +1,4 @@
-﻿namespace Cinemax.Contracts.Room
+﻿namespace Cinemax.Contracts.Rooms
 {
     public record DeleteRoomRequest
     (

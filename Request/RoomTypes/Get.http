@@ -1,0 +1,9 @@
+@host = http://localhost:5250
+@id = 07c36151-12c1-4f78-9b56-d166ebf49911
+GET  {{host}}/roomtypes/{{id}}
+Content-Type: application/json
+//Authorization: Bearer {{token}}
+
+{
+    "id" : "{{id}}"
+}

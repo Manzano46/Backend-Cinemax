@@ -1,6 +1,7 @@
 using Cinemax.Application.RoomTypes.Commands.Create;
 using Cinemax.Application.RoomTypes.Commands.Delete;
 using Cinemax.Application.RoomTypes.Common;
+using Cinemax.Application.RoomTypes.Queries.Get;
 using Cinemax.Application.RoomTypes.Queries.Read;
 using Cinemax.Contracts.RoomTypes;
 using MapsterMapper;
@@ -31,7 +32,7 @@ public class RoomTypeController : ControllerBase{
 
         RoomTypeResult RoomTypeResult = await _mediator.Send(command);
 
-        var response = _mapper.Map<ProjectionResponse>(RoomTypeResult);
+        var response = _mapper.Map<RoomTypeResponse>(RoomTypeResult);
         return Ok(response);
     }
 
@@ -41,22 +42,36 @@ public class RoomTypeController : ControllerBase{
     {
         var command = new ReadRoomTypesQuery();
 
-        IEnumerable<RoomTypeResult> RoomTypeResults = await _mediator.Send(command);
+        IEnumerable<RoomTypeResult> RoomtypeResults = await _mediator.Send(command);
 
-        IEnumerable<ProjectionResponse> responses = RoomTypeResults.Select(_mapper.Map<ProjectionResponse>);
+        IEnumerable<RoomTypeResponse> responses = RoomtypeResults.Select(_mapper.Map<RoomTypeResponse>);
         
         return Ok(responses);
     }
 
-    // DELETE: api/roomtypes/{name}
-    [HttpDelete("{name}")]
-    public async Task<IActionResult> Delete(string name)
+    // DELETE: api/roomtypes/{id}
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(string id)
     {
-        var command = new DeleteRoomTypeCommand(name);
+        DeleteRoomTypeRequest deleteRoomTypeRequest = new(id);
+        var command = _mapper.Map<DeleteRoomTypeCommand>(deleteRoomTypeRequest);
 
-        RoomTypeResult RoomTypeResult = await _mediator.Send(command);
+        RoomTypeResult roomTypeResult = await _mediator.Send(command);
 
-        var response = _mapper.Map<ProjectionResponse>(RoomTypeResult);
+        var response = _mapper.Map<RoomTypeResponse>(roomTypeResult);
+        return Ok(response);
+    }
+
+    // GET: api/roomtypes/{id}
+    [HttpGet("{id}")]
+    public async Task<IActionResult> Get(string id)
+    {
+        GetRoomTypeRequest getRoomTypeRequest = new(id);
+        var query = _mapper.Map<GetRoomTypeQuery>(getRoomTypeRequest);
+
+        RoomTypeResult roomtypeResult = await _mediator.Send(query);
+
+        var response = _mapper.Map<RoomTypeResponse>(roomtypeResult);
 
         return Ok(response);
     }

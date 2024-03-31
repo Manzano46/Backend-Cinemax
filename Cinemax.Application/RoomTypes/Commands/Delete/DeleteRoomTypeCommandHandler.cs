@@ -14,12 +14,12 @@ public class DeleteRoomTypeCommandHandler : IRequestHandler<DeleteRoomTypeComman
     public async Task<RoomTypeResult> Handle(DeleteRoomTypeCommand command, CancellationToken cancellationToken)
     {
         await Task.CompletedTask;
-        if (_RoomTypeRepository.GetByName(command.Name) is not RoomType RoomType)
+        if (_RoomTypeRepository.GetById(command.Id) is not RoomType RoomType)
         {
-            throw new Exception("RoomType with given name does not exist");
+            throw new Exception("RoomType with given id does not exist");
         }
 
-        _RoomTypeRepository.Delete(command.Name);
+        _RoomTypeRepository.Delete(command.Id);
 
         return new RoomTypeResult(RoomType);
     }

@@ -3,6 +3,6 @@ using Cinemax.Domain.ProjectionAggregate.ValueObjects;
 using MediatR;
 
 namespace Cinemax.Application.Rooms.Commands.Delete;
-public record DeleteProjectionCommand(
+public record DeleteRoomCommand(
     RoomId Id
 ) : IRequest<RoomResult>;

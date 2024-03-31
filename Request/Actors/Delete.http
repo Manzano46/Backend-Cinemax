@@ -5,5 +5,5 @@ DELETE {{host}}/actors/{{actorId}}
 Content-Type: application/json
 
 {
-    "id": "{{actorId}}"
+    
 }
