@@ -1,4 +1,5 @@
 using Cinemax.Application.Movies.Commands.Create;
+using Cinemax.Application.Movies.Commands.Delete;
 using Cinemax.Application.Movies.Common;
 using Cinemax.Application.Movies.Queries.Get;
 using Cinemax.Application.Movies.Queries.Read;
@@ -50,8 +51,9 @@ public class MovieController : ControllerBase{
 
     // GET: api/movies/{id}
     [HttpGet("{id}")]
-    public async Task<IActionResult> Get(GetMovieRequest getMovieRequest)
+    public async Task<IActionResult> Get(string id)
     {
+        GetMovieRequest getMovieRequest = new(id);
         var query = _mapper.Map<GetMovieQuery>(getMovieRequest);
 
         MovieResult MovieResult = await _mediator.Send(query);
@@ -61,46 +63,17 @@ public class MovieController : ControllerBase{
         return Ok(response);
     }
 
-    /*
-    // GET: api/movies/{id}
-    [HttpGet("{id}")]
-    public async Task<IActionResult> Get(int id)
-    {
-        var query = new GetMovieQuery(id);
-
-        MovieResult movieResult = await _mediator.Send(command);
-
-        var response = new MovieResponse(movieResult.Movie.Id, movieResult.Movie.Name, movieResult.Movie.Description, movieResult.Movie.Duration, movieResult.Movie.Premiere, movieResult.Movie.IconURL, movieResult.Movie.TrailerURL);
-
-        return Ok(response);
-        var movie = await _mediator.Send(new GetMovieQuery { Id = id });
-        if (movie == null)
-        {
-            return NotFound();
-        }
-        return Ok(movie);
-    }
-
-    /*
-    // PUT: api/movies/{id}
-    [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, UpdateMovieCommand command)
-    {
-        if (id != command.Id)
-        {
-            return BadRequest();
-        }
-
-        await _mediator.Send(command);
-        return NoContent();
-    }
-
     // DELETE: api/movies/{id}
     [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(int id)
+    public async Task<IActionResult> Delete(string id)
     {
-        await _mediator.Send(new DeleteMovieCommand { Id = id });
-        return NoContent();
+        DeleteMovieRequest deleteMovieRequest = new(id);
+        var command = _mapper.Map<DeleteMovieCommand>(deleteMovieRequest);
+
+        MovieResult MovieResult = await _mediator.Send(command);
+
+        var response = _mapper.Map<MovieResponse>(MovieResult);
+
+        return Ok(response);
     }
-    */
 }
