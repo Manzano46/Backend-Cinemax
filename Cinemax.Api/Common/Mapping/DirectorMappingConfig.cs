@@ -2,6 +2,7 @@ using Cinemax.Application.Directors.Commands.Create;
 using Cinemax.Application.Directors.Common;
 using Cinemax.Application.Directors.Queries.Get;
 using Cinemax.Contracts.Directors;
+using Cinemax.Domain.Director.Entities;
 using Cinemax.Domain.Director.ValueObjects;
 using Mapster;
 
@@ -23,5 +24,10 @@ public class DirectorMappingConfig : IRegister
 
         config.NewConfig<GetDirectorRequest, GetDirectorQuery>()
             .Map(dest => dest.DirectorId, src => DirectorId.Create(new(src.DirectorId)));
+
+        config.NewConfig<Director, DirectorResponseCore>()
+            .Map(dest => dest.Id, src => src.Id.Value)
+            .Map(dest => dest.Firstname, src => src.FirstName)
+            .Map(dest => dest.Lastname, src => src.LastName);
     }
 }

@@ -13,8 +13,18 @@ public record MovieResponse(
     DateTime Premiere,
     string IconURL,
     string TrailerURL,
-    List<ActorResponse> Actors,
-    List<CountryResponse> Countries,
-    List<DirectorResponse> Directors,
-    List<GenreResponse> Genres
+    List<ActorResponseCore> Actors,
+    List<CountryResponseCore> Countries,
+    List<DirectorResponseCore> Directors,
+    List<GenreResponseCore> Genres
+);
+
+public record MovieResponseCore(
+    string Id,
+    string Name,
+    string Description,
+    TimeSpan Duration,
+    DateTime Premiere,
+    string IconURL,
+    string TrailerURL
 );

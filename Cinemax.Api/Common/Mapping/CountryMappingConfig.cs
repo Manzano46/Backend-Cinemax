@@ -2,6 +2,7 @@ using Cinemax.Application.Countries.Commands.Create;
 using Cinemax.Application.Countries.Common;
 using Cinemax.Application.Countries.Queries.Get;
 using Cinemax.Contracts.Countries;
+using Cinemax.Domain.Country.Entities;
 using Cinemax.Domain.Country.ValueObjects;
 using Mapster;
 
@@ -21,5 +22,9 @@ public class CountryMappingConfig : IRegister
 
         config.NewConfig<GetCountryRequest, GetCountryQuery>()
             .Map(dest => dest.CountryId, src => CountryId.Create(new(src.CountryId)));
+
+        config.NewConfig<Country, CountryResponseCore>()
+            .Map(dest => dest.Id, src => src.Id.Value)
+            .Map(dest => dest.Name, src => src.Name);
     }
 }

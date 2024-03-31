@@ -1,6 +1,7 @@
 using Cinemax.Application.Common.Interfaces.Persistence;
 using Cinemax.Application.Directors.Common;
 using Cinemax.Domain.Director.Entities;
+using Cinemax.Domain.ProjectionAggregate.Entities;
 using MediatR;
 
 namespace Cinemax.Application.Directors.Commands.Create;
@@ -21,7 +22,8 @@ public class CreateDirectorCommandHandler : IRequestHandler<CreateDirectorComman
 
         Director director = Director.Create(
             command.Firstname,
-            command.Lastname
+            command.Lastname,
+            new List<Movie>()
         );
 
         _directorRepository.Add(director);

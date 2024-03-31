@@ -5,6 +5,7 @@ using Cinemax.Application.Movies.Commands.Create;
 using Mapster;
 using Cinemax.Domain.Actor.ValueObjects;
 using Cinemax.Application.Actors.Queries.Get;
+using Cinemax.Domain.Actor.Entities;
 
 namespace Cinemax.Api.Common.Mapping;
 public class ActorMappingConfig : IRegister
@@ -27,5 +28,9 @@ public class ActorMappingConfig : IRegister
         config.NewConfig<GetActorRequest, GetActorQuery>()
             .Map(dest => dest.ActorId, src => ActorId.Create(new(src.ActorId)));
         
+        config.NewConfig<Actor, ActorResponseCore>()
+            .Map(dest => dest.Id, src => src.Id.Value)
+            .Map(dest => dest.Firstname, src => src.FirstName)
+            .Map(dest => dest.Lastname, src => src.LastName);
     }
 }

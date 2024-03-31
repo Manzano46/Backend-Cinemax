@@ -5,6 +5,6 @@ Content-Type: application/json
 //Authorization: Bearer {{token}}
 
 {
-    "firstname":"Nina",
-    "lastname":"Carey"
+    "firstname":"Nana",
+    "lastname":"Caguama"
 }

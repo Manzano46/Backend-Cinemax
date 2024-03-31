@@ -7,3 +7,9 @@ public record ActorResponse(
     string Lastname,
     List<CreateMovieRequest> Movies
 );
+
+public record ActorResponseCore(
+    string Id,
+    string Firstname,
+    string Lastname
+);

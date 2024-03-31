@@ -1,6 +1,7 @@
 using Cinemax.Application.Common.Interfaces.Persistence;
 using Cinemax.Application.Genres.Common;
 using Cinemax.Domain.Genre.Entities;
+using Cinemax.Domain.ProjectionAggregate.Entities;
 using MediatR;
 
 namespace Cinemax.Application.Genres.Commands.Create;
@@ -20,7 +21,8 @@ public class CreateGenreCommandHandler : IRequestHandler<CreateGenreCommand, Gen
         }
 
         Genre genre = Genre.Create(
-            command.Name
+            command.Name,
+            new List<Movie>()
         );
 
         _genreRepository.Add(genre);
