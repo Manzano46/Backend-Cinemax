@@ -13,11 +13,11 @@ public class CardConfigurations : IEntityTypeConfiguration<Card>
 
     private void ConfigureCardsTable(EntityTypeBuilder<Card> builder){
         builder.ToTable("Cards");
-        builder.HasKey(m => m.Number);
-        builder.Property(m => m.Number)
+        builder.HasKey(m => m.Id);
+        builder.Property(m => m.Id)
             .ValueGeneratedNever()
             .HasConversion(
-                number => number.Value,
-                value => CardNumber.Create(value));        
+                Id => Id.Value,
+                value => CardId.Create(value));        
     }
 }

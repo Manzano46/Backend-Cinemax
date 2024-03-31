@@ -3,8 +3,8 @@ using Cinemax.Domain.Card.ValueObjects;
 
 namespace Cinemax.Application.Common.Interfaces.Persistence;
 public interface ICardRepository{
-    Card? GetByNumber(CardNumber CardId);
+    Card? GetById(CardId CardId);
     void Add(Card Card);
-    void Delete(CardNumber Card);
+    void Delete(CardId Card);
     IEnumerable<Card> GetAllCards();
 }

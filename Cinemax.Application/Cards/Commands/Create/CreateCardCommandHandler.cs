@@ -18,12 +18,12 @@ public class CreateCardCommandHandler : IRequestHandler<CreateCardCommand, CardR
     public async Task<CardResult> Handle(CreateCardCommand command, CancellationToken cancellationToken)
     {
         await Task.CompletedTask;
-        if(_CardRepository.GetByNumber(command.Number) is not null){
-            throw new Exception("Card with given number already exists");
+        if(_CardRepository.GetById(command.Id) is not null){
+            throw new Exception("Card with given Id already exists");
         }
 
         Card Card = Card.Create(
-            command.Number
+            command.Id
         );
 
         _CardRepository.Add(Card);

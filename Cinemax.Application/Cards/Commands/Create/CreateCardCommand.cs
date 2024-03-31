@@ -4,6 +4,6 @@ using MediatR;
 
 namespace Cinemax.Application.Cards.Commands.Create;
 public record CreateCardCommand(
-    CardNumber Number
+    CardId Id
 ) : IRequest<CardResult>;
 

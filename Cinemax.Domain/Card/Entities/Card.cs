@@ -2,19 +2,18 @@ using Cinemax.Domain.Common.Models;
 using Cinemax.Domain.Card.ValueObjects;
 
 namespace Cinemax.Domain.Card.Entities;
-public class Card: Entity<CardNumber>{
-    public CardNumber Number {get;set;}
+public class Card: Entity<CardId>{
 
     #pragma warning disable CS8618
     private Card(){}
     #pragma warning restore CS8618
-    private Card(CardNumber cardNumber)
-        : base(cardNumber){
-            Number=cardNumber;
+    
+    private Card(CardId cardId)
+        : base(cardId){
     }
 
-    public static Card Create(CardNumber cardNumber)
+    public static Card Create(CardId cardId)
     {
-        return new Card(cardNumber);
+        return new Card(cardId);
     }
 }

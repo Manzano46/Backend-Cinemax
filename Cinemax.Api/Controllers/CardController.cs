@@ -23,7 +23,7 @@ public class CardController : ControllerBase{
         _mapper = mapper;
     } 
 
-    // POST: api/Cards
+    // POST: api/cards
     [HttpPost]
     //[Authorize] 
     public async Task<IActionResult> Create(CreateCardRequest createCardRequest)
@@ -36,7 +36,9 @@ public class CardController : ControllerBase{
         return Ok(response);
     }
 
-    // GET: api/Cards
+    
+
+    // GET: api/cards
     [HttpGet]
     public async Task<IActionResult> Read()
     {
@@ -51,12 +53,12 @@ public class CardController : ControllerBase{
 
 
     
-    // DELETE: api/Cards/{number}
-    [HttpDelete("{number}")]
-    public async Task<IActionResult> Delete(string number)
+    // DELETE: api/cards/{id}
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(string id)
     {
-        CardNumber CardNumber = CardNumber.Create(new (number));
-        var command = new DeleteCardCommand(CardNumber);
+        CardId CardId = CardId.Create(long.Parse(id));
+        var command = new DeleteCardCommand(CardId);
         CardResult CardResult = await _mediator.Send(command);
         var response = _mapper.Map<CardResponse>(CardResult);
         return Ok(response);

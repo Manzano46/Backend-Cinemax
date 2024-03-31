@@ -1,16 +1,13 @@
 using Cinemax.Domain.Common.Models;
 namespace Cinemax.Domain.Card.ValueObjects;
-public sealed class CardNumber : ValueObject
+public sealed class CardId : ValueObject
 {
-    public Guid Value {get;}
+    public long Value {get;}
 
-    private CardNumber(Guid value){
+    private CardId(long value){
         Value = value;
     }
-    public static CardNumber CreateUnique(){
-        return new(Guid.NewGuid());
-    }
-    public static CardNumber Create(Guid value){
+    public static CardId Create(long value){
         return new(value);
     }
     public override IEnumerable<object> GetEqualityComponents()

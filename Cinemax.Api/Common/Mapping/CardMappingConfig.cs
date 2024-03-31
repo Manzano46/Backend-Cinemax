@@ -8,9 +8,9 @@ public class CardMappingConfig : IRegister
 {
     public void Register(TypeAdapterConfig config){
         config.NewConfig<CardResult, CardResponse>()
-            .Map(dest => dest.Number, src => src.Card.Number.Value);
+            .Map(dest => dest.Id, src => src.Card.Id.Value);
 
         config.NewConfig<CreateCardRequest, CreateCardCommand>()
-        .Map(dest => dest.Number, src => src.Number);
+        .Map(dest => dest.Id, src => src.Id);
     }
 }
