@@ -44,8 +44,8 @@ public static class DependencyInjection{
         services.AddScoped<IDiscountRepository, DiscountRepository>();
         services.AddScoped<IRoomTypeRepository, RoomTypeRepository>();
         services.AddScoped<IProjectionRepository, ProjectionRepository>();
+        services.AddScoped<ISeatRepository, SeatRepository>();
         
-
         return services;
     }
 

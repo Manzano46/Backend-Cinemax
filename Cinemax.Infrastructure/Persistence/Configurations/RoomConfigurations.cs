@@ -20,8 +20,10 @@ public class RoomConfigurations : IEntityTypeConfiguration<Room>
             .HasConversion(
                 id => id.Value,
                 value => RoomId.Create(value));
+
         builder.Property(m => m.Height);
         builder.Property(m => m.Width);
+        
         builder.HasMany(m => m.RoomTypes)
                 .WithMany(m => m.Rooms)
                 .UsingEntity(m => m.ToTable("RoomRoomType"));

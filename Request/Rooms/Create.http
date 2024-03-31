@@ -5,11 +5,8 @@ Content-Type: application/json
 //Authorization: Bearer {{token}}
 
 {
-    "height": "10",
-    "width": "5",
-    "roomtypesids":
-        [
-            "07c36151-12c1-4f78-9b56-d166ebf49911",
-            "7ebbfa40-5bf1-4ad7-b7cc-fffc60aab65d"
-        ]
+    "name": "asdaasfsd",
+    "height": "2",
+    "width": "1",
+    "roomtypes":[]
 }

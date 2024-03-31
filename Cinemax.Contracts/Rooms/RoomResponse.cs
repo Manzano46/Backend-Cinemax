@@ -1,4 +1,5 @@
 ﻿using Cinemax.Contracts.RoomTypes;
+using Cinemax.Contracts.Seats;
 
 
 namespace Cinemax.Contracts.Rooms
@@ -9,6 +10,7 @@ namespace Cinemax.Contracts.Rooms
         int Height,
         int Width,
         string Name,
-        List<RoomTypeResponseCore> RoomTypes
+        List<RoomTypeResponseCore> RoomTypes,
+        List<SeatResponseCore> Seats
     );
 }

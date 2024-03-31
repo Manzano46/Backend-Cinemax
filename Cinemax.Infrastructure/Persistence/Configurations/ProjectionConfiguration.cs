@@ -40,10 +40,13 @@ namespace Cinemax.Infrastructure.Persistence.Configurations
 
             builder.HasOne(m => m.Movie)
                 .WithMany()
-                .HasForeignKey(m => m.MovieId);
+                .HasForeignKey(m => m.MovieId)
+                .OnDelete(DeleteBehavior.Cascade);
+
             builder.HasOne(m => m.Room)
                 .WithMany()
-                .HasForeignKey(m => m.RoomId);
+                .HasForeignKey(m => m.RoomId)
+                .OnDelete(DeleteBehavior.Cascade);
 
         }
     }

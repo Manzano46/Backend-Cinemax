@@ -2,6 +2,7 @@ using Cinemax.Application.Common.Interfaces.Persistence;
 using Cinemax.Application.Rooms.Common;
 using Cinemax.Domain.ProjectionAggregate.Entities;
 using Cinemax.Domain.RoomType.Entities;
+using Cinemax.Domain.Seat.Entities;
 using MediatR;
 
 namespace Cinemax.Application.Rooms.Commands.Create;
@@ -9,11 +10,14 @@ public class CreateRoomCommandHandler : IRequestHandler<CreateRoomCommand, RoomR
 {
     private readonly IRoomRepository _RoomRepository;
     private readonly IRoomTypeRepository _RoomTypeRepository;
+    private readonly ISeatRepository _SeatRepository;
+    
 
-    public CreateRoomCommandHandler(IRoomRepository roomRepository, IRoomTypeRepository roomTypeRepository)
+    public CreateRoomCommandHandler(IRoomRepository roomRepository, IRoomTypeRepository roomTypeRepository, ISeatRepository _seatRepository)
     {
         _RoomRepository = roomRepository;
         _RoomTypeRepository = roomTypeRepository;
+        _SeatRepository = _seatRepository;
     }
     public async Task<RoomResult> Handle(CreateRoomCommand command, CancellationToken cancellationToken)
     {
@@ -22,6 +26,11 @@ public class CreateRoomCommandHandler : IRequestHandler<CreateRoomCommand, RoomR
         if (command.Height <= 0 || command.Width <= 0)
         {
             throw new Exception("Room with the given parameters cannot be created");
+        }
+
+        if(_RoomRepository.GetByName(command.Name) is not null)
+        {
+            throw new Exception($"Room with name '{command.Name}' already exists in the database");
         }
 
         List<RoomType> roomTypes = new();
@@ -36,12 +45,21 @@ public class CreateRoomCommandHandler : IRequestHandler<CreateRoomCommand, RoomR
             roomTypes.Add(existingRoomType);
         });
 
+
         Room Room = Room.Create(
             command.Height,
             command.Width,
             command.Name,
             roomTypes
         );
+        
+        List<Seat> seats = new();
+        for(int i=0;i<command.Height*command.Width;i++)
+        {
+            Seat seat = Seat.Create(Room.Id, Room);
+            seats.Add(seat);
+        }
+        Room.Seats = seats;
 
         _RoomRepository.Add(Room);
 

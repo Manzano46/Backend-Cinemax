@@ -4,10 +4,12 @@ using Cinemax.Application.Rooms.Common;
 using Cinemax.Application.Rooms.Queries.Get;
 using Cinemax.Contracts.Rooms;
 using Cinemax.Contracts.RoomTypes;
+using Cinemax.Contracts.Seats;
 using Cinemax.Domain.ProjectionAggregate.Entities;
 using Cinemax.Domain.ProjectionAggregate.ValueObjects;
 using Cinemax.Domain.RoomType.Entities;
 using Cinemax.Domain.RoomType.ValueObjects;
+using Cinemax.Domain.Seat.Entities;
 using Mapster;
 using MapsterMapper;
 
@@ -21,7 +23,8 @@ public class RoomMappingConfig : IRegister
             .Map(dest => dest.Height, src => src.Room.Height)
             .Map(dest => dest.Width, src => src.Room.Width)
             .Map(dest => dest.Name, src => src.Room.Name)
-            .Map(dest => dest.RoomTypes, src => src.Room.RoomTypes);
+            .Map(dest => dest.RoomTypes, src => src.Room.RoomTypes)
+            .Map(dest => dest.Seats, src => src.Room.Seats);
         
         config.NewConfig<CreateRoomRequest, CreateRoomCommand>()
             .Map(dest => dest.RoomTypesId, src => src.RoomTypes.Select(id => RoomTypeId.Create( new(id) ) ))
@@ -39,5 +42,7 @@ public class RoomMappingConfig : IRegister
             .Map(dest => dest.Width, src => src.Width)
             .Map(dest => dest.Name, src => src.Name);
 
+        config.NewConfig<Seat, SeatResponseCore>()
+            .Map(dest => dest.Id, src => src.Id.Value);
     }
 }

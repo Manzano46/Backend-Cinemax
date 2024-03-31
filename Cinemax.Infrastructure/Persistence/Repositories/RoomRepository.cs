@@ -19,12 +19,17 @@ public class RoomRepository : IRoomRepository{
 
     public IEnumerable<Room> GetAll()
     {
-        return _cinemaxDbContext.Rooms.Include(r => r.RoomTypes);
+        return _cinemaxDbContext.Rooms.Include(r => r.RoomTypes).Include(r => r.Seats);
     }
 
     public Room? GetById(RoomId id)
     {
-        return _cinemaxDbContext.Rooms.Include(r => r.RoomTypes).SingleOrDefault(m => m.Id == id);
+        return _cinemaxDbContext.Rooms.Include(r => r.RoomTypes).Include(r => r.Seats).SingleOrDefault(m => m.Id == id);
+    }
+
+    public Room? GetByName(string name)
+    {
+        return _cinemaxDbContext.Rooms.Include(r => r.RoomTypes).Include(r => r.Seats).SingleOrDefault(m => m.Name == name);
     }
     
     public void Delete(RoomId id)
