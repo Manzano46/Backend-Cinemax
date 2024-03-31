@@ -2,6 +2,6 @@
 {
     public record GetProjectionRequest
     (
-        string ProjectionId
+        string Id
     );
 }

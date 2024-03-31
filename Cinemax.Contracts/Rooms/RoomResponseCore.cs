@@ -4,6 +4,7 @@
     (
         string Id,
         int Height,
-        int Width
+        int Width,
+        string Name
     );
 }

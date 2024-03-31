@@ -2,8 +2,8 @@
 {
     public record CreateProjectionRequest
     (
-        string MovieId,
-        string RoomId,
+        string Movie,
+        string Room,
         DateTime Date,
         int Price
     );

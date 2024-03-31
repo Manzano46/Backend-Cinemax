@@ -51,8 +51,9 @@ public class RoomTypeController : ControllerBase{
 
     // DELETE: api/roomtypes/{id}
     [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(DeleteRoomTypeRequest deleteRoomTypeRequest )
+    public async Task<IActionResult> Delete(string id)
     {
+        DeleteRoomTypeRequest deleteRoomTypeRequest = new(id);
         var command = _mapper.Map<DeleteRoomTypeCommand>(deleteRoomTypeRequest);
 
         RoomTypeResult roomTypeResult = await _mediator.Send(command);
@@ -63,8 +64,9 @@ public class RoomTypeController : ControllerBase{
 
     // GET: api/roomtypes/{id}
     [HttpGet("{id}")]
-    public async Task<IActionResult> Get(GetRoomTypeRequest getRoomTypeRequest)
+    public async Task<IActionResult> Get(string id)
     {
+        GetRoomTypeRequest getRoomTypeRequest = new(id);
         var query = _mapper.Map<GetRoomTypeQuery>(getRoomTypeRequest);
 
         RoomTypeResult roomtypeResult = await _mediator.Send(query);

@@ -20,14 +20,14 @@ public class ProjectionMappingConfig : IRegister
             .Map(dest => dest.Movie, src => src.Projection.Movie);
 
         config.NewConfig<CreateProjectionRequest, CreateProjectionCommand>()
-        .Map(dest => dest.MovieId, src => MovieId.Create(new(src.MovieId)))
-        .Map(dest => dest.RoomId, src => RoomId.Create(new(src.RoomId)));
+        .Map(dest => dest.MovieId, src => MovieId.Create(new(src.Movie)))
+        .Map(dest => dest.RoomId, src => RoomId.Create(new(src.Room)));
 
         config.NewConfig<DeleteProjectionRequest, DeleteProjectionCommand>()
-            .Map(dest => dest.Id, src => ProjectionId.Create(new(src.ProjectionId)));
+            .Map(dest => dest.Id, src => ProjectionId.Create(new(src.Id)));
 
         config.NewConfig<GetProjectionRequest, GetProjectionQuery>()
-            .Map(dest => dest.projectionId, src => ProjectionId.Create(new(src.ProjectionId)));
+            .Map(dest => dest.projectionId, src => ProjectionId.Create(new(src.Id)));
 
         config.NewConfig<Projection, ProjectionResponseCore>()
             .Map(dest => dest.Id, src => src.Id.Value)

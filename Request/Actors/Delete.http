@@ -1,9 +1,9 @@
 @host = http://localhost:5250
-@actorId = 4f40094b-25e9-485e-b7f3-f1260dae2b05
+@actorId = 99270946-75c4-4123-8512-94aed7751c7f
 
 DELETE {{host}}/actors/{{actorId}}
 Content-Type: application/json
 
 {
-    "id": "{{actorId}}"
+    
 }

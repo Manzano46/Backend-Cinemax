@@ -4,6 +4,7 @@
     (
         int Height,
         int Width,
+        string Name,
         List<string> RoomTypes
     );
 }

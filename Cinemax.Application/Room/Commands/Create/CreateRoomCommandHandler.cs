@@ -38,7 +38,8 @@ public class CreateRoomCommandHandler : IRequestHandler<CreateRoomCommand, RoomR
 
         Room Room = Room.Create(
             command.Height,
-            command.Height,
+            command.Width,
+            command.Name,
             roomTypes
         );
 
