@@ -1,6 +1,7 @@
 using Cinemax.Application.Movies.Commands.Create;
 using Cinemax.Application.Movies.Common;
 using Cinemax.Contracts.Movies;
+using Cinemax.Domain.ProjectionAggregate.Entities;
 using Mapster;
 
 namespace Cinemax.Api.Common.Mapping;
@@ -15,11 +16,20 @@ public class MovieMappingConfig : IRegister
             
 
         config.NewConfig<CreateMovieRequest, CreateMovieCommand>()
-        .Map(dest => dest.Name, src => src.Name)
-        .Map(dest => dest.Description, src => src.Description)
-        .Map(dest => dest.Duration, src => src.Duration)
-        .Map(dest => dest.Premiere, src => src.Premiere)
-        .Map(dest => dest.IconURL, src => src.IconURL)
-        .Map(dest => dest.TrailerURL, src => src.TrailerURL);
+            .Map(dest => dest.Name, src => src.Name)
+            .Map(dest => dest.Description, src => src.Description)
+            .Map(dest => dest.Duration, src => src.Duration)
+            .Map(dest => dest.Premiere, src => src.Premiere)
+            .Map(dest => dest.IconURL, src => src.IconURL)
+            .Map(dest => dest.TrailerURL, src => src.TrailerURL);
+
+        config.NewConfig<Movie, MovieResponseCore>()
+            .Map(dest => dest.Id, src => src.Id.Value.ToString())
+            .Map(dest => dest.Name, src => src.Name)
+            .Map(dest => dest.Description, src => src.Description)
+            .Map(dest => dest.Duration, src => src.Duration)
+            .Map(dest => dest.Premiere, src => src.Premiere)
+            .Map(dest => dest.IconURL, src => src.IconURL)
+            .Map(dest => dest.TrailerURL, src => src.TrailerURL);
     }
 }

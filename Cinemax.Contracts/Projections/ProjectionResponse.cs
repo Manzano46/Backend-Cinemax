@@ -6,8 +6,8 @@ namespace Cinemax.Contracts.Projections
     public record ProjectionResponse
     (
         string Id,
-        string MovieId,
-        string RoomId,
+        MovieResponseCore Movie,
+        RoomResponseCore Room,
         DateTime Date,
         int Price
     );

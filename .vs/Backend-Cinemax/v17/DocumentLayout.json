@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{77EC5FFD-9D10-489C-A5DD-3982641B65F1}|Cinemax.Api\\Cinemax.Api.csproj|c:\\users\\admin\\documents\\programming\\proyecto de is\\backend-cinemax\\cinemax.api\\common\\mapping\\roommappingconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{77EC5FFD-9D10-489C-A5DD-3982641B65F1}|Cinemax.Api\\Cinemax.Api.csproj|solutionrelative:cinemax.api\\common\\mapping\\roommappingconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77EC5FFD-9D10-489C-A5DD-3982641B65F1}|Cinemax.Api\\Cinemax.Api.csproj|c:\\users\\admin\\documents\\programming\\proyecto de is\\backend-cinemax\\cinemax.api\\common\\mapping\\roomtypemappingconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{77EC5FFD-9D10-489C-A5DD-3982641B65F1}|Cinemax.Api\\Cinemax.Api.csproj|solutionrelative:cinemax.api\\common\\mapping\\roomtypemappingconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1C078BE2-812C-46A5-A009-25E536193C92}|Cinemax.Infrastructure\\Cinemax.Infrastructure.csproj|c:\\users\\admin\\documents\\programming\\proyecto de is\\backend-cinemax\\cinemax.infrastructure\\persistence\\cinemaxdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C078BE2-812C-46A5-A009-25E536193C92}|Cinemax.Infrastructure\\Cinemax.Infrastructure.csproj|solutionrelative:cinemax.infrastructure\\persistence\\cinemaxdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -53,10 +61,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{77EC5FFD-9D10-489C-A5DD-3982641B65F1}|Cinemax.Api\\Cinemax.Api.csproj|c:\\users\\admin\\documents\\programming\\proyecto de is\\backend-cinemax\\cinemax.api\\common\\mapping\\projectionmappingconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{77EC5FFD-9D10-489C-A5DD-3982641B65F1}|Cinemax.Api\\Cinemax.Api.csproj|solutionrelative:cinemax.api\\common\\mapping\\projectionmappingconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{77EC5FFD-9D10-489C-A5DD-3982641B65F1}|Cinemax.Api\\Cinemax.Api.csproj|c:\\users\\admin\\documents\\programming\\proyecto de is\\backend-cinemax\\cinemax.api\\common\\mapping\\roommappingconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{77EC5FFD-9D10-489C-A5DD-3982641B65F1}|Cinemax.Api\\Cinemax.Api.csproj|solutionrelative:cinemax.api\\common\\mapping\\roommappingconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,50 +70,39 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "RoomTypeMappingConfig.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Api\\Common\\Mapping\\RoomTypeMappingConfig.cs",
+              "RelativeDocumentMoniker": "Cinemax.Api\\Common\\Mapping\\RoomTypeMappingConfig.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Api\\Common\\Mapping\\RoomTypeMappingConfig.cs",
+              "RelativeToolTip": "Cinemax.Api\\Common\\Mapping\\RoomTypeMappingConfig.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwBkAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-30T22:40:55.251Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "CinemaxDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\Persistence\\CinemaxDbContext.cs",
               "RelativeDocumentMoniker": "Cinemax.Infrastructure\\Persistence\\CinemaxDbContext.cs",
               "ToolTip": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\Persistence\\CinemaxDbContext.cs",
               "RelativeToolTip": "Cinemax.Infrastructure\\Persistence\\CinemaxDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-30T04:36:38.804Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RoomTypeRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\Persistence\\Repositories\\RoomTypeRepository.cs",
-              "RelativeDocumentMoniker": "Cinemax.Infrastructure\\Persistence\\Repositories\\RoomTypeRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\Persistence\\Repositories\\RoomTypeRepository.cs",
-              "RelativeToolTip": "Cinemax.Infrastructure\\Persistence\\Repositories\\RoomTypeRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-30T04:35:26.859Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-30T04:36:38.804Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "RoomRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\Persistence\\Repositories\\RoomRepository.cs",
-              "RelativeDocumentMoniker": "Cinemax.Infrastructure\\Persistence\\Repositories\\RoomRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\Persistence\\Repositories\\RoomRepository.cs",
-              "RelativeToolTip": "Cinemax.Infrastructure\\Persistence\\Repositories\\RoomRepository.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAowAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-30T04:35:24.375Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "MovieRepository.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\Persistence\\Repositories\\MovieRepository.cs",
               "RelativeDocumentMoniker": "Cinemax.Infrastructure\\Persistence\\Repositories\\MovieRepository.cs",
@@ -117,12 +110,11 @@
               "RelativeToolTip": "Cinemax.Infrastructure\\Persistence\\Repositories\\MovieRepository.cs",
               "ViewState": "AQIAABkAAAAAAAAAAAAkwCgAAABDAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-30T04:34:38.491Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-30T04:34:38.491Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "ProjectionRepository.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\Persistence\\Repositories\\ProjectionRepository.cs",
               "RelativeDocumentMoniker": "Cinemax.Infrastructure\\Persistence\\Repositories\\ProjectionRepository.cs",
@@ -130,12 +122,11 @@
               "RelativeToolTip": "Cinemax.Infrastructure\\Persistence\\Repositories\\ProjectionRepository.cs",
               "ViewState": "AQIAABQAAAAAAAAAAAAgwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-30T04:35:20.029Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-30T04:35:20.029Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "GenreRepository.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\Persistence\\Repositories\\GenreRepository.cs",
               "RelativeDocumentMoniker": "Cinemax.Infrastructure\\Persistence\\Repositories\\GenreRepository.cs",
@@ -143,12 +134,48 @@
               "RelativeToolTip": "Cinemax.Infrastructure\\Persistence\\Repositories\\GenreRepository.cs",
               "ViewState": "AQIAABcAAAAAAAAAAAAgwCgAAABMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-30T04:31:51.626Z",
+              "WhenOpened": "2024-03-30T04:31:51.626Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RoomMappingConfig.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Api\\Common\\Mapping\\RoomMappingConfig.cs",
+              "RelativeDocumentMoniker": "Cinemax.Api\\Common\\Mapping\\RoomMappingConfig.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Api\\Common\\Mapping\\RoomMappingConfig.cs*",
+              "RelativeToolTip": "Cinemax.Api\\Common\\Mapping\\RoomMappingConfig.cs*",
+              "ViewState": "AQIAABMAAAAAAAAAAAAQwBcAAABQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-30T03:45:24.873Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
+              "Title": "RoomRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\Persistence\\Repositories\\RoomRepository.cs",
+              "RelativeDocumentMoniker": "Cinemax.Infrastructure\\Persistence\\Repositories\\RoomRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\Persistence\\Repositories\\RoomRepository.cs",
+              "RelativeToolTip": "Cinemax.Infrastructure\\Persistence\\Repositories\\RoomRepository.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAowAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-30T04:35:24.375Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RoomTypeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\Persistence\\Repositories\\RoomTypeRepository.cs",
+              "RelativeDocumentMoniker": "Cinemax.Infrastructure\\Persistence\\Repositories\\RoomTypeRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\Persistence\\Repositories\\RoomTypeRepository.cs",
+              "RelativeToolTip": "Cinemax.Infrastructure\\Persistence\\Repositories\\RoomTypeRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-30T04:35:26.859Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "CountryRepository.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\Persistence\\Repositories\\CountryRepository.cs",
               "RelativeDocumentMoniker": "Cinemax.Infrastructure\\Persistence\\Repositories\\CountryRepository.cs",
@@ -156,12 +183,11 @@
               "RelativeToolTip": "Cinemax.Infrastructure\\Persistence\\Repositories\\CountryRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-30T04:31:50.294Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-30T04:31:50.294Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "ActorRepository.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\Persistence\\Repositories\\ActorRepository.cs",
               "RelativeDocumentMoniker": "Cinemax.Infrastructure\\Persistence\\Repositories\\ActorRepository.cs",
@@ -169,12 +195,11 @@
               "RelativeToolTip": "Cinemax.Infrastructure\\Persistence\\Repositories\\ActorRepository.cs",
               "ViewState": "AQIAAAUAAAAAAAAAAAAxwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-30T04:31:45.224Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-30T04:31:45.224Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Application\\Common\\Interfaces\\Persistence\\IUserRepository.cs",
               "RelativeDocumentMoniker": "Cinemax.Application\\Common\\Interfaces\\Persistence\\IUserRepository.cs",
@@ -182,12 +207,11 @@
               "RelativeToolTip": "Cinemax.Application\\Common\\Interfaces\\Persistence\\IUserRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-30T04:31:16.388Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-30T04:31:16.388Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "IRoomTypeRepository.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Application\\Common\\Interfaces\\Persistence\\IRoomTypeRepository.cs",
               "RelativeDocumentMoniker": "Cinemax.Application\\Common\\Interfaces\\Persistence\\IRoomTypeRepository.cs",
@@ -195,12 +219,11 @@
               "RelativeToolTip": "Cinemax.Application\\Common\\Interfaces\\Persistence\\IRoomTypeRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-30T04:30:49.111Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-30T04:30:49.111Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "IRoomRepository.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Application\\Common\\Interfaces\\Persistence\\IRoomRepository.cs",
               "RelativeDocumentMoniker": "Cinemax.Application\\Common\\Interfaces\\Persistence\\IRoomRepository.cs",
@@ -208,12 +231,11 @@
               "RelativeToolTip": "Cinemax.Application\\Common\\Interfaces\\Persistence\\IRoomRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-30T04:30:40.148Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-30T04:30:40.148Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "Projection.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Domain\\ProjectionAggregate\\Projection.cs",
               "RelativeDocumentMoniker": "Cinemax.Domain\\ProjectionAggregate\\Projection.cs",
@@ -221,12 +243,11 @@
               "RelativeToolTip": "Cinemax.Domain\\ProjectionAggregate\\Projection.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-30T04:29:33.234Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-30T04:29:33.234Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "ProjectionMappingConfig.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Api\\Common\\Mapping\\ProjectionMappingConfig.cs",
               "RelativeDocumentMoniker": "Cinemax.Api\\Common\\Mapping\\ProjectionMappingConfig.cs",
@@ -234,25 +255,7 @@
               "RelativeToolTip": "Cinemax.Api\\Common\\Mapping\\ProjectionMappingConfig.cs",
               "ViewState": "AQIAAAgAAAAAAAAAAAA5wBkAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-30T03:45:33.561Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "RoomMappingConfig.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Api\\Common\\Mapping\\RoomMappingConfig.cs",
-              "RelativeDocumentMoniker": "Cinemax.Api\\Common\\Mapping\\RoomMappingConfig.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Api\\Common\\Mapping\\RoomMappingConfig.cs",
-              "RelativeToolTip": "Cinemax.Api\\Common\\Mapping\\RoomMappingConfig.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-30T03:45:24.873Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+              "WhenOpened": "2024-03-30T03:45:33.561Z"
             }
           ]
         }

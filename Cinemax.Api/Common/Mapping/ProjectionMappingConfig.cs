@@ -13,10 +13,10 @@ public class ProjectionMappingConfig : IRegister
    
         config.NewConfig<ProjectionResult, ProjectionResponse>()
             .Map(dest => dest.Id, src => src.Projection.Id.Value)
-            .Map(dest => dest.MovieId, src => src.Projection.MovieId.Value)
-            .Map(dest => dest.RoomId, src => src.Projection.RoomId.Value)
             .Map(dest => dest.Date, src => src.Projection.Date)
-            .Map(dest => dest.Price, src => src.Projection.Price);
+            .Map(dest => dest.Price, src => src.Projection.Price)
+            .Map(dest => dest.Room, src => src.Projection.Room)
+            .Map(dest => dest.Movie, src => src.Projection.Movie);
 
         config.NewConfig<CreateProjectionRequest, CreateProjectionCommand>()
         .Map(dest => dest.MovieId, src => MovieId.Create(new(src.MovieId)))

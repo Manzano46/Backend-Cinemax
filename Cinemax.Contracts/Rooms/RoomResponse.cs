@@ -8,6 +8,6 @@ namespace Cinemax.Contracts.Rooms
         string Id,
         int Height,
         int Width,
-        List<RoomTypeResponse> RoomTypes
+        List<RoomTypeResponseCore> RoomTypes
     );
 }
