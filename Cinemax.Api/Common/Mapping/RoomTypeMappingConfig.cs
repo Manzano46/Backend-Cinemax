@@ -16,7 +16,7 @@ public class RoomTypeMappingConfig : IRegister
         config.NewConfig<RoomTypeResult, RoomTypeResponse>()
             .Map(dest => dest.Id, src => src.RoomType.Id.Value )
             .Map(dest => dest.Name, src => src.RoomType.Name)
-            .Map(dest => dest.Rooms, src => src.RoomType.Rooms.Select(r => new RoomResponseCore(r.Id.Value.ToString(), r.Height, r.Width)) );
+            .Map(dest => dest.Rooms, src => src.RoomType.Rooms);
             
         config.NewConfig<CreateRoomTypeRequest, CreateRoomTypeCommand>();
         

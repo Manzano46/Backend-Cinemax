@@ -11,4 +11,11 @@ namespace Cinemax.Contracts.Projections
         DateTime Date,
         int Price
     );
+
+    public record ProjectionResponseCore
+    (
+        string Id,
+        DateTime Date,
+        int Price
+    );
 }

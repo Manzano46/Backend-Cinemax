@@ -20,7 +20,7 @@ public class RoomMappingConfig : IRegister
             .Map(dest => dest.Id, src => src.Room.Id.Value)
             .Map(dest => dest.Height, src => src.Room.Height)
             .Map(dest => dest.Width, src => src.Room.Width)
-            .Map(dest => dest.RoomTypes, src => src.Room.RoomTypes.Select(rt =>  new RoomTypeResponseCore(rt.Id.Value.ToString(), rt.Name)) );
+            .Map(dest => dest.RoomTypes, src => src.Room.RoomTypes);
         
         config.NewConfig<CreateRoomRequest, CreateRoomCommand>()
             .Map(dest => dest.RoomTypesId, src => src.RoomTypes.Select(id => RoomTypeId.Create( new(id) ) ))

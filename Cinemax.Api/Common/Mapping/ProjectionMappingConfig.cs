@@ -5,6 +5,7 @@ using Cinemax.Application.Projections.Common;
 using Cinemax.Contracts.Projections;
 using Cinemax.Domain.ProjectionAggregate.ValueObjects;
 using Mapster;
+using Cinemax.Domain.ProjectionAggregate;
 
 namespace Cinemax.Api.Common.Mapping;
 public class ProjectionMappingConfig : IRegister
@@ -27,5 +28,11 @@ public class ProjectionMappingConfig : IRegister
 
         config.NewConfig<GetProjectionRequest, GetProjectionQuery>()
             .Map(dest => dest.projectionId, src => ProjectionId.Create(new(src.ProjectionId)));
+
+        config.NewConfig<Projection, ProjectionResponseCore>()
+            .Map(dest => dest.Id, src => src.Id.Value)
+            .Map(dest => dest.Date, src => src.Date)
+            .Map(dest => dest.Price, src => src.Price);
+            
     }
 }
