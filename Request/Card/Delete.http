@@ -1,0 +1,9 @@
+@host = http://localhost:5250
+@cardId = 1234567812345678
+
+DELETE {{host}}/cards/{{cardId}}
+Content-Type: application/json
+
+{
+    "id":{{cardId}},
+}

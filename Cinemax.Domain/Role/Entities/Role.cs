@@ -4,6 +4,7 @@ using Cinemax.Domain.Role.ValueObjects;
 namespace Cinemax.Domain.Role.Entities;
 public class Role: Entity<RoleId>{
     public string Name {get;set;} = null!;
+    public virtual ICollection<User.Entities.User> Users {get;set;} = null!;
 
     #pragma warning disable CS8618
     private Role(){}

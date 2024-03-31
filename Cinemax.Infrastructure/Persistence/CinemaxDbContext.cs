@@ -11,6 +11,7 @@ using Cinemax.Domain.Discount.Entities;
 using Cinemax.Domain.RoomType.Entities;
 using Cinemax.Domain.ProjectionAggregate;
 using Cinemax.Domain.Seat.Entities;
+using Cinemax.Domain.Card.Entities;
 
 namespace Cinemax.Infrastructure.Persistence;
 public class CinemaxDbContext : DbContext{
@@ -30,6 +31,7 @@ public class CinemaxDbContext : DbContext{
     public DbSet<PaymentType> PaymentTypes {get; set;}
     public DbSet<Discount> Discounts {get; set;}
     public DbSet<Seat> Seats {get; set;}
+    public DbSet<Card> Cards {get; set;}
     
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
