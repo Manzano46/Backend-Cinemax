@@ -21,13 +21,21 @@ public class ProjectionMappingConfig : IRegister
 
         config.NewConfig<CreateProjectionRequest, CreateProjectionCommand>()
         .Map(dest => dest.MovieId, src => MovieId.Create(new(src.Movie)))
-        .Map(dest => dest.RoomId, src => RoomId.Create(new(src.Room)));
+        .Map(dest => dest.RoomId, src => RoomId.Create(new(src.Room)))
+        .Map(dest => dest.Date, src => src.Date)
+        .Map(dest => dest.Price, src => src.Price);
 
         config.NewConfig<DeleteProjectionRequest, DeleteProjectionCommand>()
             .Map(dest => dest.Id, src => ProjectionId.Create(new(src.Id)));
 
+        config.NewConfig<GetProjectionRequestFilters, GetProjectionQueryFilters>()
+            .Map(dest => dest.DateInit, src => src.DateInit)
+            .Map(dest => dest.DateEnd, src => src.DateEnd)
+            .Map(dest => dest.MinPrice, src => src.MinPrice)
+            .Map(dest => dest.MaxPrice, src => src.MaxPrice);
+
         config.NewConfig<GetProjectionRequest, GetProjectionQuery>()
-            .Map(dest => dest.projectionId, src => ProjectionId.Create(new(src.Id)));
+            .Map(dest => dest.Id, src => src.Id);
 
         config.NewConfig<Projection, ProjectionResponseCore>()
             .Map(dest => dest.Id, src => src.Id.Value)

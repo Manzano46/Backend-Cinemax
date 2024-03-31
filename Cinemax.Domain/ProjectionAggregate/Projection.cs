@@ -21,7 +21,7 @@ namespace Cinemax.Domain.ProjectionAggregate
         {
             MovieId = movieId;
             RoomId = roomId;
-            Date = Date;
+            Date = date;
             Price = price;
             Movie = movie;
             Room = room;

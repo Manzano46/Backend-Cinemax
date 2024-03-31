@@ -54,7 +54,6 @@ public class UserMappingConfig : IRegister
 
         config.NewConfig<LoginRequest, LoginQuery>()
             .Map(dest => dest.Email, src => src.Email)
-            .Map(dest => dest.Password, src => src.Password)
-            ;
+            .Map(dest => dest.Password, src => src.Password);
     }
 }

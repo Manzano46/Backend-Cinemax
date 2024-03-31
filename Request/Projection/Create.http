@@ -5,8 +5,8 @@ Content-Type: application/json
 //Authorization: Bearer {{token}}
 
 {
-    "movieid": "500dbf3b-70b3-44e4-84c8-8a71f629b97f",
-    "roomid": "91c0676d-825b-4097-ba54-913d5f8d0c8d",
-    "date": "2024-04-01T00:00:00",
-    "price": "10"
+    "movie": "3307a6aa-eef4-42aa-83a8-acdcfb8fcb8f",
+    "room": "86bb8ffc-7c2c-4674-a3f9-534cbc27937d",
+    "date": "2014-04-01T00:00:00",
+    "price": "5"
 }

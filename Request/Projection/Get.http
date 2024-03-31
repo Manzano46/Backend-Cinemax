@@ -1,0 +1,9 @@
+@host = http://localhost:5250
+@id = 0481aca3-13f3-471d-b9ca-d5b79f43b00a
+
+GET {{host}}/projections/{{id}}
+//Authorization: Bearer {{token}}
+
+{
+    
+}

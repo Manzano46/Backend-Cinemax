@@ -22,6 +22,7 @@ public class DiscountConfigurations : IEntityTypeConfiguration<Discount>
                 value => DiscountId.Create(value));
         builder.Property(m => m.Name)
             .HasMaxLength(100);
+        builder.Property(m => m.Percentage);
         
     }
 }

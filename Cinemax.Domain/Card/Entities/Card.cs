@@ -14,6 +14,7 @@ public class Card: Entity<CardId>{
             Users = users ?? [];
     }
 
+
     public static Card Create(CardId cardId,List<User.Entities.User> users = null!)
     {
         return new Card(cardId,users);

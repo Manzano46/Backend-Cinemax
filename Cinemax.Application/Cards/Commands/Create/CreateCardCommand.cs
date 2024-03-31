@@ -1,5 +1,6 @@
 using Cinemax.Application.Cards.Common;
 using Cinemax.Domain.Card.ValueObjects;
+using Cinemax.Domain.User.ValueObjects;
 using MediatR;
 
 namespace Cinemax.Application.Cards.Commands.Create;

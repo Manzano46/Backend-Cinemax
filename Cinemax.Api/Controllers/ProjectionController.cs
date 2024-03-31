@@ -7,6 +7,7 @@ using MapsterMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Cinemax.Application.Projections.Queries.Get;
+using Cinemax.Domain.ProjectionAggregate.ValueObjects;
 
 namespace Cinemax.Api.Controllers;
 
@@ -72,6 +73,32 @@ public class ProjectionController : ControllerBase{
         ProjectionResult ProjectionResult = await _mediator.Send(query);
 
         var response = _mapper.Map<ProjectionResponse>(ProjectionResult);
+
+        return Ok(response);
+    }
+
+    // GET: api/projections/{dateinit}/{dateend}/{minprice}/{maxprice}
+    [HttpGet("{dateInit}/{dateEnd}/{minPrice}/{maxPrice}")]
+        public async Task<IActionResult> GetWithFilters(DateTime dateInit,DateTime dateEnd,int minPrice,int maxPrice)
+    {
+        GetProjectionQueryFilters query = new GetProjectionQueryFilters(dateInit,dateEnd,minPrice,maxPrice);
+
+        List<ProjectionResult> ProjectionResult = await _mediator.Send(query);
+
+        var response = _mapper.Map<List<ProjectionResponse>>(ProjectionResult);
+
+        return Ok(response);
+    }
+
+    // GET: api/projections/movies/{id}
+    [HttpGet("movies/{id}")]
+        public async Task<IActionResult> GetByMovie(string id)
+    {
+        GetProjectionQueryMovie query = new GetProjectionQueryMovie(MovieId.Create(new Guid(id)));
+
+        List<ProjectionResult> ProjectionResult = await _mediator.Send(query);
+
+        var response = _mapper.Map<List<ProjectionResponse>>(ProjectionResult);
 
         return Ok(response);
     }

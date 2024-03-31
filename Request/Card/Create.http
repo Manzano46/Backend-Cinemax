@@ -5,5 +5,5 @@ Content-Type: application/json
 //Authorization: Bearer {{token}}
 
 {
-    "id":"1234567812345678",
+    "id": "1234567812345678"
 }

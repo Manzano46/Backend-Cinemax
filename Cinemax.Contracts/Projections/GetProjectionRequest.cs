@@ -1,7 +1,7 @@
-﻿namespace Cinemax.Contracts.Projections
+namespace Cinemax.Contracts.Projections
 {
     public record GetProjectionRequest
     (
-        string Id
+       string Id
     );
 }
