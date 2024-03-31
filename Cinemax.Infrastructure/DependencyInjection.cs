@@ -32,6 +32,7 @@ public static class DependencyInjection{
         
         //services.AddDbContext<CinemaxDbContext>(options => options.UseSqlServer("Server=KEVIN\\SQLEXPRESS;Database=cinemax;User Id=cinemax;Password=cinemax;TrustServerCertificate=true"));
         services.AddDbContext<CinemaxDbContext>(options => options.UseSqlServer("Server=LAPTOP-PO2FBC8G\\SQLEXPRESS;Database=cinemax;User Id=cinemax;Password=cinemax;TrustServerCertificate=true"));
+        // services.AddDbContext<CinemaxDbContext>(options => options.UseSqlServer("Server=LEGION;Database=cinemax;User Id=cinemax;Password=cinemax;TrustServerCertificate=true"));
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IMovieRepository, MovieRepository>();
         services.AddScoped<IGenreRepository, GenreRepository>();
@@ -44,7 +45,7 @@ public static class DependencyInjection{
         services.AddScoped<IDiscountRepository, DiscountRepository>();
         services.AddScoped<IRoomTypeRepository, RoomTypeRepository>();
         services.AddScoped<IProjectionRepository, ProjectionRepository>();
-        
+        services.AddScoped<ICardRepository, CardRepository>();
 
         return services;
     }
