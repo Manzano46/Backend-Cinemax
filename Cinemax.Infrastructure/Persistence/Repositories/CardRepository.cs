@@ -22,9 +22,9 @@ public class CardRepository : ICardRepository{
     }
 
     
-    public Card? GetById(CardId CardId)
+    public Card? GetById(CardId cardId)
     {
-        return _cinemaxDbContext.Cards.SingleOrDefault(m => m.Id == CardId);
+        return _cinemaxDbContext.Cards.SingleOrDefault(m => m.Id == cardId);
     }
     
     public void Delete(CardId Id)

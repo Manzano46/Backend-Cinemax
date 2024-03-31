@@ -15,10 +15,10 @@ public class DeleteCardCommandHandler : IRequestHandler<DeleteCardCommand, CardR
     public async Task<CardResult> Handle(DeleteCardCommand command, CancellationToken cancellationToken)
     {
         await Task.CompletedTask;
-        if(_CardRepository.GetById(command.Id) is not Card Card){
+        if(_CardRepository.GetById(command.Id) is not Card card){
             throw new Exception("Card not found");
         }
         _CardRepository.Delete(command.Id);
-        return new CardResult(Card);
+        return new CardResult(card);
     }
 }

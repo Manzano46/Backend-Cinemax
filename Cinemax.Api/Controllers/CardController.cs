@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Cinemax.Api.Controllers;
 
 [ApiController]
-[Route("Cards")]
+[Route("cards")]
 
 public class CardController : ControllerBase{
     private readonly IMediator _mediator;
