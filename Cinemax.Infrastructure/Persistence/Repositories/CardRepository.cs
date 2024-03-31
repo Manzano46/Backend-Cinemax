@@ -22,14 +22,14 @@ public class CardRepository : ICardRepository{
     }
 
     
-    public Card? GetByNumber(CardNumber CardNumber)
+    public Card? GetById(CardId CardId)
     {
-        return _cinemaxDbContext.Cards.SingleOrDefault(m => m.Number == CardNumber);
+        return _cinemaxDbContext.Cards.SingleOrDefault(m => m.Id == CardId);
     }
     
-    public void Delete(CardNumber number)
+    public void Delete(CardId Id)
     {
-        var Card = _cinemaxDbContext.Cards.SingleOrDefault(m => m.Number == number);
+        var Card = _cinemaxDbContext.Cards.SingleOrDefault(m => m.Id == Id);
         if (Card is not null)
         {
             _cinemaxDbContext.Cards.Remove(Card);
