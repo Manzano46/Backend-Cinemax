@@ -3,9 +3,7 @@ using Cinemax.Domain.ProjectionAggregate.ValueObjects;
 using Cinemax.Domain.Seat.ValueObjects;
 using Cinemax.Domain.TicketAggregate.Entities;
 using Cinemax.Domain.TicketAggregate.ValueObjects;
-using Cinemax.Domain.User.Entities;
 using Cinemax.Domain.User.ValueObjects;
-using Cinemax.Infrastructure.Migrations;
 using Cinemax.Infrastructure.Services.Statistics;
 using Microsoft.EntityFrameworkCore;
 
@@ -22,7 +20,7 @@ public class TicketRepository : ITicketRepository{
 
     public void UpdateDataBase(){
         _cinemaxDbContext.Tickets
-            .Where(t => t.TicketStatus == TicketStatus.reserved && EF.Functions.DateDiffMinute(t.Date,DateTime.Now) > 10)
+            .Where(t => t.TicketStatus == TicketStatus.reserved && EF.Functions.DateDiffMinute(t.Date,DateTime.UtcNow) > 10)
             .ExecuteUpdate(t => t.SetProperty(ticket => ticket.TicketStatus, TicketStatus.available));
 
         _cinemaxDbContext.SaveChanges();

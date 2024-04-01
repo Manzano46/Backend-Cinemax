@@ -22,7 +22,7 @@ public class Movie : Entity<MovieId>
 #pragma warning disable CS8618
     private Movie() { }
 #pragma warning restore CS8618
-    private Movie(MovieId movieId, string name, string description, TimeSpan duration, DateTime premiere, string iconURL, string trailerURL, string summary, string coverURL, string imagenURL,ICollection<Actor.Entities.Actor> actors, ICollection<Country.Entities.Country> countries, ICollection<Director.Entities.Director> directors, ICollection<Genre.Entities.Genre> genres)
+    private Movie(MovieId movieId, string name, string description, TimeSpan duration, DateTime premiere, string iconURL, string trailerURL, string summary, string coverURL, string imagenURL,ICollection<Actor.Entities.Actor> actors = null!, ICollection<Country.Entities.Country> countries = null!, ICollection<Director.Entities.Director> directors = null!, ICollection<Genre.Entities.Genre> genres = null!)
         : base(movieId)
     {
         Name = name;
@@ -34,13 +34,13 @@ public class Movie : Entity<MovieId>
         Summary = summary;
         CoverURL  = coverURL;
         ImagenURL = imagenURL;
-        Actors = actors;
-        Countries = countries;
-        Directors = directors;
-        Genres = genres;
+        Actors = actors ?? [];
+        Countries = countries ?? [];
+        Directors = directors ?? [];
+        Genres = genres ?? [];
     }
 
-    public static Movie Create(string name, string description, TimeSpan duration, DateTime premiere, string iconURL, string trailerURL,  string summary, string coverURL, string imagenURL, ICollection<Actor.Entities.Actor> actors, ICollection<Country.Entities.Country> countries, ICollection<Director.Entities.Director> directors, ICollection<Genre.Entities.Genre> genres)
+    public static Movie Create(string name, string description, TimeSpan duration, DateTime premiere, string iconURL, string trailerURL,  string summary, string coverURL, string imagenURL, ICollection<Actor.Entities.Actor> actors = null!, ICollection<Country.Entities.Country> countries = null!, ICollection<Director.Entities.Director> directors = null!, ICollection<Genre.Entities.Genre> genres = null!)
     {
 
         return new(MovieId.CreateUnique(),

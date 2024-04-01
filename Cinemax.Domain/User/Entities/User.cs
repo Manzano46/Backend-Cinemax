@@ -21,7 +21,7 @@ public class User : Entity<UserId>{
     private User(){}
     #pragma warning restore CS8618
 
-    private User(UserId userId, string firstName, string lastName, string email, string password, DateOnly birth, int points,RoleId roleId, Role.Entities.Role role, ICollection<Card.Entities.Card> cards)
+    private User(UserId userId, string firstName, string lastName, string email, string password, DateOnly birth, int points,RoleId roleId, Role.Entities.Role role, ICollection<Card.Entities.Card> cards = null!)
         : base(userId){
             FirstName = firstName;
             LastName = lastName;
@@ -34,7 +34,7 @@ public class User : Entity<UserId>{
             Cards = cards;
     }
     
-    public static User Create(string firstName, string lastName,string email, string password, DateOnly birth,  int points,RoleId roleId, Role.Entities.Role role, ICollection<Card.Entities.Card> cards){
+    public static User Create(string firstName, string lastName,string email, string password, DateOnly birth,  int points,RoleId roleId, Role.Entities.Role role, ICollection<Card.Entities.Card> cards = null!){
 
             return new(UserId.CreateUnique() ,
             firstName,

@@ -5,7 +5,6 @@ using Cinemax.Application.Users.Common;
 
 namespace Cinemax.Application.Users.Commands.Create;
 public record CreateUserCommand(
-    string Id,
     string FirstName,
     string LastName,
     string Email,

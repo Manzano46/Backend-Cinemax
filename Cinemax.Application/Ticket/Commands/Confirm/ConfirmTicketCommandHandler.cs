@@ -68,6 +68,8 @@ public class ConfirmTicketCommandHandler : IRequestHandler<ConfirmTicketCommand,
         _TicketRepository.Add(ticket);
         _TicketRepository.Delete(existingTicket.Id);
 
+        //_UserRepository.UpdatePointMinus(command.UserId);
+
         return new TicketResult(ticket);
     }
 }

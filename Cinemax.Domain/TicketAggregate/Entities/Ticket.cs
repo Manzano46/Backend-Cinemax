@@ -25,10 +25,10 @@ public class Ticket : Entity<TicketId>{
 
     public ProjectionId ProjectionId {get; set;}
     public virtual Projection Projection {get; set;}
-    public CardId CardId {get; set;}
-    public virtual Card.Entities.Card Card {get; set;}
-    public PaymentTypeId PaymentTypeId {get; set;}
-    public virtual PaymentType.Entities.PaymentType PaymentType {get; set;}
+    public CardId? CardId {get; set;}
+    public virtual Card.Entities.Card? Card {get; set;}
+    public PaymentTypeId? PaymentTypeId {get; set;}
+    public virtual PaymentType.Entities.PaymentType? PaymentType {get; set;}
     public DateTime Date {get; set;}
     public TicketStatus TicketStatus {get; set;}    
     public virtual ICollection<Discount.Entities.Discount> Discounts {get; set;} = null!;

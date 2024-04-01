@@ -1,0 +1,9 @@
+@host = http://localhost:5250
+@id = dbd88216-e214-45f5-ab31-8e6322054f0f
+GET  {{host}}/tickets/byprojection/{{id}}
+Content-Type: application/json
+//Authorization: Bearer {{token}}
+
+{
+    "id" : "{{id}}"
+}

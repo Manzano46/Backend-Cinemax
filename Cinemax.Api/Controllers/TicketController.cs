@@ -12,17 +12,14 @@ using Cinemax.Domain.ProjectionAggregate.ValueObjects;
 using Cinemax.Application.Tickets.Queries.GetReserved;
 using Cinemax.Application.Tickets.Queries.GetReservedByUser;
 using Cinemax.Domain.User.ValueObjects;
-<<<<<<< HEAD
 using Microsoft.AspNetCore.Authorization;
-=======
 using Cinemax.Application.Tickets.Queries.GetTopRoomCounts;
->>>>>>> e8f74fa820992aa6b90106f67227495eca787c83
+using Cinemax.Application.Extras.Queries.Validate;
 
 namespace Cinemax.Api.Controllers;
 
 [ApiController]
 [Route("tickets")]
-//[Authorize(Roles = "ADMIN")] 
 
 public class TicketController : ControllerBase{
     private readonly IMediator _mediator;
@@ -35,14 +32,14 @@ public class TicketController : ControllerBase{
 
     // POST: api/tickets/create
     [HttpPost("create")]
-    //[Authorize] 
+   // [Authorize(Roles = "ADMIN,USER")] 
     public async Task<IActionResult> Create(CreateTicketsRequest createTicketsRequest)
     {
         List<TicketResponse> responses = new List<TicketResponse>();
         foreach(var createTicketRequest in createTicketsRequest.CreateTicketsRequests){
             var command = _mapper.Map<CreateTicketCommand>(createTicketRequest);
 
-            CreateTicketCommand command1 = new(command.SeatId, command.UserId, command.ProjectionId, command.Date);
+            CreateTicketCommand command1 = new(command.SeatId, command.UserId, command.ProjectionId, DateTime.UtcNow);
 
             TicketResult TicketResult = await _mediator.Send(command1);
 
@@ -54,28 +51,35 @@ public class TicketController : ControllerBase{
         return Ok(responses);
     }
 
-    // POST: api/tickets/confirm
+    // POST: api/tickets/confirm/
     [HttpPost("confirm")]
-    //[Authorize] 
-    public async Task<IActionResult> Confirm(ConfirmTicketsRequest confirmTicketsRequest)
+    //[Authorize(Roles = "ADMIN,USER")] 
+    public async Task<IActionResult> Confirm(ConfirmTicketsRequest confirmTicketsRequest, string idPaymentType)
     {
+
+       // var query = new ValidateQuery(confirmTicketsRequest.ConfirmTicketsRequests.Count(), confirmTicketsRequest.ConfirmTicketsRequests[0].UserId, idPaymentType);
+        //await _mediator.Send(query);
+
         List<TicketResponse> responses = new List<TicketResponse>();
         foreach(var confirmTicketRequest in confirmTicketsRequest.ConfirmTicketsRequests){
             var command = _mapper.Map<ConfirmTicketCommand>(confirmTicketRequest);
 
-            ConfirmTicketCommand command1 = new(command.SeatId, command.UserId, command.ProjectionId, command.Date);
+            ConfirmTicketCommand command1 = new(command.SeatId, command.UserId, command.ProjectionId, DateTime.UtcNow);
             TicketResult TicketResult = await _mediator.Send(command1);
 
             var response = _mapper.Map<TicketResponse>(TicketResult);
             responses.Add(response);
 
         }
+
+        
 
         return Ok(responses);
     }
 
     // GET: api/tickets
     [HttpGet]
+    //[Authorize(Roles = "ADMIN")] 
     public async Task<IActionResult> Read()
     {
         var query = new ReadTicketQuery();
@@ -89,6 +93,7 @@ public class TicketController : ControllerBase{
 
     // DELETE: api/Tickets/{id}
     [HttpDelete("{id}")]
+    //[Authorize(Roles = "ADMIN")] 
     public async Task<IActionResult> Delete(string id)
     {
         DeleteTicketRequest deleteTicketRequest = new(id);
@@ -103,6 +108,7 @@ public class TicketController : ControllerBase{
 
     // GET: api/Tickets/{id}
     [HttpGet("{id}")]
+    //[Authorize(Roles = "ADMIN")] 
     public async Task<IActionResult> Get(string id)
     {
         GetTicketRequest getTicketRequest = new(id);
@@ -117,6 +123,7 @@ public class TicketController : ControllerBase{
 
     // GET: api/tickets/byprojection/{projectionid}/
     [HttpGet("byprojection/{id}")]
+    //[Authorize(Roles = "ADMIN,USER")] 
     public async Task<IActionResult> GetByProjection(string id)
     {
         var query = new GetByProjectionQuery(ProjectionId.Create(new(id)));
@@ -128,8 +135,9 @@ public class TicketController : ControllerBase{
         return Ok(responses);
     }
 
-    // GET: api/tickets/reserved/
+    // GET: api/tickets/reserved
     [HttpGet("reserved")]
+    //[Authorize(Roles = "ADMIN,USER")] 
     public async Task<IActionResult> GetReserved()
     {
         var query = new GetReservedQuery();
@@ -143,6 +151,7 @@ public class TicketController : ControllerBase{
 
     // GET: api/tickets/reservedbyuser/{id}
     [HttpGet("reservedbyuser/{id}")]
+    //[Authorize(Roles = "ADMIN,USER")] 
     public async Task<IActionResult> GetReserved(string id)
     {
         var query = new GetReservedByUserQuery(UserId.Create(new(id)));
@@ -156,6 +165,7 @@ public class TicketController : ControllerBase{
 
     // GET: api/tickets/roomCounts/{startDate}/{endDate}/{limit}
     [HttpGet("roomCounts/{startDate}/{endDate}/{limit}")]
+    //[Authorize(Roles = "ADMIN,USER")] 
     public async Task<IActionResult> GetTopRoomCounts(DateTime startDate,DateTime endDate,int limit)
     {
         var roomCounts = await _mediator.Send(new GetTopRoomCountsQuery(startDate,endDate,limit));
