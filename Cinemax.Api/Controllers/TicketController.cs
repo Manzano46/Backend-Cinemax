@@ -12,6 +12,7 @@ using Cinemax.Domain.ProjectionAggregate.ValueObjects;
 using Cinemax.Application.Tickets.Queries.GetReserved;
 using Cinemax.Application.Tickets.Queries.GetReservedByUser;
 using Cinemax.Domain.User.ValueObjects;
+using Cinemax.Application.Tickets.Queries.GetTopRoomCounts;
 
 namespace Cinemax.Api.Controllers;
 
@@ -147,5 +148,13 @@ public class TicketController : ControllerBase{
         IEnumerable<TicketResponse> responses = TicketResults.Select(_mapper.Map<TicketResponse>);
         
         return Ok(responses);
+    }
+
+    // GET: api/tickets/roomCounts/{startDate}/{endDate}/{limit}
+    [HttpGet("roomCounts/{startDate}/{endDate}/{limit}")]
+    public async Task<IActionResult> GetTopRoomCounts(DateTime startDate,DateTime endDate,int limit)
+    {
+        var roomCounts = await _mediator.Send(new GetTopRoomCountsQuery(startDate,endDate,limit));
+        return Ok(roomCounts);
     }
 }

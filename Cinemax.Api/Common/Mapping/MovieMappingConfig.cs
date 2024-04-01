@@ -9,6 +9,7 @@ using Cinemax.Contracts.Genres;
 using Cinemax.Contracts.Movies;
 using Cinemax.Domain.ProjectionAggregate.Entities;
 using Cinemax.Domain.ProjectionAggregate.ValueObjects;
+using Cinemax.Infrastructure.Persistence.Repositories;
 using Mapster;
 
 namespace Cinemax.Api.Common.Mapping;
@@ -48,6 +49,9 @@ public class MovieMappingConfig : IRegister
 
         config.NewConfig<GetMovieRequest, GetMovieQuery>()
             .Map(dest => dest.MovieId, src => MovieId.Create(new(src.Id)));
+
+        config.NewConfig<GetMovieByNameRequest, GetMovieByNameQuery>()
+            .Map(dest => dest.MovieName, src => src.Name);
 
         config.NewConfig<Movie, MovieResponseCore>()
             .Map(dest => dest.Id, src => src.Id.Value.ToString())

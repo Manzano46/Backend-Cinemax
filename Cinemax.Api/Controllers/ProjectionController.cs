@@ -8,6 +8,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Cinemax.Application.Projections.Queries.Get;
 using Cinemax.Domain.ProjectionAggregate.ValueObjects;
+using Cinemax.Application.Tickets.Queries.GetTopRoomCounts;
 
 namespace Cinemax.Api.Controllers;
 
@@ -102,4 +103,5 @@ public class ProjectionController : ControllerBase{
 
         return Ok(response);
     }
+
 }
