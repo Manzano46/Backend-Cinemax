@@ -1,10 +1,10 @@
 @host = http://localhost:5250
-//@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJDaW5lbWF4LkRvbWFpbi5Vc2VyLlZhbHVlT2JqZWN0cy5Vc2VySWQiLCJnaXZlbl9uYW1lIjoia2V2aW4iLCJmYW1pbHlfbmFtZSI6Im1hbnphbm8iLCJqdGkiOiI1NWNmZmZmNC1iM2VkLTQyNzMtOWYxMy1lMjQ3MDFkNDcxN2YiLCJleHAiOjE3MTE1MTgxODIsImlzcyI6IkNpbmVtYXgiLCJhdWQiOiJDaW5lbWF4In0.1Y--W8wMMLNhjz2s1C92VFEcDIHCGjNhj1hnJPJQ7bQ
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjYWE2YjAwZC1lNmJmLTRjNmMtODgwNy02NGEwYjI4ZTEyOWEiLCJnaXZlbl9uYW1lIjoiYXNkYXNkYXNkYSIsImZhbWlseV9uYW1lIjoiQVNEQVNEQSIsImp0aSI6IjJkNDUwNjlkLTMzYTQtNDFlNS05ODhlLWVmNGY3MzllODE1NSIsImJpcnRoZGF0ZSI6IjYvMTAvMjAwMiIsImVtYWlsIjoiYXNkYXNkYXNkYXMiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBRE1JTiIsImV4cCI6MTcxMTk0NDU0OSwiaXNzIjoiQ2luZW1heCIsImF1ZCI6IkNpbmVtYXgifQ.RKwGEurV74X3Gu8hIXH381hvNon7CUDfmBx4VvdgLwY
 POST {{host}}/actors
 Content-Type: application/json
-//Authorization: Bearer {{token}}
+Authorization: Bearer {{token}}
 
 {
-    "firstname":"Nana",
-    "lastname":"Caguama"
+    "firstname":"ss",
+    "lastname":"Casdaguama"
 }

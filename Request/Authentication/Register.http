@@ -1,7 +1,13 @@
 @host = http://localhost:5250
 
-GET {{host}}/users
+POST {{host}}/users
 Content-Type: application/json
 
 {
+    "firstname" : "asdasdasda", 
+    "lastname":"ASDASDA",
+    "email":"asdasdasdas",
+    "password":"asdasdasd",
+    "birthday": "2002-06-10",
+    "role":"ADMIN" 
 }

@@ -57,8 +57,7 @@ public class TicketController : ControllerBase{
         foreach(var confirmTicketRequest in confirmTicketsRequest.ConfirmTicketsRequests){
             var command = _mapper.Map<ConfirmTicketCommand>(confirmTicketRequest);
 
-
-            CreateTicketCommand command1 = new(command.SeatId, command.UserId, command.ProjectionId, command.Date);
+            ConfirmTicketCommand command1 = new(command.SeatId, command.UserId, command.ProjectionId, command.Date);
             TicketResult TicketResult = await _mediator.Send(command1);
 
             var response = _mapper.Map<TicketResponse>(TicketResult);

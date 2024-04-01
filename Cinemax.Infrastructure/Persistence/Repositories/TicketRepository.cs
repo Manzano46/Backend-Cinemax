@@ -19,16 +19,26 @@ public class TicketRepository : ITicketRepository{
         _cinemaxDbContext.SaveChanges();
     }
 
+    public void UpdateDataBase(){
+        _cinemaxDbContext.Tickets
+            .Where(t => t.TicketStatus == TicketStatus.reserved && EF.Functions.DateDiffMinute(t.Date,DateTime.Now) > 10)
+            .ExecuteUpdate(t => t.SetProperty(ticket => ticket.TicketStatus, TicketStatus.available));
+
+        _cinemaxDbContext.SaveChanges();
+    }
     public Ticket? GetById(TicketId TicketId)
     {
+        UpdateDataBase();
         return _cinemaxDbContext.Tickets.Include(t => t.Seat).Include(t=>t.User).Include(t=>t.Projection).SingleOrDefault(Ticket => Ticket.Id == TicketId);
     }
 
     public Ticket? GetTicketByKeys(SeatId seatId, UserId userId, ProjectionId projectionId, TicketStatus ticketStatus){
+        UpdateDataBase();
         return _cinemaxDbContext.Tickets.Include(t => t.Seat).Include(t=>t.User).Include(t=>t.Projection).SingleOrDefault(Ticket => Ticket.SeatId == seatId && Ticket.UserId == userId && Ticket.ProjectionId == projectionId && Ticket.TicketStatus == ticketStatus); 
     }
 
     public IEnumerable<Ticket>? GetTicketByProjection(ProjectionId projectionId){
+        UpdateDataBase();
         return _cinemaxDbContext.Tickets.Include(t => t.Seat).Include(t=>t.User).Include(t=>t.Projection).Where(t => t.ProjectionId == projectionId); 
     }
 
@@ -42,21 +52,25 @@ public class TicketRepository : ITicketRepository{
 
     public IEnumerable<Ticket> GetAll()
     {
+        UpdateDataBase();
         return _cinemaxDbContext.Tickets.Include(t => t.Seat).Include(t=>t.User).Include(t=>t.Projection);
     }
 
     public Ticket? GetTicketByKeysNoUser(SeatId seatId, ProjectionId projectionId, TicketStatus ticketStatus)
     {
+        UpdateDataBase();
         return _cinemaxDbContext.Tickets.Include(t => t.Seat).Include(t=>t.User).Include(t=>t.Projection).SingleOrDefault(Ticket => Ticket.SeatId == seatId && Ticket.ProjectionId == projectionId && Ticket.TicketStatus == ticketStatus); 
     }
 
     public IEnumerable<Ticket>? GetTicketsReserved()
     {
+        UpdateDataBase();
         return _cinemaxDbContext.Tickets.Include(t => t.Seat).Include(t=>t.User).Include(t=>t.Projection).Where(Ticket => Ticket.TicketStatus != TicketStatus.available); 
     }
 
     public IEnumerable<Ticket>? GetTicketsReservedByUser(UserId userId)
     {
+        UpdateDataBase();
         return _cinemaxDbContext.Tickets.Include(t => t.Seat).Include(t=>t.User).Include(t=>t.Projection).Where(Ticket => Ticket.UserId != userId); 
     }
 }

@@ -26,7 +26,7 @@ public class ActorController : ControllerBase{
 
     // POST: api/actors
     [HttpPost]
-    //[Authorize] 
+    [Authorize(Roles = "ADMIN")] 
     public async Task<IActionResult> Create(CreateActorRequest createActorRequest)
     {
         var command = _mapper.Map<CreateActorCommand>(createActorRequest);
