@@ -1,8 +1,10 @@
+using Cinemax.Domain.ProjectionAggregate.Entities;
 using Cinemax.Domain.ProjectionAggregate.ValueObjects;
 using Cinemax.Domain.Seat.ValueObjects;
 using Cinemax.Domain.TicketAggregate.Entities;
 using Cinemax.Domain.TicketAggregate.ValueObjects;
 using Cinemax.Domain.User.ValueObjects;
+using Cinemax.Infrastructure.Services.Statistics;
 
 namespace Cinemax.Application.Common.Interfaces.Persistence;
 public interface ITicketRepository{
@@ -12,6 +14,8 @@ public interface ITicketRepository{
     IEnumerable<Ticket>? GetTicketByProjection(ProjectionId projectionId);
     IEnumerable<Ticket>? GetTicketsReserved();
     IEnumerable<Ticket>? GetTicketsReservedByUser(UserId userId);
+    Task<List<RoomTicketCount>>? GetTopRoomCountsAsync(DateTime startDate, DateTime endDate,int limit);
+    Task<List<TopMovie>>? GetTopMoviesAsync(DateTime startDate, DateTime endDate,int limit);
     void Add(Ticket Ticket);
     void Delete(TicketId TicketId);
     IEnumerable<Ticket> GetAll();

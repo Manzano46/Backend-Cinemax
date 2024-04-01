@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using Cinemax.Application.Common.Interfaces.Persistence;
 using Cinemax.Domain.ProjectionAggregate;
 using Cinemax.Domain.ProjectionAggregate.ValueObjects;
@@ -49,4 +50,8 @@ public class ProjectionRepository : IProjectionRepository{
         return _cinemaxDbContext.Projections.Include(r => r.Movie).Include(r => r.Room).SingleOrDefault(m => m.RoomId == roomId && m.MovieId == movieId && m.Date == date);   
     }
 
+    public async Task<List<Projection>> GetByAsync(Expression<Func<Projection, bool>> predicate)
+    {
+        return await _cinemaxDbContext.Projections.Include(r=>r.Movie).Include(r=>r.Room).Where(predicate).ToListAsync();
+    }
 }

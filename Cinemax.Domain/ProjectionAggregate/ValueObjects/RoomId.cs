@@ -17,4 +17,9 @@ public sealed class RoomId : ValueObject
     {
         yield return Value;
     }
+
+    public override string ToString()
+    {
+        return Value.ToString();
+    }
 }

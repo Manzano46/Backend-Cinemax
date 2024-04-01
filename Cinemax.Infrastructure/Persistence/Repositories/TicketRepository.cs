@@ -5,6 +5,8 @@ using Cinemax.Domain.TicketAggregate.Entities;
 using Cinemax.Domain.TicketAggregate.ValueObjects;
 using Cinemax.Domain.User.Entities;
 using Cinemax.Domain.User.ValueObjects;
+using Cinemax.Infrastructure.Migrations;
+using Cinemax.Infrastructure.Services.Statistics;
 using Microsoft.EntityFrameworkCore;
 
 namespace Cinemax.Infrastructure.Persistence.Repositories;
@@ -71,5 +73,28 @@ public class TicketRepository : ITicketRepository{
     {
         UpdateDataBase();
         return _cinemaxDbContext.Tickets.Include(t => t.Seat).Include(t=>t.User).Include(t=>t.Projection).Where(Ticket => Ticket.UserId != userId); 
+    }
+    public async Task<List<RoomTicketCount>> GetTopRoomCountsAsync(DateTime startDate, DateTime endDate,int limit)
+    {
+        return await _cinemaxDbContext.Tickets
+            .Include(t => t.Projection.Room)
+            .Where(t => t.Date >= startDate && t.Date <= endDate)
+            .GroupBy(t => new { t.Projection.Room.Id, t.Projection.Room.Name })
+            .Select(g => new RoomTicketCount { RoomName = g.Key.Name, TicketCount = g.Count() })
+            .OrderByDescending(x => x.TicketCount)
+            .Take(limit)
+            .ToListAsync();
+    }
+
+    public async Task<List<TopMovie>> GetTopMoviesAsync(DateTime startDate, DateTime endDate,int limit)
+    {
+        return await _cinemaxDbContext.Tickets
+            .Include(t => t.Projection.Movie)
+            .Where(t => t.Date >= startDate && t.Date <= endDate)
+            .GroupBy(t => new { t.Projection.Movie.Id, t.Projection.Movie.Name })
+            .Select(g => new TopMovie { Name = g.Key.Name, Count = g.Count() })
+            .OrderByDescending(x => x.Count)
+            .Take(limit)
+            .ToListAsync();
     }
 }

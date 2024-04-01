@@ -22,5 +22,10 @@ namespace Cinemax.Domain.ProjectionAggregate.ValueObjects
         {
             yield return Value;
         }
+
+        public override string ToString()
+        {
+            return Value.ToString();
+        }
     }
 }

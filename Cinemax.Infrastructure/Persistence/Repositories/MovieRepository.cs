@@ -39,6 +39,6 @@ public class MovieRepository : IMovieRepository{
 
     public Movie? GetByName(string name)
     {
-        return _cinemaxDbContext.Movies.Include(m => m.Genres).Include(m => m.Actors).Include(m => m.Directors).Include(m => m.Countries).SingleOrDefault(m => m.Name == name);
+        return _cinemaxDbContext.Movies.Include(m => m.Genres).Include(m => m.Actors).Include(m => m.Directors).Include(m => m.Countries).Where(m => m.Name.ToLower().Contains(name.ToLower())).FirstOrDefault(m => m.Name == name);
     }
 }

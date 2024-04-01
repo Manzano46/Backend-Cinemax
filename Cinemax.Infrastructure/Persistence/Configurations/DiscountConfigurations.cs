@@ -25,6 +25,7 @@ public class DiscountConfigurations : IEntityTypeConfiguration<Discount>
 
         builder.HasMany(m => m.Tickets)
             .WithMany(t => t.Discounts);
+        builder.Property(m => m.Percentage);
         
     }
 }

@@ -1,0 +1,9 @@
+@host = http://localhost:5250
+@id = 3307a6aa-eef4-42aa-83a8-acdcfb8fcb8f
+
+GET {{host}}/projections/movies/{{id}}
+//Authorization: Bearer {{token}}
+
+{
+    
+}

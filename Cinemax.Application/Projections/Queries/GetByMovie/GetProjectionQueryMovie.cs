@@ -3,6 +3,6 @@ using Cinemax.Domain.ProjectionAggregate.ValueObjects;
 using MediatR;
 
 namespace Cinemax.Application.Projections.Queries.Get;
-public record GetProjectionQuery(
-    string Id
-) : IRequest<ProjectionResult>;
+public record GetProjectionQueryMovie(
+    MovieId MovieId
+) : IRequest<List<ProjectionResult>>;

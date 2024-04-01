@@ -20,4 +20,5 @@ public sealed class MovieId : ValueObject
     {
         yield return Value;
     }
+
 }

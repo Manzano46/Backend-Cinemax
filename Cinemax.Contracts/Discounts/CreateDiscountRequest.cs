@@ -1,6 +1,7 @@
 namespace Cinemax.Contracts.Discounts
 {
     public record CreateDiscountRequest(
-        string Name
+        string Name,
+        float Percentage
     );
 }

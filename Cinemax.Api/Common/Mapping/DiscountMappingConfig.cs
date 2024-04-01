@@ -11,10 +11,12 @@ public class DiscountMappingConfig : IRegister
     public void Register(TypeAdapterConfig config){
         config.NewConfig<DiscountResult, DiscountResponse>()
             .Map(dest => dest.Id, src => src.Discount.Id.Value )
-            .Map(dest => dest.Name, src => src.Discount.Name);
+            .Map(dest => dest.Name, src => src.Discount.Name)
+            .Map(dest => dest.Percentage, src => src.Discount.Percentage);
             
         config.NewConfig<CreateDiscountRequest, CreateDiscountCommand>()
-        .Map(dest => dest.Name, src => src.Name);
+        .Map(dest => dest.Name, src => src.Name)
+        .Map(dest => dest.Percentage, src => src.Percentage);
 
         config.NewConfig<DeleteDiscountRequest, DeleteDiscountCommand>()
             .Map(dest => dest.Id, src => DiscountId.Create(new(src.DiscountId)));

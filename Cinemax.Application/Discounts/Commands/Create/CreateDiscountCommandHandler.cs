@@ -19,6 +19,11 @@ public class CreateDiscountCommandHandler : IRequestHandler<CreateDiscountComman
             throw new Exception("Discount with given name alredy exists");
         }
 
+        if(command.Percentage <= 0 || command.Percentage > 100)
+        {
+            throw new Exception("Discount percentage is not valid");
+        }
+
         Discount discount = Discount.Create(
             command.Name,
             command.Percentage

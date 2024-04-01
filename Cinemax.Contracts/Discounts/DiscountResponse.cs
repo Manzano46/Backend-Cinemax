@@ -2,5 +2,6 @@ namespace Cinemax.Contracts.Discounts;
 
 public record DiscountResponse(
     string Id,
-    string Name
+    string Name,
+    float Percentage
 );
