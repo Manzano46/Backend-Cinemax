@@ -14,14 +14,14 @@ namespace Cinemax.Domain.Genre.Entities
         private Genre() { } 
         #pragma warning restore CS8618
 
-        private Genre(GenreId genreId, string name,ICollection<Movie> movies)
+        private Genre(GenreId genreId, string name,ICollection<Movie> movies = null!)
             : base(genreId)
         {
             Name = name;
             Movies = movies;
         }
 
-        public static Genre Create(string name,ICollection<Movie> movies)
+        public static Genre Create(string name,ICollection<Movie> movies = null!)
         {
             return new Genre(GenreId.CreateUnique(), name,movies);
         }

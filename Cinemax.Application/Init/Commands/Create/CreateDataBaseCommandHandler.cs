@@ -5,6 +5,10 @@ using Cinemax.Domain.Card.Entities;
 using Cinemax.Domain.Card.ValueObjects;
 using Cinemax.Domain.Country.Entities;
 using Cinemax.Domain.Director.Entities;
+using Cinemax.Domain.Discount.Entities;
+using Cinemax.Domain.Genre.Entities;
+using Cinemax.Domain.PaymentType.Entities;
+using Cinemax.Domain.ProjectionAggregate;
 using Cinemax.Domain.ProjectionAggregate.Entities;
 using MediatR;
 
@@ -81,15 +85,15 @@ public class CreateDataBaseCommandHandler : IRequestHandler<CreateDataBaseComman
         _CountryRepository.Add(country1);
         _CountryRepository.Add(country2);
 
-        /*
+        
         Director director1 = Director.Create("Steven","Spielberg");
         Director director2 = Director.Create("James","Cameron");
 
         _DirectorRepository.Add(director1);
         _DirectorRepository.Add(director2);
 
-        Discount discount1 = Discount.Create(0.1);
-        Discount discount2 = Discount.Create(0.2);
+        Discount discount1 = Discount.Create("dia de las madres",0.1f);
+        Discount discount2 = Discount.Create("dia del perro",0.2f);
 
         _DiscountRepository.Add(discount1);
         _DiscountRepository.Add(discount2);
@@ -106,6 +110,7 @@ public class CreateDataBaseCommandHandler : IRequestHandler<CreateDataBaseComman
         _PaymentTypeRepository.Add(paymentType1);
         _PaymentTypeRepository.Add(paymentType2);
 
+        /*
         Projection projection1 = Projection.Create(DateTime.Now, 1, 1);
         Projection projection2 = Projection.Create(DateTime.Now, 2, 2);
 

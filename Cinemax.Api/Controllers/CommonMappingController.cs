@@ -15,7 +15,7 @@ namespace Cinemax.Api.Controllers;
 
 [ApiController]
 [Route("common")]
-[Authorize(Roles = "ADMIN")] 
+//[Authorize(Roles = "ADMIN")] 
 public class CommonController : ControllerBase{
     private readonly IMediator _mediator;
     private readonly IMapper _mapper;
