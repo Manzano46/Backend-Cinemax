@@ -13,7 +13,7 @@ namespace Cinemax.Api.Controllers;
 
 [ApiController]
 [Route("paymentTypes")]
-
+//[Authorize(Roles = "ADMIN")] 
 public class PaymentTypeController : ControllerBase{
     private readonly IMediator _mediator;
     private readonly IMapper _mapper;
@@ -62,26 +62,4 @@ public class PaymentTypeController : ControllerBase{
         return Ok(response);
     }
 
-    /*
-    // PUT: api/PaymentTypes/{id}
-    [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, UpdateCountrieCommand command)
-    {
-        if (id != command.Id)
-        {
-            return BadRequest();
-        }
-
-        await _mediator.Send(command);
-        return NoContent();
-    }
-
-    // DELETE: api/PaymentTypes/{id}
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(int id)
-    {
-        await _mediator.Send(new DeleteCountrieCommand { Id = id });
-        return NoContent();
-    }
-    */
 }

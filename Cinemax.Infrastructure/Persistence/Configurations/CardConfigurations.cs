@@ -18,6 +18,14 @@ public class CardConfigurations : IEntityTypeConfiguration<Card>
             .ValueGeneratedNever()
             .HasConversion(
                 Id => Id.Value,
-                value => CardId.Create(value));        
+                value => CardId.Create(value));  
+        
+        builder.HasMany(m => m.Users)
+            .WithMany(u => u.Cards);
+
+        builder.HasMany(m => m.Tickets)
+            .WithOne(t => t.Card)
+            .HasForeignKey(t => t.CardId)
+            .IsRequired(false);      
     }
 }

@@ -7,11 +7,13 @@ using MapsterMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Cinemax.Application.Projections.Queries.Get;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Cinemax.Api.Controllers;
 
 [ApiController]
 [Route("projections")]
+//[Authorize(Roles = "ADMIN")] 
 
 public class ProjectionController : ControllerBase{
     private readonly IMediator _mediator;

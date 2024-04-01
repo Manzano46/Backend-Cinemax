@@ -20,7 +20,8 @@ public class CreateDiscountCommandHandler : IRequestHandler<CreateDiscountComman
         }
 
         Discount discount = Discount.Create(
-            command.Name
+            command.Name,
+            command.Percentage
         );
 
         _discountRepository.Add(discount);

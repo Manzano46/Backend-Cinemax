@@ -14,7 +14,7 @@ namespace Cinemax.Api.Controllers;
 
 [ApiController]
 [Route("countries")]
-
+//[Authorize(Roles = "ADMIN")] 
 public class CountryController : ControllerBase{
     private readonly IMediator _mediator;
     private readonly IMapper _mapper;

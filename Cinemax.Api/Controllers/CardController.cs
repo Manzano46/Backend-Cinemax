@@ -13,7 +13,7 @@ namespace Cinemax.Api.Controllers;
 
 [ApiController]
 [Route("cards")]
-
+//[Authorize(Roles = "ADMIN")] 
 public class CardController : ControllerBase{
     private readonly IMediator _mediator;
     private readonly IMapper _mapper;
@@ -63,28 +63,4 @@ public class CardController : ControllerBase{
         var response = _mapper.Map<CardResponse>(CardResult);
         return Ok(response);
     }
-
-    /*
-    // PUT: api/Cards/{id}
-    [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, UpdateCardCommand command)
-    {
-        if (id != command.Id)
-        {
-            return BadRequest();
-        }
-
-        await _mediator.Send(command);
-        return NoContent();
-    }
-
-    // DELETE: api/Cards/{id}
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(int id)
-    {
-        await _mediator.Send(new DeleteCardCommand { Id = id });
-        return NoContent();
-    }
-    */
-
 }

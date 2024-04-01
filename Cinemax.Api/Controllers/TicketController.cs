@@ -12,11 +12,13 @@ using Cinemax.Domain.ProjectionAggregate.ValueObjects;
 using Cinemax.Application.Tickets.Queries.GetReserved;
 using Cinemax.Application.Tickets.Queries.GetReservedByUser;
 using Cinemax.Domain.User.ValueObjects;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Cinemax.Api.Controllers;
 
 [ApiController]
 [Route("tickets")]
+//[Authorize(Roles = "ADMIN")] 
 
 public class TicketController : ControllerBase{
     private readonly IMediator _mediator;

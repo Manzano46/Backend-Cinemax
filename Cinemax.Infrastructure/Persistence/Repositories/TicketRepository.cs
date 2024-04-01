@@ -5,7 +5,6 @@ using Cinemax.Domain.TicketAggregate.Entities;
 using Cinemax.Domain.TicketAggregate.ValueObjects;
 using Cinemax.Domain.User.Entities;
 using Cinemax.Domain.User.ValueObjects;
-using Cinemax.Infrastructure.Migrations;
 using Microsoft.EntityFrameworkCore;
 
 namespace Cinemax.Infrastructure.Persistence.Repositories;

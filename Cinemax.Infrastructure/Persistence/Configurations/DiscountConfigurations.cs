@@ -22,6 +22,9 @@ public class DiscountConfigurations : IEntityTypeConfiguration<Discount>
                 value => DiscountId.Create(value));
         builder.Property(m => m.Name)
             .HasMaxLength(100);
+
+        builder.HasMany(m => m.Tickets)
+            .WithMany(t => t.Discounts);
         
     }
 }

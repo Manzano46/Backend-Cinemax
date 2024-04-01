@@ -23,5 +23,10 @@ public class PaymentTypeConfigurations : IEntityTypeConfiguration<PaymentType>
         builder.Property(m => m.Name)
             .HasMaxLength(100);
         
+        builder.HasMany(m => m.Tickets)
+            .WithOne(t => t.PaymentType)
+            .HasForeignKey(t => t.PaymentTypeId)
+            .OnDelete(DeleteBehavior.Restrict);
+
     }
 }

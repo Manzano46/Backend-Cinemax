@@ -8,13 +8,14 @@ using Cinemax.Contracts.Users;
 using Cinemax.Domain.User.ValueObjects;
 using MapsterMapper;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cinemax.Api.Controllers;
 
 [ApiController]
 [Route("common")]
-
+[Authorize(Roles = "ADMIN")] 
 public class CommonController : ControllerBase{
     private readonly IMediator _mediator;
     private readonly IMapper _mapper;

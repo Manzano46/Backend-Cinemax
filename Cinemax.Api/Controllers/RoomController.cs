@@ -8,11 +8,13 @@ using Microsoft.AspNetCore.Mvc;
 using Cinemax.Application.RoomTypes.Commands.Delete;
 using Cinemax.Application.Rooms.Commands.Delete;
 using Cinemax.Application.Rooms.Queries.Get;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Cinemax.Api.Controllers;
 
 [ApiController]
 [Route("rooms")]
+//[Authorize(Roles = "ADMIN")] 
 
 public class RoomController : ControllerBase{
     private readonly IMediator _mediator;

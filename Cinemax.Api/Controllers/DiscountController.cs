@@ -14,6 +14,7 @@ namespace Cinemax.Api.Controllers;
 
 [ApiController]
 [Route("discounts")]
+//[Authorize(Roles = "ADMIN")] 
 
 public class DiscountController : ControllerBase{
     private readonly IMediator _mediator;

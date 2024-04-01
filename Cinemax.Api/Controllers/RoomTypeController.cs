@@ -13,7 +13,7 @@ namespace Cinemax.Api.Controllers;
 
 [ApiController]
 [Route("roomtypes")]
-
+//[Authorize(Roles = "ADMIN")] 
 public class RoomTypeController : ControllerBase{
     private readonly IMediator _mediator;
     private readonly IMapper _mapper;

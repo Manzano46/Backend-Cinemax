@@ -13,6 +13,7 @@ namespace Cinemax.Api.Controllers;
 
 [ApiController]
 [Route("genres")]
+//[Authorize(Roles = "ADMIN")] 
 
 public class GenreController : ControllerBase{
     private readonly IMediator _mediator;

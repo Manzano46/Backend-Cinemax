@@ -14,6 +14,7 @@ namespace Cinemax.Api.Controllers;
 
 [ApiController]
 [Route("actors")]
+//[Authorize(Roles = "ADMIN")] 
 
 public class ActorController : ControllerBase{
     private readonly IMediator _mediator;
@@ -26,7 +27,6 @@ public class ActorController : ControllerBase{
 
     // POST: api/actors
     [HttpPost]
-    [Authorize(Roles = "ADMIN")] 
     public async Task<IActionResult> Create(CreateActorRequest createActorRequest)
     {
         var command = _mapper.Map<CreateActorCommand>(createActorRequest);
@@ -49,8 +49,6 @@ public class ActorController : ControllerBase{
         
         return Ok(responses);
     }
-
-
     
     // DELETE: api/actors/{id}
     [HttpDelete("{id}")]
@@ -75,28 +73,5 @@ public class ActorController : ControllerBase{
 
         return Ok(response);
     }
-
-    /*
-    // PUT: api/Actors/{id}
-    [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, UpdateActorCommand command)
-    {
-        if (id != command.Id)
-        {
-            return BadRequest();
-        }
-
-        await _mediator.Send(command);
-        return NoContent();
-    }
-
-    // DELETE: api/Actors/{id}
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(int id)
-    {
-        await _mediator.Send(new DeleteActorCommand { Id = id });
-        return NoContent();
-    }
-    */
 
 }

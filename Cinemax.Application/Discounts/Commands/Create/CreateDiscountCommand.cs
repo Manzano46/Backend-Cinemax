@@ -4,6 +4,7 @@ using MediatR;
 
 namespace Cinemax.Application.Discounts.Commands.Create;
 public record CreateDiscountCommand(
-    string Name
+    string Name,
+    float Percentage
 ) : IRequest<DiscountResult>;
 
