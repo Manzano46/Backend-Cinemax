@@ -16,7 +16,7 @@ public class DeleteRoomCommandHandler : IRequestHandler<DeleteRoomCommand, RoomR
         await Task.CompletedTask;
         if (_RoomRepository.GetById(command.Id) is not Room room)
         {
-            throw new Exception("Room with given name does not exist");
+            throw new Exception("Room with given id does not exist");
         }
 
         _RoomRepository.Delete(command.Id);

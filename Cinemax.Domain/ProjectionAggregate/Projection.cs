@@ -1,6 +1,7 @@
 ﻿using Cinemax.Domain.Common.Models;
 using Cinemax.Domain.ProjectionAggregate.ValueObjects;
 using Cinemax.Domain.ProjectionAggregate.Entities;
+using Cinemax.Domain.TicketAggregate.Entities;
 
 namespace Cinemax.Domain.ProjectionAggregate
 {
@@ -12,6 +13,7 @@ namespace Cinemax.Domain.ProjectionAggregate
         public int Price { get; set; }
         public virtual Movie Movie { get; set; }
         public virtual Room Room { get; set; }
+        public virtual ICollection<Ticket> Tickets { get; set; } = new List<Ticket>();
 
         #pragma warning disable CS8618
         private Projection() { }

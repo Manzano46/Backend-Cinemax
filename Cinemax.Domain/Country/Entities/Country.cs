@@ -16,7 +16,7 @@ public class Country: Entity<CountryId>{
             Movies = movies ?? new List<Movie>();
     }
 
-    public static Country Create(string name,ICollection<Movie> movies){
+    public static Country Create(string name, ICollection<Movie> movies = null!){
         return new(CountryId.CreateUnique(), name, movies);
     }
 

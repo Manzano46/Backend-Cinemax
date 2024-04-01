@@ -2,6 +2,7 @@ using System.Linq.Expressions;
 using Cinemax.Application.Common.Interfaces.Persistence;
 using Cinemax.Domain.ProjectionAggregate;
 using Cinemax.Domain.ProjectionAggregate.ValueObjects;
+using Cinemax.Domain.Seat.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Cinemax.Infrastructure.Persistence.Repositories;
@@ -23,6 +24,10 @@ public class ProjectionRepository : IProjectionRepository{
         return _cinemaxDbContext.Projections.Include(r => r.Movie).Include(r => r.Room);
     }
 
+    public IEnumerable<Seat> GetAllSeats(RoomId roomId)
+    {
+        return _cinemaxDbContext.Seats.Where(s => s.RoomId == roomId);
+    }
     public Projection? GetById(ProjectionId id)
     {
         return _cinemaxDbContext.Projections.Include(r => r.Movie).Include(r => r.Room).SingleOrDefault(m => m.Id == id);
@@ -31,6 +36,8 @@ public class ProjectionRepository : IProjectionRepository{
     public void Delete(ProjectionId id)
     {
         var Projection = _cinemaxDbContext.Projections.SingleOrDefault(m => m.Id == id);
+        var range = _cinemaxDbContext.Tickets.Where(x => x.ProjectionId == id);
+        _cinemaxDbContext.Tickets.RemoveRange(range);
         if (Projection is not null)
         {
             _cinemaxDbContext.Projections.Remove(Projection);

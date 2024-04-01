@@ -23,6 +23,9 @@ public class MovieMappingConfig : IRegister
             .Map(dest => dest.Premiere, src => src.Movie.Premiere )
             .Map(dest => dest.IconURL, src => src.Movie.IconURL)
             .Map(dest => dest.TrailerURL, src => src.Movie.TrailerURL)
+            .Map(dest => dest.Summary, src => src.Movie.Summary)
+            .Map(dest => dest.CoverURL, src => src.Movie.CoverURL)
+            .Map(dest => dest.ImagenURL, src => src.Movie.ImagenURL)
             .Map(dest => dest.Actors, src => src.Movie.Actors)
             .Map(dest => dest.Countries, src => src.Movie.Countries)
             .Map(dest => dest.Directors, src => src.Movie.Directors)
@@ -35,7 +38,10 @@ public class MovieMappingConfig : IRegister
             .Map(dest => dest.Duration, src => src.Duration)
             .Map(dest => dest.Premiere, src => src.Premiere)
             .Map(dest => dest.IconURL, src => src.IconURL)
-            .Map(dest => dest.TrailerURL, src => src.TrailerURL);
+            .Map(dest => dest.TrailerURL, src => src.TrailerURL)
+            .Map(dest => dest.Summary, src => src.Summary)
+            .Map(dest => dest.CoverURL, src => src.CoverURL)
+            .Map(dest => dest.ImagenURL, src => src.ImagenURL);
 
         config.NewConfig<DeleteMovieRequest, DeleteMovieCommand>()
             .Map(dest => dest.MovieId, src => MovieId.Create(new(src.Id)));
@@ -50,6 +56,9 @@ public class MovieMappingConfig : IRegister
             .Map(dest => dest.Duration, src => src.Duration)
             .Map(dest => dest.Premiere, src => src.Premiere)
             .Map(dest => dest.IconURL, src => src.IconURL)
-            .Map(dest => dest.TrailerURL, src => src.TrailerURL);
+            .Map(dest => dest.TrailerURL, src => src.TrailerURL)
+            .Map(dest => dest.Summary, src => src.Summary)
+            .Map(dest => dest.CoverURL, src => src.CoverURL)
+            .Map(dest => dest.ImagenURL, src => src.ImagenURL);
     }
 }

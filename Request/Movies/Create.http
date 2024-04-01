@@ -6,15 +6,27 @@ Content-Type: application/json
 //Authorization: Bearer {{token}}
 
 {
-    "Name":"Mi peli",
-    "Description":"Best peli",
-    "Duration":"02:30:00",
-    "Premiere":"2020-04-01T00:00:00",
-    "IconURL":"https://ejemplo.com/icon.png",
-    "TrailerURL":"https://ejemplo.com/trailer.mp4",
-    "Actors":["abc6ea68-af72-4c3f-add1-72883d271496"],
-    "Countries":["96b07805-e238-4757-9c3e-962c78921ba4"],
-    "Directors":["d19182d6-87f5-4149-9c41-03b3bc7806a6"],   
-    "Genres":["0ff58171-acd1-43d3-ab96-8b077c410ffe"]
-    
+  "name": "Wonka2",
+  "description": "<p>&lt;p&gt;El aspirante a mago, inventor y chocolatero Willy Wonka llega en barco a una ciudad europea anónima para cumplir su sueño de abrir su tienda de chocolates en las Galerías Gourmet. Decide quedarse en una lavandería propiedad de la tortuosa señora Scrubbit y su secuaz Bleacher. A pesar de las advertencias de Noodle, una huérfana que se aloja en Scrubbit's, de leer la letra pequeña , el analfabeto Wonka firma voluntariamente su contrato, lo que le obliga a pagar cargos excesivos durante su estancia. Un confiado Wonka acude a las Galerías Gourmet a vender sus \\\"hoverchocs\\\" que hacen volar a quienes los comen. Los tres principales chocolateros de las Galerías, el Sr. Slugworth, el Sr. Prodnose y el Sr. Fickelgruber, se burlan de los chocolates de Wonka y llaman al jefe de policía para confiscar sus ganancias del día.&lt;/p&gt;</p>",
+  "summary": "Armado únicamente con muchos sueños y ganas de aventura, el joven chocolatero Willy Wonka conoce a los oompa-loompas y se dispone a cambiar el mundo.",
+  "trailerURL": "http://youtube.com",
+  "iconURL": "https://drive.google.com/file/d/1R-Lo3koYZIYcR4q66LRq2xlDDc6OhaPc/view?usp=drive_link",
+  "coverURL": "https://drive.google.com/file/d/1Gc28p8TyOAwIW9mjOxI3tiFcZQy62-aK/view?usp=drive_link",
+  "imagenURL": "https://drive.google.com/file/d/1KG1gv-OFHRlCvTthC2QTrJv6u1P7rrDN/view?usp=drive_link",
+  "duration": "01:45:00",
+  "premiere": "2023-12-25T05:00:00.000Z",
+  "countries": [
+    "9976841c-de98-4be1-bf5a-a8169f3a3296"
+  ],
+  "actors": [
+    "78648254-4c6a-4244-b309-714b3a586208"
+  ],
+  "directors": [
+    "bc913455-a9a6-4074-b693-5a7de0a0bdd2"
+  ],
+  "genres": [
+    "56be0e11-1efc-4fbb-8a19-bb35f512947a",
+    "b6605af1-7aa2-4a80-a561-bd1bd69c94ff",
+    "b4c4d34b-41d7-4543-8b1e-f250af7314f1"
+  ]
 }

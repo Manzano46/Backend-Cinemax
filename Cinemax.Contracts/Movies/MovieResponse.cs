@@ -13,6 +13,9 @@ public record MovieResponse(
     DateTime Premiere,
     string IconURL,
     string TrailerURL,
+    string Summary,
+    string CoverURL,
+    string ImagenURL,
     List<ActorResponseCore> Actors,
     List<CountryResponseCore> Countries,
     List<DirectorResponseCore> Directors,
@@ -26,5 +29,8 @@ public record MovieResponseCore(
     TimeSpan Duration,
     DateTime Premiere,
     string IconURL,
-    string TrailerURL
+    string TrailerURL,
+    string Summary,
+    string CoverURL,
+    string ImagenURL
 );

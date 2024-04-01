@@ -42,8 +42,7 @@
               "RelativeToolTip": "Cinemax.Domain\\Seat\\Entities\\Seat.cs",
               "ViewState": "AQIAABAAAAAAAAAAAAA5wAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-31T04:56:56.57Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-31T04:56:56.57Z"
             },
             {
               "$type": "Document",
@@ -53,7 +52,7 @@
               "RelativeDocumentMoniker": "Cinemax.Infrastructure\\Persistence\\Configurations\\SeatConfigurations.cs",
               "ToolTip": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\Persistence\\Configurations\\SeatConfigurations.cs",
               "RelativeToolTip": "Cinemax.Infrastructure\\Persistence\\Configurations\\SeatConfigurations.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAowAcAAAAAAAAA",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAkwAcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-31T04:56:36.88Z",
               "EditorCaption": ""
@@ -68,8 +67,7 @@
               "RelativeToolTip": "Cinemax.Infrastructure\\Persistence\\Repositories\\SeatRepository.cs",
               "ViewState": "AQIAABUAAAAAAAAAAAAYwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-31T04:56:33.235Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-31T04:56:33.235Z"
             },
             {
               "$type": "Document",
@@ -81,8 +79,7 @@
               "RelativeToolTip": "Cinemax.Application\\Room\\Commands\\Create\\CreateRoomCommandHandler.cs",
               "ViewState": "AQIAADAAAAAAAAAAAAAAwBEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-31T04:38:19.016Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-31T04:38:19.016Z"
             }
           ]
         }

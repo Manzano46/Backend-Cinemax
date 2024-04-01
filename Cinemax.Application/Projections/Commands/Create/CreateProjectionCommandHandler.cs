@@ -3,6 +3,7 @@ using Cinemax.Application.Projections.Commands.Create;
 using Cinemax.Application.Projections.Common;
 using Cinemax.Domain.ProjectionAggregate;
 using Cinemax.Domain.ProjectionAggregate.Entities;
+using Cinemax.Domain.TicketAggregate.Entities;
 using MediatR;
 
 namespace Cinemax.Application.Projections.Commands.Create;
@@ -11,12 +12,14 @@ public class CreateProjectionCommandHandler : IRequestHandler<CreateProjectionCo
     private readonly IRoomRepository _RoomRepository;
     private readonly IMovieRepository _MovieRepository;
     private readonly IProjectionRepository _ProjectionRepository;
+    private readonly ITicketRepository _TicketRepository;
 
-    public CreateProjectionCommandHandler(IRoomRepository roomRepository, IMovieRepository movieRepository, IProjectionRepository projectionRepository)
+    public CreateProjectionCommandHandler(IRoomRepository roomRepository, IMovieRepository movieRepository, IProjectionRepository projectionRepository, ITicketRepository ticketRepository)
     {
         _RoomRepository = roomRepository;
         _MovieRepository = movieRepository;
         _ProjectionRepository = projectionRepository;
+        _TicketRepository = ticketRepository;
     }
     public async Task<ProjectionResult> Handle(CreateProjectionCommand command, CancellationToken cancellationToken)
     {
@@ -42,6 +45,12 @@ public class CreateProjectionCommandHandler : IRequestHandler<CreateProjectionCo
             );
 
         _ProjectionRepository.Add(projection);
+
+        foreach(var seat in _ProjectionRepository.GetAllSeats(existingRoom.Id))
+        {
+            var ticket = Ticket.Create(seat.Id, null!, projection.Id, command.Date, TicketStatus.available, seat: seat);
+            _TicketRepository.Add(ticket);
+        }
 
         return new ProjectionResult(projection);
     }

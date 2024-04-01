@@ -5,7 +5,7 @@ Content-Type: application/json
 //Authorization: Bearer {{token}}
 
 {
-    "name": "3D",
+    "name": "Avesllaneda",
     "height": "2",
     "width": "1",
     "roomtypes":[]

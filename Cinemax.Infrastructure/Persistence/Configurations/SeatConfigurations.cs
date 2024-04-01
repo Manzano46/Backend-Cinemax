@@ -22,6 +22,10 @@ public class SeatConfigurations : IEntityTypeConfiguration<Seat>
                 id => id.Value,
                 value => SeatId.Create(value));
 
+        builder.Property(m => m.Row);
+        builder.Property(m => m.Colum);
+        
+
         builder.Property(m => m.RoomId)
             .HasConversion(
                 id => id.Value,
@@ -31,5 +35,6 @@ public class SeatConfigurations : IEntityTypeConfiguration<Seat>
             .WithMany(m => m.Seats)
             .HasForeignKey(m => m.RoomId)
             .OnDelete(DeleteBehavior.Cascade);
+
     }
 }
