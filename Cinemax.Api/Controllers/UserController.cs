@@ -33,7 +33,7 @@ public class UserController : ControllerBase{
 
         IEnumerable<UserResult> UserResults = await _mediator.Send(command);
 
-        IEnumerable<UserResponse> responses = UserResults.Select(UserResult => _mapper.Map<UserResponse>(UserResult));
+        IEnumerable<UserResponse> responses = UserResults.Select(_mapper.Map<UserResponse>);
         
         return Ok(responses);
     }
@@ -65,6 +65,15 @@ public class UserController : ControllerBase{
     [HttpPost("register")]
     public async Task<IActionResult> Register(RegisterRequest registerRequest){
         var command = _mapper.Map<CreateUserCommand>(registerRequest);
+        AuthenticationResult authResult = await _mediator.Send(command);
+
+        var response = _mapper.Map<AuthenticationResponse>(authResult);
+        return Ok(response);
+    }
+
+    [HttpPost()]
+    public async Task<IActionResult> Create(CreateUserRequest createUserRequest){
+        var command = _mapper.Map<CreateUserCommand>(createUserRequest);
         AuthenticationResult authResult = await _mediator.Send(command);
 
         var response = _mapper.Map<AuthenticationResponse>(authResult);

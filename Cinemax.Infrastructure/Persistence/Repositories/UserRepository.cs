@@ -6,10 +6,8 @@ using Microsoft.EntityFrameworkCore;
 namespace Cinemax.Infrastructure.Persistence.Repositories;
 public class UserRepository : IUserRepository{
     private readonly CinemaxDbContext _cinemaxDbContext;
-    public readonly CinemaxDbContext _cardsDbContext;
-    public UserRepository(CinemaxDbContext cinemaxDbContext,CinemaxDbContext cardsDbContext){
+    public UserRepository(CinemaxDbContext cinemaxDbContext){
         _cinemaxDbContext = cinemaxDbContext;
-        _cardsDbContext = cardsDbContext;
     }
     public void Add(User user){
         _cinemaxDbContext.Users.Add(user);

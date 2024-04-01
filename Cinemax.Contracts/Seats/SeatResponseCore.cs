@@ -2,6 +2,8 @@
 {
     public record SeatResponseCore
     (
-        string Id
+        string Id,
+        int Row,
+        int Colum
     );
 }

@@ -54,11 +54,13 @@ public class CreateRoomCommandHandler : IRequestHandler<CreateRoomCommand, RoomR
         );
         
         List<Seat> seats = new();
-        for(int i=0;i<command.Height*command.Width;i++)
-        {
-            Seat seat = Seat.Create(Room.Id, Room);
-            seats.Add(seat);
+        for(int i=0;i<command.Height;i++){
+            for(int j=0;j<command.Width;j++){
+                Seat seat = Seat.Create(Room.Id, Room,i,j);
+                seats.Add(seat);
+            }
         }
+
         Room.Seats = seats;
 
         _RoomRepository.Add(Room);

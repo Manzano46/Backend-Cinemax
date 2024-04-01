@@ -2,6 +2,8 @@
 {
     public record CreateSeatRequest
     (
-        string Room
+        string Room,
+        int Row,
+        int Column
     );
 }

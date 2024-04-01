@@ -6,15 +6,27 @@ Content-Type: application/json
 //Authorization: Bearer {{token}}
 
 {
-    "Name":"Mi peli 8",
-    "Description":"Best peli",
-    "Duration":"02:30:00",
-    "Premiere":"2020-04-01T00:00:00",
-    "IconURL":"https://ejemplo.com/icon.png",
-    "TrailerURL":"https://ejemplo.com/trailer.mp4",
-    "Actors":["4021062c-e295-4531-9fab-2c74873cd682","24847ff4-3ccd-4536-9695-9985df03acfc"],
-    "Countries":["0fd4f031-5940-49cc-9326-43671a8a7bfa","d64c559e-4dd8-4645-a19f-f9c34b005762"],
-    "Directors":["ebcc3605-e955-4142-8ab0-9d8eb47186c7","75a29fc8-d6d4-46e4-bcef-71a82784e486"],   
-    "Genres":["bb6f6ec0-6389-41bf-9b68-679ae1a8ef8f","0091e0fb-9e03-4a68-9fb6-7e9bcc2b1311"]
-    
+  "name": "Wonka2",
+  "description": "<p>&lt;p&gt;El aspirante a mago, inventor y chocolatero Willy Wonka llega en barco a una ciudad europea anónima para cumplir su sueño de abrir su tienda de chocolates en las Galerías Gourmet. Decide quedarse en una lavandería propiedad de la tortuosa señora Scrubbit y su secuaz Bleacher. A pesar de las advertencias de Noodle, una huérfana que se aloja en Scrubbit's, de leer la letra pequeña , el analfabeto Wonka firma voluntariamente su contrato, lo que le obliga a pagar cargos excesivos durante su estancia. Un confiado Wonka acude a las Galerías Gourmet a vender sus \\\"hoverchocs\\\" que hacen volar a quienes los comen. Los tres principales chocolateros de las Galerías, el Sr. Slugworth, el Sr. Prodnose y el Sr. Fickelgruber, se burlan de los chocolates de Wonka y llaman al jefe de policía para confiscar sus ganancias del día.&lt;/p&gt;</p>",
+  "summary": "Armado únicamente con muchos sueños y ganas de aventura, el joven chocolatero Willy Wonka conoce a los oompa-loompas y se dispone a cambiar el mundo.",
+  "trailerURL": "http://youtube.com",
+  "iconURL": "https://drive.google.com/file/d/1R-Lo3koYZIYcR4q66LRq2xlDDc6OhaPc/view?usp=drive_link",
+  "coverURL": "https://drive.google.com/file/d/1Gc28p8TyOAwIW9mjOxI3tiFcZQy62-aK/view?usp=drive_link",
+  "imagenURL": "https://drive.google.com/file/d/1KG1gv-OFHRlCvTthC2QTrJv6u1P7rrDN/view?usp=drive_link",
+  "duration": "01:45:00",
+  "premiere": "2023-12-25T05:00:00.000Z",
+  "countries": [
+    "9976841c-de98-4be1-bf5a-a8169f3a3296"
+  ],
+  "actors": [
+    "78648254-4c6a-4244-b309-714b3a586208"
+  ],
+  "directors": [
+    "bc913455-a9a6-4074-b693-5a7de0a0bdd2"
+  ],
+  "genres": [
+    "56be0e11-1efc-4fbb-8a19-bb35f512947a",
+    "b6605af1-7aa2-4a80-a561-bd1bd69c94ff",
+    "b4c4d34b-41d7-4543-8b1e-f250af7314f1"
+  ]
 }

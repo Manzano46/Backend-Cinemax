@@ -1,12 +1,7 @@
 @host = http://localhost:5250
 
-POST {{host}}/users/register
+GET {{host}}/users
 Content-Type: application/json
 
 {
-    "firstName": "kevin",
-    "lastName": "manzano",
-    "email": "kevin@gmail.com",
-    "password": "kevin1234!",
-    "birthDay":"2002-06-10"
 }

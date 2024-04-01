@@ -22,14 +22,18 @@ public class MovieConfigurations : IEntityTypeConfiguration<Movie>
                 value => MovieId.Create(value));
         builder.Property(m => m.Name)
             .HasMaxLength(100);
-        builder.Property(m => m.Description)
-            .HasMaxLength(100);
+        builder.Property(m => m.Description);
+            
         builder.Property(m => m.Duration);
         builder.Property(m => m.Premiere);
         builder.Property(m => m.IconURL)
-            .HasMaxLength(100);
+            .HasMaxLength(200);
         builder.Property(m => m.TrailerURL)
-            .HasMaxLength(100);
-        
+            .HasMaxLength(200);
+        builder.Property(m => m.Summary);
+        builder.Property(m => m.CoverURL)
+            .HasMaxLength(200);
+        builder.Property(m => m.ImagenURL)
+        .HasMaxLength(200);
     }
 }

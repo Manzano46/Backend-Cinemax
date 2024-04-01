@@ -21,7 +21,9 @@ public class ProjectionMappingConfig : IRegister
 
         config.NewConfig<CreateProjectionRequest, CreateProjectionCommand>()
         .Map(dest => dest.MovieId, src => MovieId.Create(new(src.Movie)))
-        .Map(dest => dest.RoomId, src => RoomId.Create(new(src.Room)));
+        .Map(dest => dest.RoomId, src => RoomId.Create(new(src.Room)))
+        .Map(dest => dest.Date , src => src.Date)
+        ;
 
         config.NewConfig<DeleteProjectionRequest, DeleteProjectionCommand>()
             .Map(dest => dest.Id, src => ProjectionId.Create(new(src.Id)));

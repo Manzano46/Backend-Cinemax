@@ -1,6 +1,7 @@
 using Cinemax.Domain.Common.Models;
 using Cinemax.Domain.Role.Entities;
 using Cinemax.Domain.Role.ValueObjects;
+using Cinemax.Domain.TicketAggregate.Entities;
 using Cinemax.Domain.User.ValueObjects;
 
 namespace Cinemax.Domain.User.Entities;
@@ -14,6 +15,7 @@ public class User : Entity<UserId>{
     public RoleId RoleId {get; set;} = null!;
     public virtual Role.Entities.Role Role {get; set;} = null!;
     public virtual ICollection<Card.Entities.Card> Cards { get; set; } = null!;
+    public virtual ICollection<Ticket> Tickets { get; set; } = null!;
 
     #pragma warning disable CS8618
     private User(){}
