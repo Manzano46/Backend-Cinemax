@@ -36,4 +36,5 @@ public class UserRepository : IUserRepository{
         return _cinemaxDbContext.Users.Include(r => r.Cards).Include(r=>r.Role);
     }
 
+   
 }

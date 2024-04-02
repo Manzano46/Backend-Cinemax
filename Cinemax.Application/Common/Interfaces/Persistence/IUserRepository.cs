@@ -8,4 +8,5 @@ public interface IUserRepository{
     void Add(User user);
     void Delete(UserId userId);
     IEnumerable<User> GetAll();
+
 }

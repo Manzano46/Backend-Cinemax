@@ -29,9 +29,11 @@ public class ValidateQueryHandler : IRequestHandler<ValidateQuery, string>
             throw new Exception("payment type does not exists");
         }
 
-        if(paymentType.Name == "PUNTOS" && user.Points < query.Cant * 20){
+        if(paymentType.Name == "Puntos" && user.Points < query.Cant * 20){
             throw new Exception("not points enough");
         }
+
+        
 
 
         return "ok";

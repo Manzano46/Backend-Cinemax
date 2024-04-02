@@ -52,13 +52,13 @@ public class TicketController : ControllerBase{
     }
 
     // POST: api/tickets/confirm/
-    [HttpPost("confirm")]
+    [HttpPost("confirm/{paymentTypeid}")]
     //[Authorize(Roles = "ADMIN,USER")] 
-    public async Task<IActionResult> Confirm(ConfirmTicketsRequest confirmTicketsRequest, string idPaymentType)
+    public async Task<IActionResult> Confirm(ConfirmTicketsRequest confirmTicketsRequest, string paymentTypeid)
     {
 
-       // var query = new ValidateQuery(confirmTicketsRequest.ConfirmTicketsRequests.Count(), confirmTicketsRequest.ConfirmTicketsRequests[0].UserId, idPaymentType);
-        //await _mediator.Send(query);
+        var query = new ValidateQuery(confirmTicketsRequest.ConfirmTicketsRequests.Count(), confirmTicketsRequest.ConfirmTicketsRequests[0].UserId, paymentTypeid);
+        await _mediator.Send(query);
 
         List<TicketResponse> responses = new List<TicketResponse>();
         foreach(var confirmTicketRequest in confirmTicketsRequest.ConfirmTicketsRequests){
@@ -72,6 +72,7 @@ public class TicketController : ControllerBase{
 
         }
 
+        // poner puntos
         
 
         return Ok(responses);
