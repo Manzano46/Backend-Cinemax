@@ -3,12 +3,8 @@ using Cinemax.Domain.RoomType.Entities;
 
 namespace Cinemax.Application.Common.Interfaces.Persistence
 {
-    public interface IRoomTypeRepository
+    public interface IRoomTypeRepository : IRepository<RoomType, RoomTypeId>
     {
-        RoomType? GetById(RoomTypeId roomTypeId);
-        RoomType? GetByName(String name);       
-        void Add(RoomType RoomType);
-        void Delete(RoomTypeId roomTypeId);
-        IEnumerable<RoomType> GetAllRoomTypes();
+        RoomType? GetByName(string name);
     }
 }

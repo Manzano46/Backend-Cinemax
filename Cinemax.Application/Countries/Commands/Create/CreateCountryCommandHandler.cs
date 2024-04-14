@@ -27,7 +27,7 @@ public class CreateCountryCommandHandler : IRequestHandler<CreateCountryCommand,
             new List<Movie>()
         );
 
-        _countryRepository.Add(country);
+        _countryRepository.Insert(country);
 
         return new CountryResult(country);
     }

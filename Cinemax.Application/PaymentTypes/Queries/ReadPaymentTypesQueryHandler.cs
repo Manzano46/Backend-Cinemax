@@ -15,6 +15,6 @@ public class ReadPaymentTypesQueryHandler : IRequestHandler<ReadPaymentTypesQuer
     public async Task<IEnumerable<PaymentTypeResult>> Handle(ReadPaymentTypesQuery command, CancellationToken cancellationToken)
     {
         await Task.CompletedTask;
-        return _paymentTypeRepository.GetAllPaymentTypes().Select(x => new PaymentTypeResult(x));
+        return _paymentTypeRepository.GetAll().Select(x => new PaymentTypeResult(x));
     }
 }

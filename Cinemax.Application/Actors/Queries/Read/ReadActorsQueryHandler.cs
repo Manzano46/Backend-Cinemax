@@ -15,6 +15,6 @@ public class ReadActorsQueryHandler : IRequestHandler<ReadActorsQuery, IEnumerab
     public async Task<IEnumerable<ActorResult>> Handle(ReadActorsQuery command, CancellationToken cancellationToken)
     {
         await Task.CompletedTask;
-        return _actorRepository.GetAllActors().Select(x => new ActorResult(x));
+        return _actorRepository.GetAll().Select(x => new ActorResult(x));
     }
 }

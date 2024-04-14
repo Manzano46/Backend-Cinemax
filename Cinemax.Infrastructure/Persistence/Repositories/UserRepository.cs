@@ -4,37 +4,15 @@ using Cinemax.Domain.User.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 
 namespace Cinemax.Infrastructure.Persistence.Repositories;
-public class UserRepository : IUserRepository{
+public class UserRepository : Repository<User,UserId> , IUserRepository{
     private readonly CinemaxDbContext _cinemaxDbContext;
-    public UserRepository(CinemaxDbContext cinemaxDbContext){
+
+    public UserRepository(CinemaxDbContext cinemaxDbContext) : base(cinemaxDbContext){
         _cinemaxDbContext = cinemaxDbContext;
     }
-    public void Add(User user){
-        _cinemaxDbContext.Users.Add(user);
-        _cinemaxDbContext.SaveChanges();
-    }
 
-    public User? GetById(UserId userId)
+    public User? GetByEmail(string email)
     {
-        return _cinemaxDbContext.Users.Include(r => r.Cards).Include(r=>r.Role).SingleOrDefault(user => user.Id == userId);
+        return _cinemaxDbContext.Users.SingleOrDefault(u => u.Email == email);
     }
-
-    public User? GetUserByEmail(string email){
-        return _cinemaxDbContext.Users.Include(r => r.Cards).Include(r=>r.Role).SingleOrDefault(user => user.Email == email); 
-    }
-
-    public void Delete(UserId userId){
-        User user = _cinemaxDbContext.Users.SingleOrDefault(user => user.Id == userId)!;
-        if(user is not null){
-            _cinemaxDbContext.Users.Remove(user);
-        }
-        _cinemaxDbContext.SaveChanges();
-    }
-
-    public IEnumerable<User> GetAll()
-    {
-        return _cinemaxDbContext.Users.Include(r => r.Cards).Include(r=>r.Role);
-    }
-
-   
 }

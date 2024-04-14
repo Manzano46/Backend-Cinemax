@@ -23,7 +23,7 @@ public class CreatePaymentTypeCommandHandler : IRequestHandler<CreatePaymentType
             command.Name
         );
 
-        _paymentTypeRepository.Add(paymentType);
+        _paymentTypeRepository.Insert(paymentType);
 
         return new PaymentTypeResult(paymentType);
     }

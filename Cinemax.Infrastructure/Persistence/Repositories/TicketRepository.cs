@@ -8,16 +8,11 @@ using Cinemax.Infrastructure.Services.Statistics;
 using Microsoft.EntityFrameworkCore;
 
 namespace Cinemax.Infrastructure.Persistence.Repositories;
-public class TicketRepository : ITicketRepository{
+public class TicketRepository : Repository<Ticket,TicketId>, ITicketRepository{
     private readonly CinemaxDbContext _cinemaxDbContext;
-    public TicketRepository(CinemaxDbContext cinemaxDbContext){
+    public TicketRepository(CinemaxDbContext cinemaxDbContext) : base(cinemaxDbContext){
         _cinemaxDbContext = cinemaxDbContext;
     }
-    public void Add(Ticket Ticket){
-        _cinemaxDbContext.Tickets.Add(Ticket);
-        _cinemaxDbContext.SaveChanges();
-    }
-
     public void UpdateDataBase(){
         _cinemaxDbContext.Tickets
             .Where(t => t.TicketStatus == TicketStatus.reserved && EF.Functions.DateDiffMinute(t.Date,DateTime.UtcNow) > 10)
@@ -25,7 +20,7 @@ public class TicketRepository : ITicketRepository{
 
         _cinemaxDbContext.SaveChanges();
     }
-    public Ticket? GetById(TicketId TicketId)
+    public override Ticket? GetById(TicketId TicketId)
     {
         UpdateDataBase();
         return _cinemaxDbContext.Tickets.Include(t => t.Seat).Include(t=>t.User).Include(t=>t.Projection).SingleOrDefault(Ticket => Ticket.Id == TicketId);
@@ -41,15 +36,8 @@ public class TicketRepository : ITicketRepository{
         return _cinemaxDbContext.Tickets.Include(t => t.Seat).Include(t=>t.User).Include(t=>t.Projection).Where(t => t.ProjectionId == projectionId); 
     }
 
-    public void Delete(TicketId TicketId){
-        Ticket Ticket = _cinemaxDbContext.Tickets.SingleOrDefault(Ticket => Ticket.Id == TicketId)!;
-        if(Ticket is not null){
-            _cinemaxDbContext.Tickets.Remove(Ticket);
-        }
-        _cinemaxDbContext.SaveChanges();
-    }
 
-    public IEnumerable<Ticket> GetAll()
+    public override IEnumerable<Ticket> GetAll()
     {
         UpdateDataBase();
         return _cinemaxDbContext.Tickets.Include(t => t.Seat).Include(t=>t.User).Include(t=>t.Projection);
@@ -74,6 +62,7 @@ public class TicketRepository : ITicketRepository{
     }
     public async Task<List<RoomTicketCount>> GetTopRoomCountsAsync(DateTime startDate, DateTime endDate,int limit)
     {
+        UpdateDataBase();
         return await _cinemaxDbContext.Tickets
             .Include(t => t.Projection.Room)
             .Where(t => t.Date >= startDate && t.Date <= endDate && t.TicketStatus == TicketStatus.paid)
@@ -86,6 +75,7 @@ public class TicketRepository : ITicketRepository{
 
     public async Task<List<TopMovie>> GetTopMoviesAsync(DateTime startDate, DateTime endDate,int limit)
     {
+        UpdateDataBase();
         return await _cinemaxDbContext.Tickets
             .Include(t => t.Projection.Movie)
             .Where(t => t.Date >= startDate && t.Date <= endDate)

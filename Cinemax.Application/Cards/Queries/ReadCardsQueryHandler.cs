@@ -15,6 +15,6 @@ public class ReadCardsQueryHandler : IRequestHandler<ReadCardsQuery, IEnumerable
     public async Task<IEnumerable<CardResult>> Handle(ReadCardsQuery command, CancellationToken cancellationToken)
     {
         await Task.CompletedTask;
-        return _CardRepository.GetAllCards().Select(x => new CardResult(x));
+        return _CardRepository.GetAll().Select(x => new CardResult(x));
     }
 }

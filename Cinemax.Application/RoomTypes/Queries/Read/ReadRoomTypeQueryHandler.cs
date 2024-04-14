@@ -14,6 +14,6 @@ public class ReadRoomTypesQueryHandler : IRequestHandler<ReadRoomTypesQuery, IEn
     public async Task<IEnumerable<RoomTypeResult>> Handle(ReadRoomTypesQuery command, CancellationToken cancellationToken)
     {
         await Task.CompletedTask;
-        return _RoomTypeRepository.GetAllRoomTypes().Select(x => new RoomTypeResult(x));
+        return _RoomTypeRepository.GetAll().Select(x => new RoomTypeResult(x));
     }
 }

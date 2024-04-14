@@ -3,43 +3,15 @@ using Cinemax.Domain.Director.Entities;
 using Cinemax.Domain.Director.ValueObjects;
 
 namespace Cinemax.Infrastructure.Persistence.Repositories;
-public class DirectorRepository : IDirectorRepository{
+public class DirectorRepository : Repository<Director, DirectorId>, IDirectorRepository{
     private readonly CinemaxDbContext _cinemaxDbContext;
 
-    public DirectorRepository(CinemaxDbContext cinemaxDbContext){
+    public DirectorRepository(CinemaxDbContext cinemaxDbContext) : base(cinemaxDbContext){
         _cinemaxDbContext = cinemaxDbContext;
     }
-
-    public void Add(Director director)
-    {
-        _cinemaxDbContext.Directors.Add(director);
-        _cinemaxDbContext.SaveChanges();
-    }
-
-    public IEnumerable<Director> GetAllDirectors()
-    {
-        return _cinemaxDbContext.Directors;
-    }
-
-    public Director? GetByName(string firstname, string lastname)
-    {
-        return _cinemaxDbContext.Directors.SingleOrDefault(m => m.FirstName == firstname && m.LastName == lastname);
-    }
     
-       public Director? GetById(DirectorId DirectorId)
+    public Director? GetByName(string LastName, string FirstName)
     {
-        return _cinemaxDbContext.Directors.SingleOrDefault(m => m.Id == DirectorId);
+        return _cinemaxDbContext.Directors.SingleOrDefault(d => d.LastName == LastName && d.FirstName == FirstName);
     }
-    
-    public void Delete(DirectorId id)
-    {
-        var Director = _cinemaxDbContext.Directors.SingleOrDefault(m => m.Id == id);
-        if (Director is not null)
-        {
-            _cinemaxDbContext.Directors.Remove(Director);
-            _cinemaxDbContext.SaveChanges();
-        }
-    }
-
-
 }

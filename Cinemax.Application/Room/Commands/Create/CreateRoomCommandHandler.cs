@@ -63,7 +63,7 @@ public class CreateRoomCommandHandler : IRequestHandler<CreateRoomCommand, RoomR
 
         Room.Seats = seats;
 
-        _RoomRepository.Add(Room);
+        _RoomRepository.Insert(Room);
 
         return new RoomResult(Room);
     }

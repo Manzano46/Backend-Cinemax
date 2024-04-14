@@ -15,6 +15,6 @@ public class ReadRolesQueryHandler : IRequestHandler<ReadRolesQuery, IEnumerable
     public async Task<IEnumerable<RoleResult>> Handle(ReadRolesQuery command, CancellationToken cancellationToken)
     {
         await Task.CompletedTask;
-        return _roleRepository.GetAllRoles().Select(x => new RoleResult(x));
+        return _roleRepository.GetAll().Select(x => new RoleResult(x));
     }
 }

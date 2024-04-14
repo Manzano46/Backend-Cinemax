@@ -26,7 +26,7 @@ public class CreateDirectorCommandHandler : IRequestHandler<CreateDirectorComman
             new List<Movie>()
         );
 
-        _directorRepository.Add(director);
+        _directorRepository.Insert(director);
 
         return new DirectorResult(director);
     }

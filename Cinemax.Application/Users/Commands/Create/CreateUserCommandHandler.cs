@@ -25,7 +25,7 @@ public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, Authe
     public async Task<AuthenticationResult> Handle(CreateUserCommand command, CancellationToken cancellationToken)
     {
         await Task.CompletedTask;
-        if(_UserRepository.GetUserByEmail(command.Email) is not null){
+        if(_UserRepository.GetByEmail(command.Email) is not null){
             throw new Exception("User with given email alredy exists");
         }
 
@@ -59,7 +59,7 @@ public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, Authe
             cards
         );
 
-        _UserRepository.Add(user);
+        _UserRepository.Insert(user);
         var token = _jwtTokenGenerator.GenerateToken(user);
 
         return new AuthenticationResult(user, token);

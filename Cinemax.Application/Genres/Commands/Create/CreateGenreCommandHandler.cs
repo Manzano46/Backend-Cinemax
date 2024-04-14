@@ -25,7 +25,7 @@ public class CreateGenreCommandHandler : IRequestHandler<CreateGenreCommand, Gen
             new List<Movie>()
         );
 
-        _genreRepository.Add(genre);
+        _genreRepository.Insert(genre);
 
         return new GenreResult(genre);
     }

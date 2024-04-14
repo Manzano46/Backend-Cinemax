@@ -85,7 +85,7 @@ public class RegisterCommandHandler : IRequestHandler<CreateMovieCommand, MovieR
             genres
         );
 
-        _movieRepository.Add(movie);
+        _movieRepository.Insert(movie);
 
         return new MovieResult(movie);
     }

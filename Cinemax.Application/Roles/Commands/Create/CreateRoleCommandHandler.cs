@@ -23,7 +23,7 @@ public class CreateRoleCommandHandler : IRequestHandler<CreateRoleCommand, RoleR
             command.Name
         );
 
-        _roleRepository.Add(role);
+        _roleRepository.Insert(role);
 
         return new RoleResult(role);
     }

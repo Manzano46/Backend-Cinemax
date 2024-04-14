@@ -23,7 +23,7 @@ public class CreateRoomTypeCommandHandler : IRequestHandler<CreateRoomTypeComman
             command.Name
         );
 
-        _RoomTypeRepository.Add(RoomType);
+        _RoomTypeRepository.Insert(RoomType);
 
         return new RoomTypeResult(RoomType);
     }

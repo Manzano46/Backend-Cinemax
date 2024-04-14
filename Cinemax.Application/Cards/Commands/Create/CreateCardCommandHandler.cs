@@ -26,7 +26,7 @@ public class CreateCardCommandHandler : IRequestHandler<CreateCardCommand, CardR
             command.Id
         );
 
-        _CardRepository.Add(Card);
+        _CardRepository.Insert(Card);
 
         return new CardResult(Card);
     }

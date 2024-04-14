@@ -40,7 +40,7 @@ public class CreateActorCommandHandler : IRequestHandler<CreateActorCommand, Act
             movies
         );
 
-        _actorRepository.Add(actor);
+        _actorRepository.Insert(actor);
 
         return new ActorResult(actor);
     }

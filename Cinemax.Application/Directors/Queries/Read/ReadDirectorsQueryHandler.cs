@@ -15,6 +15,6 @@ public class ReadDirectorsQueryHandler : IRequestHandler<ReadDirectorsQuery, IEn
     public async Task<IEnumerable<DirectorResult>> Handle(ReadDirectorsQuery command, CancellationToken cancellationToken)
     {
         await Task.CompletedTask;
-        return _directorRepository.GetAllDirectors().Select(x => new DirectorResult(x));
+        return _directorRepository.GetAll().Select(x => new DirectorResult(x));
     }
 }

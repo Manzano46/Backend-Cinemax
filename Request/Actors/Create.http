@@ -2,9 +2,9 @@
 @token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5YTExZDU2MC00YjgxLTQ4NDQtOTk5Yy1iMmQ5MmM2NDRhYTYiLCJnaXZlbl9uYW1lIjoiS2V2aW4iLCJmYW1pbHlfbmFtZSI6Ik1hbnphbm8iLCJqdGkiOiJjYWE1ZDAzNi1hMjIyLTQ1NGEtYjg1ZS1hMzE2MWMzZjg0MWQiLCJiaXJ0aGRhdGUiOiI2LzEwLzIwMDIiLCJlbWFpbCI6ImtldmluQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFETUlOIiwiZXhwIjoxNzExOTYzOTM0LCJpc3MiOiJDaW5lbWF4IiwiYXVkIjoiQ2luZW1heCJ9.vxrHTytq2z0AK5q2ZlWAoalqPfV20a9En15mmbBbqJo
 POST {{host}}/actors
 Content-Type: application/json
-Authorization: Bearer {{token}}
+//Authorization: Bearer {{token}}
 
 {
-    "firstname":"Jennifer",
-    "lastname":"Lopez"
+    "firstname":"Mariah",
+    "lastname":"Carey"
 }

@@ -65,8 +65,9 @@ public class ConfirmTicketCommandHandler : IRequestHandler<ConfirmTicketCommand,
             existingProjection
         );
         
-        _TicketRepository.Add(ticket);
-        _TicketRepository.Delete(existingTicket.Id);
+        existingTicket.UserId = command.UserId;
+        existingTicket.TicketStatus = TicketStatus.paid;
+        _TicketRepository.Update(existingTicket);
 
         //_UserRepository.UpdatePointMinus(command.UserId);
 

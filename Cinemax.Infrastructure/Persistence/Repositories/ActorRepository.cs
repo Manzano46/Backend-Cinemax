@@ -5,43 +5,14 @@ using Cinemax.Domain.ProjectionAggregate.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Cinemax.Infrastructure.Persistence.Repositories;
-public class ActorRepository : IActorRepository{
+public class ActorRepository : Repository<Actor,ActorId>, IActorRepository{
     private readonly CinemaxDbContext _cinemaxDbContext;
-
-    public ActorRepository(CinemaxDbContext cinemaxDbContext){
+    public ActorRepository(CinemaxDbContext cinemaxDbContext) : base(cinemaxDbContext){
         _cinemaxDbContext = cinemaxDbContext;
     }
 
-    public void Add(Actor actor)
+    public Actor? GetByName(string FirstName, string LastName)
     {
-        _cinemaxDbContext.Actors.Add(actor);
-        _cinemaxDbContext.SaveChanges();
+        return _cinemaxDbContext.Actors.SingleOrDefault(a => a.FirstName == FirstName && a.LastName == LastName);
     }
-
-    public IEnumerable<Actor> GetAllActors()
-    {
-        return _cinemaxDbContext.Actors.Include(a=>a.Movies);
-    }
-
-    public Actor? GetByName(string firstname, string lastname)
-    {
-        return _cinemaxDbContext.Actors.SingleOrDefault(m => m.FirstName == firstname && m.LastName == lastname);
-    }
-    
-       public Actor? GetById(ActorId actorId)
-    {
-        return _cinemaxDbContext.Actors.SingleOrDefault(m => m.Id == actorId);
-    }
-    
-    public void Delete(ActorId id)
-    {
-        var actor = _cinemaxDbContext.Actors.SingleOrDefault(m => m.Id == id);
-        if (actor is not null)
-        {
-            _cinemaxDbContext.Actors.Remove(actor);
-            _cinemaxDbContext.SaveChanges();
-        }
-    }
-
-
 }

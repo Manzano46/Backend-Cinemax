@@ -15,6 +15,6 @@ public class ReadCountriesQueryHandler : IRequestHandler<ReadCountriesQuery, IEn
     public async Task<IEnumerable<CountryResult>> Handle(ReadCountriesQuery command, CancellationToken cancellationToken)
     {
         await Task.CompletedTask;
-        return _countryRepository.GetAllCountries().Select(x => new CountryResult(x));
+        return _countryRepository.GetAll().Select(x => new CountryResult(x));
     }
 }

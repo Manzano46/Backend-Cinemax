@@ -44,12 +44,12 @@ public class CreateProjectionCommandHandler : IRequestHandler<CreateProjectionCo
             existingRoom
             );
 
-        _ProjectionRepository.Add(projection);
+        _ProjectionRepository.Insert(projection);
 
         foreach(var seat in _ProjectionRepository.GetAllSeats(existingRoom.Id))
         {
             var ticket = Ticket.Create(seat.Id, null!, projection.Id, command.Date, TicketStatus.available, seat: seat);
-            _TicketRepository.Add(ticket);
+            _TicketRepository.Insert(ticket);
         }
 
         return new ProjectionResult(projection);

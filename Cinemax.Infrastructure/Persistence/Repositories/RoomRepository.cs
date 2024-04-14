@@ -4,41 +4,15 @@ using Cinemax.Domain.ProjectionAggregate.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 
 namespace Cinemax.Infrastructure.Persistence.Repositories;
-public class RoomRepository : IRoomRepository{
+public class RoomRepository : Repository<Room,RoomId>, IRoomRepository{
     private readonly CinemaxDbContext _cinemaxDbContext;
 
-    public RoomRepository(CinemaxDbContext cinemaxDbContext){
+    public RoomRepository(CinemaxDbContext cinemaxDbContext) : base(cinemaxDbContext){
         _cinemaxDbContext = cinemaxDbContext;
-    }
-
-    public void Add(Room Room)
-    {
-        _cinemaxDbContext.Rooms.Add(Room);
-        _cinemaxDbContext.SaveChanges();
-    }
-
-    public IEnumerable<Room> GetAll()
-    {
-        return _cinemaxDbContext.Rooms.Include(r => r.RoomTypes).Include(r => r.Seats);
-    }
-
-    public Room? GetById(RoomId id)
-    {
-        return _cinemaxDbContext.Rooms.Include(r => r.RoomTypes).Include(r => r.Seats).SingleOrDefault(m => m.Id == id);
     }
 
     public Room? GetByName(string name)
     {
-        return _cinemaxDbContext.Rooms.Include(r => r.RoomTypes).Include(r => r.Seats).SingleOrDefault(m => m.Name == name);
-    }
-    
-    public void Delete(RoomId id)
-    {
-        var Room = _cinemaxDbContext.Rooms.SingleOrDefault(m => m.Id == id);
-        if (Room is not null)
-        {
-            _cinemaxDbContext.Rooms.Remove(Room);
-        }
-        _cinemaxDbContext.SaveChanges();
+        return _cinemaxDbContext.Rooms.SingleOrDefault(r => r.Name == name);
     }
 }

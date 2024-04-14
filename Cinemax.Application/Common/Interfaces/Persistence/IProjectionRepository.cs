@@ -6,15 +6,10 @@ using Cinemax.Domain.ProjectionAggregate.Entities;
 
 namespace Cinemax.Application.Common.Interfaces.Persistence
 {
-    public interface IProjectionRepository
+    public interface IProjectionRepository : IRepository<Projection, ProjectionId>
     {
-        Projection? GetByKeys(RoomId roomId, MovieId movieId, DateTime date);
-        Projection? GetById(ProjectionId id);     
+        Projection? GetByKeys(RoomId roomId, MovieId movieId, DateTime date);     
         Task<List<Projection>> GetByAsync(Expression<Func<Projection, bool>> predicate);
-
-        void Add(Projection Projection);
-        void Delete(ProjectionId id);
-        IEnumerable<Projection> GetAll();
         IEnumerable<Seat> GetAllSeats(RoomId roomId);
     }
 }

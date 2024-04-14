@@ -29,7 +29,7 @@ public class CreateDiscountCommandHandler : IRequestHandler<CreateDiscountComman
             command.Percentage
         );
 
-        _discountRepository.Add(discount);
+        _discountRepository.Insert(discount);
 
         return new DiscountResult(discount);
     }

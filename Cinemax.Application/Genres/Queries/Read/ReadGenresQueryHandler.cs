@@ -14,6 +14,6 @@ public class ReadGenresQueryHandler : IRequestHandler<ReadGenresQuery, IEnumerab
     public async Task<IEnumerable<GenreResult>> Handle(ReadGenresQuery command, CancellationToken cancellationToken)
     {
         await Task.CompletedTask;
-        return _genreRepository.GetAllGenres().Select(x => new GenreResult(x));
+        return _genreRepository.GetAll().Select(x => new GenreResult(x));
     }
 }

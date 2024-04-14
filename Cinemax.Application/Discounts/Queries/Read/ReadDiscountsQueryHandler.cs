@@ -15,6 +15,6 @@ public class ReadDiscountsQueryHandler : IRequestHandler<ReadDiscountsQuery, IEn
     public async Task<IEnumerable<DiscountResult>> Handle(ReadDiscountsQuery command, CancellationToken cancellationToken)
     {
         await Task.CompletedTask;
-        return _discountRepository.GetAllDiscounts().Select(x => new DiscountResult(x));
+        return _discountRepository.GetAll().Select(x => new DiscountResult(x));
     }
 }
