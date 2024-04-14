@@ -6,7 +6,7 @@ Content-Type: application/json
 
 {
     "movie": "1d39f457-68f1-49fa-a6be-e396d771720a",
-    "room": "13e9e4e0-bb78-4127-a606-8ebb8df327de",
-    "date": "2042-05-11T00:00:00",
-    "price": "101"
+    "room": "18464df8-eb1a-4ea4-971f-1c8f8d92f42e",
+    "date": "2022-05-11T00:00:00",
+    "price": "20"
 }

@@ -76,9 +76,9 @@ public class TicketRepository : ITicketRepository{
     {
         return await _cinemaxDbContext.Tickets
             .Include(t => t.Projection.Room)
-            .Where(t => t.Date >= startDate && t.Date <= endDate)
+            .Where(t => t.Date >= startDate && t.Date <= endDate && t.TicketStatus == TicketStatus.paid)
             .GroupBy(t => new { t.Projection.Room.Id, t.Projection.Room.Name })
-            .Select(g => new RoomTicketCount { RoomName = g.Key.Name, TicketCount = g.Count() })
+            .Select(g => new RoomTicketCount { RoomName = g.Key.Name, TicketCount = g.Count(), Sales = g.Sum(t => t.Projection.Price) })
             .OrderByDescending(x => x.TicketCount)
             .Take(limit)
             .ToListAsync();

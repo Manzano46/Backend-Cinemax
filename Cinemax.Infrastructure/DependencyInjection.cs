@@ -14,6 +14,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using Npgsql.EntityFrameworkCore.PostgreSQL;
 
 namespace Cinemax.Infrastructure;
 public static class DependencyInjection{
@@ -29,8 +30,8 @@ public static class DependencyInjection{
     }
 
     public static IServiceCollection AddPersistance(this IServiceCollection services){
-        
-        services.AddDbContext<CinemaxDbContext>(options => options.UseSqlServer("Server=KEVIN\\SQLEXPRESS;Database=cinemax;User Id=cinemax;Password=cinemax;TrustServerCertificate=true;MultipleActiveResultSets=True"));
+        services.AddDbContext<CinemaxDbContext>(options => options.UseNpgsql("Host=localhost;Port=5432;Username=postgres;Password=postgres;Database=cinemax"));
+        //services.AddDbContext<CinemaxDbContext>(options => options.UseSqlServer("Server=KEVIN\\SQLEXPRESS;Database=cinemax;User Id=cinemax;Password=cinemax;TrustServerCertificate=true;MultipleActiveResultSets=True"));
         // services.AddDbContext<CinemaxDbContext>(options => options.UseSqlServer("Server=LEGION;Database=cinemax;User Id=cinemax;Password=cinemax;TrustServerCertificate=true"));
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IMovieRepository, MovieRepository>();

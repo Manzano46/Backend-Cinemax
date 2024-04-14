@@ -3,4 +3,5 @@ public class RoomTicketCount
 {
     public string RoomName { get; set; } = null!;
     public int TicketCount { get; set; }
+    public float Sales {get; set;}
 }
