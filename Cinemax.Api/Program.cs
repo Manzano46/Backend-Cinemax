@@ -5,7 +5,7 @@ using Cinemax.Api;
 var builder = WebApplication.CreateBuilder(args);
 { 
     builder.Services.AddApplication().AddInfrastructure(builder.Configuration).AddPresentation();
-    builder.Services.AddControllers();
+    builder.Services.AddControllers().AddNewtonsoftJson();
 
     // Add CORS services
     builder.Services.AddCors(options =>
