@@ -8,6 +8,7 @@ using Cinemax.Domain.Director.ValueObjects;
 using MapsterMapper;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cinemax.Api.Controllers;
@@ -77,27 +78,24 @@ public class DirectorController : ControllerBase{
         return Ok(response);
     }
 
-    /*
-    // PUT: api/Directors/{id}
-    [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, UpdateDirectorCommand command)
+    
+    // PATCH: api/directors/{id}
+    [HttpPatch("{id}")]
+    public async Task<IActionResult> Patch(string id, [FromBody] JsonPatchDocument patchDoc)
     {
-        if (id != command.Id)
+        if (patchDoc == null)
         {
             return BadRequest();
         }
 
-        await _mediator.Send(command);
-        return NoContent();
-    }
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
 
-    // DELETE: api/Directors/{id}
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(int id)
-    {
-        await _mediator.Send(new DeleteDirectorCommand { Id = id });
-        return NoContent();
-    }
-    */
+        var command = new UpdateDirectorCommand(id, patchDoc);
+        var actorResult = await _mediator.Send(command);
 
+        return Ok(actorResult);
+    }
 }

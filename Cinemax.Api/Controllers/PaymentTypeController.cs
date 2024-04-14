@@ -7,6 +7,7 @@ using Cinemax.Domain.PaymentType.ValueObjects;
 using MapsterMapper;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cinemax.Api.Controllers;
@@ -62,4 +63,23 @@ public class PaymentTypeController : ControllerBase{
         return Ok(response);
     }
 
+    // PATCH: api/actors/{id}
+    [HttpPatch("{id}")]
+    public async Task<IActionResult> Patch(string id, [FromBody] JsonPatchDocument patchDoc)
+    {
+        if (patchDoc == null)
+        {
+            return BadRequest();
+        }
+
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
+        var command = new UpdatePaymentTypeCommand(id, patchDoc);
+        var actorResult = await _mediator.Send(command);
+
+        return Ok(actorResult);
+    }
 }

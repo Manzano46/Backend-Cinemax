@@ -15,6 +15,8 @@ using Cinemax.Domain.User.ValueObjects;
 using Microsoft.AspNetCore.Authorization;
 using Cinemax.Application.Tickets.Queries.GetTopRoomCounts;
 using Cinemax.Application.Extras.Queries.Validate;
+using Microsoft.AspNetCore.JsonPatch;
+using Cinemax.Application.Tickets.Commands.Update;
 
 namespace Cinemax.Api.Controllers;
 
@@ -171,5 +173,25 @@ public class TicketController : ControllerBase{
     {
         var roomCounts = await _mediator.Send(new GetTopRoomCountsQuery(startDate,endDate,limit));
         return Ok(roomCounts);
+    }
+
+    // PATCH: api/actors/{id}
+    [HttpPatch("{id}")]
+    public async Task<IActionResult> Patch(string id, [FromBody] JsonPatchDocument patchDoc)
+    {
+        if (patchDoc == null)
+        {
+            return BadRequest();
+        }
+
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
+        var command = new UpdateTicketCommand(id, patchDoc);
+        var actorResult = await _mediator.Send(command);
+
+        return Ok(actorResult);
     }
 }

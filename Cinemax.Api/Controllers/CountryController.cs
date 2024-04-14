@@ -8,6 +8,7 @@ using Cinemax.Domain.Country.ValueObjects;
 using MapsterMapper;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cinemax.Api.Controllers;
@@ -76,26 +77,23 @@ public class CountryController : ControllerBase{
         return Ok(response);
     }
 
-    /*
-    // PUT: api/Countries/{id}
-    [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, UpdateCountrieCommand command)
+    // PATCH: api/countries/{id}
+    [HttpPatch("{id}")]
+    public async Task<IActionResult> Patch(string id, [FromBody] JsonPatchDocument patchDoc)
     {
-        if (id != command.Id)
+        if (patchDoc == null)
         {
             return BadRequest();
         }
 
-        await _mediator.Send(command);
-        return NoContent();
-    }
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
 
-    // DELETE: api/Countries/{id}
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(int id)
-    {
-        await _mediator.Send(new DeleteCountrieCommand { Id = id });
-        return NoContent();
+        var command = new UpdateCountryCommand(id, patchDoc);
+        var actorResult = await _mediator.Send(command);
+
+        return Ok(actorResult);
     }
-    */
 }

@@ -10,6 +10,7 @@ using Cinemax.Application.Projections.Queries.Get;
 using Microsoft.AspNetCore.Authorization;
 using Cinemax.Domain.ProjectionAggregate.ValueObjects;
 using Cinemax.Application.Tickets.Queries.GetTopRoomCounts;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace Cinemax.Api.Controllers;
 
@@ -106,4 +107,23 @@ public class ProjectionController : ControllerBase{
         return Ok(response);
     }
 
+    // PATCH: api/actors/{id}
+    [HttpPatch("{id}")]
+    public async Task<IActionResult> Patch(string id, [FromBody] JsonPatchDocument patchDoc)
+    {
+        if (patchDoc == null)
+        {
+            return BadRequest();
+        }
+
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
+        var command = new UpdateProjectionCommand(id, patchDoc);
+        var actorResult = await _mediator.Send(command);
+
+        return Ok(actorResult);
+    }
 }

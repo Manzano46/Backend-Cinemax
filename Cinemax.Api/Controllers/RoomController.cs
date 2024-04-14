@@ -9,6 +9,7 @@ using Cinemax.Application.RoomTypes.Commands.Delete;
 using Cinemax.Application.Rooms.Commands.Delete;
 using Cinemax.Application.Rooms.Queries.Get;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace Cinemax.Api.Controllers;
 
@@ -79,5 +80,25 @@ public class RoomController : ControllerBase{
         var response = _mapper.Map<RoomResponse>(RoomResult);
 
         return Ok(response);
+    }
+
+    // PATCH: api/actors/{id}
+    [HttpPatch("{id}")]
+    public async Task<IActionResult> Patch(string id, [FromBody] JsonPatchDocument patchDoc)
+    {
+        if (patchDoc == null)
+        {
+            return BadRequest();
+        }
+
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
+        var command = new UpdateRoomCommand(id, patchDoc);
+        var actorResult = await _mediator.Send(command);
+
+        return Ok(actorResult);
     }
 }

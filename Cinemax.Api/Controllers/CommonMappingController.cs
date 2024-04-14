@@ -9,6 +9,7 @@ using Cinemax.Domain.User.ValueObjects;
 using MapsterMapper;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cinemax.Api.Controllers;

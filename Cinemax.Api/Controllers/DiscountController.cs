@@ -8,6 +8,7 @@ using Cinemax.Domain.Discount.ValueObjects;
 using MapsterMapper;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cinemax.Api.Controllers;
@@ -77,26 +78,23 @@ public class DiscountController : ControllerBase{
         return Ok(response);
     }
 
-    /*
-    // PUT: api/Discounts/{id}
-    [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, UpdateCountrieCommand command)
+    // PATCH: api/discounts/{id}
+    [HttpPatch("{id}")]
+    public async Task<IActionResult> Patch(string id, [FromBody] JsonPatchDocument patchDoc)
     {
-        if (id != command.Id)
+        if (patchDoc == null)
         {
             return BadRequest();
         }
 
-        await _mediator.Send(command);
-        return NoContent();
-    }
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
 
-    // DELETE: api/Discounts/{id}
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(int id)
-    {
-        await _mediator.Send(new DeleteCountrieCommand { Id = id });
-        return NoContent();
+        var command = new UpdateDiscountCommand(id, patchDoc);
+        var actorResult = await _mediator.Send(command);
+
+        return Ok(actorResult);
     }
-    */
 }

@@ -1,0 +1,13 @@
+@host = http://localhost:5250
+@actorId = 0704ddce-5b55-47c5-9971-84c24c2252ff
+
+PATCH {{host}}/countries/{{actorId}}
+Content-Type: application/json-patch+json
+
+[
+    {
+        "op": "replace",
+        "path": "/Name",
+        "value": "Cuba"
+    }
+]

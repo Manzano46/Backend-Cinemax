@@ -7,6 +7,7 @@ using Cinemax.Domain.Card.ValueObjects;
 using MapsterMapper;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cinemax.Api.Controllers;
@@ -62,5 +63,25 @@ public class CardController : ControllerBase{
         CardResult CardResult = await _mediator.Send(command);
         var response = _mapper.Map<CardResponse>(CardResult);
         return Ok(response);
+    }
+
+    // PATCH: api/cards/{id}
+    [HttpPatch("{id}")]
+    public async Task<IActionResult> Patch(string id, [FromBody] JsonPatchDocument patchDoc)
+    {
+        if (patchDoc == null)
+        {
+            return BadRequest();
+        }
+
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
+        var command = new UpdateCardCommand(id, patchDoc);
+        var result = await _mediator.Send(command);
+
+        return Ok(result);
     }
 }
