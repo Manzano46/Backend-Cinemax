@@ -9,6 +9,7 @@ using Cinemax.Domain.User.Entities;
 using Cinemax.Application.Cards.Commands.Create;
 using Cinemax.Application.Roles.Commands.Create;
 using Cinemax.Application.Users.Queries.Login;
+using Cinemax.Contracts.Roles;
 
 namespace Cinemax.Api.Common.Mapping;
 public class UserMappingConfig : IRegister
@@ -22,7 +23,7 @@ public class UserMappingConfig : IRegister
             .Map(dest => dest.FirstName, src => src.User.FirstName)
             .Map(dest => dest.LastName, src => src.User.LastName)
             .Map(dest => dest.Points, src => src.User.Points)
-            .Map(dest => dest.Role, src => new CreateRoleCommand(src.User.Role.Name))
+            .Map(dest => dest.Role, src => new RoleResponse(src.User.RoleId.Value.ToString(),src.User.Role.Name))
             .Map(dest => dest.Cards, src => src.User.Cards)
             .Map(dest => dest.Token, src => src.Token);
             
@@ -34,7 +35,7 @@ public class UserMappingConfig : IRegister
             .Map(dest => dest.FirstName, src => src.User.FirstName)
             .Map(dest => dest.LastName, src => src.User.LastName)
             .Map(dest => dest.Points, src => src.User.Points)
-            .Map(dest => dest.Role, src => new CreateRoleCommand(src.User.Role.Name))
+            .Map(dest => dest.Role, src => new RoleResponse(src.User.RoleId.Value.ToString(),src.User.Role.Name))
             .Map(dest => dest.Cards, src => src.User.Cards);
 
 
