@@ -67,8 +67,9 @@ public class DiscountController : ControllerBase{
 
     // GET: api/discounts/{id}
     [HttpGet("{id}")]
-    public async Task<IActionResult> Get(GetDiscountRequest getDiscountRequest)
+    public async Task<IActionResult> Get(string id)
     {
+        GetDiscountRequest getDiscountRequest = new(id);
         var query = _mapper.Map<GetDiscountQuery>(getDiscountRequest);
 
         DiscountResult DiscountResult = await _mediator.Send(query);

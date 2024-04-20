@@ -1,5 +1,6 @@
 using Cinemax.Application.PaymentTypes.Commands.Create;
 using Cinemax.Application.PaymentTypes.Common;
+using Cinemax.Application.PaymentTypes.Queries.Get;
 using Cinemax.Application.PaymentTypes.Queries.Read;
 using Cinemax.Contracts.PaymentTypes;
 using Cinemax.Domain.PaymentType.Entities;
@@ -81,5 +82,18 @@ public class PaymentTypeController : ControllerBase{
         var actorResult = await _mediator.Send(command);
 
         return Ok(actorResult);
+    }
+
+     [HttpGet("{id}")]
+    public async Task<IActionResult> Get(string id)
+    {
+        var paymentTypeId = PaymentTypeId.Create(new(id));
+        var query = new GetPaymentTypeQuery(paymentTypeId);
+
+        PaymentTypeResult PaymentTypeResult = await _mediator.Send(query);
+
+        var response = _mapper.Map<PaymentTypeResponse>(PaymentTypeResult);
+
+        return Ok(response);
     }
 }

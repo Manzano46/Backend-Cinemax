@@ -67,8 +67,9 @@ public class GenreController : ControllerBase{
 
     // GET: api/genres/{id}
     [HttpGet("{id}")]
-    public async Task<IActionResult> Get(GetGenreRequest getGenreRequest)
+    public async Task<IActionResult> Get(string id)
     {
+        GetGenreRequest getGenreRequest = new(id);
         var query = _mapper.Map<GetGenreQuery>(getGenreRequest);
 
         GenreResult GenreResult = await _mediator.Send(query);

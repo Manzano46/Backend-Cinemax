@@ -6,7 +6,7 @@ Content-Type: application/json
 {
     "firstname" : "Jackson", 
     "lastname":"Vera",
-    "email":"JC@gmail.com",
+    "email":"kevin123@gmail.com",
     "password":"123123asd",
     "birthday": "2002-06-10",
     "role":"ADMIN"

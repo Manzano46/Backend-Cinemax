@@ -1,7 +1,9 @@
 @host = http://localhost:5250
 
-GET {{host}}/common/init
+POST {{host}}/users/login
 Content-Type: application/json
 
 {
+    "email":"JC@gmail.com",
+    "password":"123123asd",
 }

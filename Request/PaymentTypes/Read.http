@@ -1,8 +1,6 @@
 @host = http://localhost:5250
 
-GET  {{host}}/paymentTypes
+GET  {{host}}/paymentTypes/3ac9e40f-23d6-4ffe-92b3-8ecc31e2ee71
 Content-Type: application/json
 
-{
-}
 

@@ -1,5 +1,6 @@
 using Cinemax.Application.Cards.Commands.Create;
 using Cinemax.Application.Cards.Common;
+using Cinemax.Application.Cards.Queries.Get;
 using Cinemax.Application.Cards.Queries.Read;
 using Cinemax.Contracts.Cards;
 using Cinemax.Domain.Card.Entities;
@@ -83,5 +84,18 @@ public class CardController : ControllerBase{
         var result = await _mediator.Send(command);
 
         return Ok(result);
+    }
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> Get(string id)
+    {
+        var cardId = CardId.Create(id);
+        var query = new GetCardQuery(cardId);
+
+        CardResult CardResult = await _mediator.Send(query);
+
+        var response = _mapper.Map<CardResponse>(CardResult);
+
+        return Ok(response);
     }
 }

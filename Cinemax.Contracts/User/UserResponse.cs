@@ -12,7 +12,7 @@ public record UserResponse(
     DateOnly BirthDay,
     int Points,
     CreateRoleRequest Role,
-    List<CreateCardRequest> Cards
+    List<CardResponse> Cards
 );
 
 public record UserResponseCore(
@@ -33,8 +33,8 @@ public record AuthenticationResponse(
     string Password,
     DateOnly BirthDay,
     int Points,
-    CreateRoleRequest Role,
-    List<CreateCardRequest> Cards,
+    CardResponse Role,
+    List<CardResponse> Cards,
     string Token
 );
 
