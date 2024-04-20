@@ -1,3 +1,4 @@
+using System.Security.Principal;
 using Cinemax.Application.Common.Interfaces.Authentication;
 using Cinemax.Application.Common.Interfaces.Persistence;
 using Cinemax.Application.Users.Common;

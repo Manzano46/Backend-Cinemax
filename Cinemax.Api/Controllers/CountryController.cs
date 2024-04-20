@@ -66,8 +66,9 @@ public class CountryController : ControllerBase{
 
     // GET: api/Countries/{id}
     [HttpGet("{id}")]
-    public async Task<IActionResult> Get(GetCountryRequest getCountryRequest)
+    public async Task<IActionResult> Get(string id)
     {
+        GetCountryRequest getCountryRequest = new(id);
         var query = _mapper.Map<GetCountryQuery>(getCountryRequest);
 
         CountryResult CountryResult = await _mediator.Send(query);

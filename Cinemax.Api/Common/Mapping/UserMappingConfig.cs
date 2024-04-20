@@ -15,7 +15,7 @@ public class UserMappingConfig : IRegister
 {
     public void Register(TypeAdapterConfig config){
         config.NewConfig<AuthenticationResult, AuthenticationResponse>()
-            .Map(dest => dest.Id, src => src.User.Id.Value )
+            .Map(dest => dest.Id, src => src.User.Id.Value)
             .Map(dest => dest.Email, src => src.User.Email)
             .Map(dest => dest.Password, src => src.User.Password)
             .Map(dest => dest.BirthDay, src => src.User.BirthDay)
@@ -23,7 +23,7 @@ public class UserMappingConfig : IRegister
             .Map(dest => dest.LastName, src => src.User.LastName)
             .Map(dest => dest.Points, src => src.User.Points)
             .Map(dest => dest.Role, src => new CreateRoleCommand(src.User.Role.Name))
-            .Map(dest => dest.Cards, src => src.User.Cards.Select(c => new CreateCardCommand(c.Id)))
+            // .Map(dest => dest.Cards, src => src.User.Cards.Select(c => new CreateCardCommand(c.Id)))
             .Map(dest => dest.Token, src => src.Token);
             
         config.NewConfig<UserResult, UserResponse>()

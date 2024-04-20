@@ -65,8 +65,9 @@ public class ActorController : ControllerBase{
 
     // GET: api/actors/{id}
     [HttpGet("{id}")]
-    public async Task<IActionResult> Get(GetActorRequest getActorRequest)
+    public async Task<IActionResult> Get(string id)
     {
+        GetActorRequest getActorRequest = new(id);
         var query = _mapper.Map<GetActorQuery>(getActorRequest);
 
         ActorResult ActorResult = await _mediator.Send(query);

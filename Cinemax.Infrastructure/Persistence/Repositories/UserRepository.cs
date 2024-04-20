@@ -13,6 +13,6 @@ public class UserRepository : Repository<User,UserId> , IUserRepository{
 
     public User? GetByEmail(string email)
     {
-        return _cinemaxDbContext.Users.SingleOrDefault(u => u.Email == email);
+        return _cinemaxDbContext.Users.Include(r=> r.Role).SingleOrDefault(u => u.Email == email);
     }
 }

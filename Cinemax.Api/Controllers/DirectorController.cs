@@ -67,8 +67,9 @@ public class DirectorController : ControllerBase{
 
     // GET: api/directors/{id}
     [HttpGet("{id}")]
-    public async Task<IActionResult> Get(GetDirectorRequest getDirectorRequest)
+    public async Task<IActionResult> Get(string id)
     {
+        GetDirectorRequest getDirectorRequest = new(id);
         var query = _mapper.Map<GetDirectorQuery>(getDirectorRequest);
 
         DirectorResult DirectorResult = await _mediator.Send(query);
