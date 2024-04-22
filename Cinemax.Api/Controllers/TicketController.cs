@@ -20,6 +20,9 @@ using Cinemax.Application.Tickets.Commands.Update;
 using Cinemax.Application.Tickets.Queries.GetBestSection;
 using Cinemax.Domain.PaymentType.Entities;
 using Cinemax.Domain.PaymentType.ValueObjects;
+using Cinemax.Domain.TicketAggregate.Entities;
+using Cinemax.Domain.TicketAggregate.ValueObjects;
+using Cinemax.Application.Tickets.Queries.Refund;
 
 namespace Cinemax.Api.Controllers;
 
@@ -207,5 +210,19 @@ public class TicketController : ControllerBase{
         var actorResult = await _mediator.Send(command);
 
         return Ok(actorResult);
+    }
+
+    // POST: api/tickets/refund/{id}
+    [HttpPost("refund/{id}")]
+    //[Authorize(Roles = "ADMIN,USER")]
+    public async Task<IActionResult> Refund(string id)
+    {
+        var ticketId = TicketId.Create(new(id));
+        var command = new RefundTicketQuery(ticketId);
+        var TicketResult = await _mediator.Send(command);
+
+        var response = _mapper.Map<TicketResponse>(TicketResult);
+
+        return Ok(response);
     }
 }
