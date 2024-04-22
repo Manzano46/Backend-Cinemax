@@ -1,5 +1,5 @@
 @host = http://localhost:5250
 
-GET {{host}}/users/6674ad85-cf7f-48fa-ba5b-0d5cb3abbf45
+GET {{host}}/users
 Content-Type: application/json
 

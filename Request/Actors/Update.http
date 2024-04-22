@@ -1,5 +1,5 @@
 @host = http://localhost:5250
-@actorId = 9fb92e6f-6cf1-4780-b52d-4e0766a5fd57
+@actorId = e6b32a61-92f0-4077-b393-6513b9bd855b
 
 PATCH {{host}}/actors/{{actorId}}
 Content-Type: application/json-patch+json
@@ -8,7 +8,7 @@ Content-Type: application/json-patch+json
     {
         "op": "replace",
         "path": "/FirstName",
-        "value": "juliana"
+        "value": "Maria"
     },
     {
         "op": "replace",
