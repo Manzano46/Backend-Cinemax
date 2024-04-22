@@ -3,5 +3,3 @@
 GET  {{host}}/directors
 Content-Type: application/json
 
-{
-}

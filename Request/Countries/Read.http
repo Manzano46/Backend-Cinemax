@@ -4,6 +4,3 @@
 GET  {{host}}/countries
 Content-Type: application/json
 
-{
-}
-

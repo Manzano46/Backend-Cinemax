@@ -4,12 +4,12 @@ using Cinemax.Domain.ProjectionAggregate.ValueObjects;
 namespace Cinemax.Domain.ProjectionAggregate.Entities;
 public class Movie : Entity<MovieId>
 {
-    public string Name { get; private set; } = null!;
-    public string Description { get; private set; } = null!;
-    public TimeSpan Duration { get; private set; }
-    public DateTime Premiere { get; private set; }
-    public string IconURL { get; private set; } = null!;
-    public string TrailerURL { get; private set; } = null!;
+    public string Name { get; set; } = null!;
+    public string Description { get; set; } = null!;
+    public TimeSpan Duration { get; set; }
+    public DateTime Premiere { get; set; }
+    public string IconURL { get; set; } = null!;
+    public string TrailerURL { get; set; } = null!;
     public string Summary {get; set;} = null!;
     public string CoverURL {get; set;} = null!;
     public string ImagenURL {get; set;} = null!;

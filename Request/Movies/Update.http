@@ -1,0 +1,13 @@
+@host = http://localhost:5250
+@movieId = 096aac4a-410c-4d7e-a02d-38575dc13d4d
+
+PATCH {{host}}/movies/{{movieId}}
+Content-Type: application/json-patch+json
+
+[
+    {
+        "op": "replace",
+        "path": "/Description",
+        "value": "wonka 4"
+    }
+]

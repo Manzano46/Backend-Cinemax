@@ -56,8 +56,9 @@ public class UserController : ControllerBase{
     // GET: api/Users/{id}
     [HttpGet("{id}")]
     //[Authorize(Roles = "ADMIN")] 
-    public async Task<IActionResult> Get(GetUserRequest getUserRequest)
+    public async Task<IActionResult> Get(string id)
     {
+        GetUserRequest getUserRequest = new(id);
         var query = _mapper.Map<GetUserQuery>(getUserRequest);
 
         UserResult UserResult = await _mediator.Send(query);

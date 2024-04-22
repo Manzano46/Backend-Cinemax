@@ -3,5 +3,3 @@
 GET  {{host}}/actors
 Content-Type: application/json
 
-{
-}
