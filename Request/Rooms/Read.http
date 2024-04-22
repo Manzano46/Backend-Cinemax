@@ -3,5 +3,3 @@
 GET  {{host}}/rooms
 Content-Type: application/json
 
-{
-}

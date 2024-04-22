@@ -38,7 +38,7 @@ public class CreateProjectionCommandHandler : IRequestHandler<CreateProjectionCo
         Projection projection = Projection.Create(
             existingMovie.Id,
             existingRoom.Id,
-            command.Date,
+            command.Date.ToUniversalTime(),
             command.Price,
             existingMovie,
             existingRoom
@@ -46,9 +46,11 @@ public class CreateProjectionCommandHandler : IRequestHandler<CreateProjectionCo
 
         _ProjectionRepository.Insert(projection);
 
-        foreach(var seat in _ProjectionRepository.GetAllSeats(existingRoom.Id))
+        var allSeats = _ProjectionRepository.GetAllSeats(existingRoom.Id).ToList();
+
+        foreach(var seat in allSeats)
         {
-            var ticket = Ticket.Create(seat.Id, null!, projection.Id, command.Date, TicketStatus.available, seat: seat);
+            var ticket = Ticket.Create(seat.Id, null!, projection.Id, command.Date.ToUniversalTime(), TicketStatus.available, seat: seat);
             _TicketRepository.Insert(ticket);
         }
 
