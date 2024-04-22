@@ -18,6 +18,11 @@ public class DeleteUserCommandHandler : IRequestHandler<DeleteUserCommand, UserR
         if(_UserRepository.GetById(command.Id) is not User user){
             throw new Exception("User not found");
         }
+        if(user.Role.Name == "ADMIN")
+        {
+            throw new Exception("You can't delete an admin");
+        }
+        
         _UserRepository.Delete(command.Id);
         
         return new UserResult(user);

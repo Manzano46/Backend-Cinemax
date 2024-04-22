@@ -97,7 +97,7 @@ public class UserController : ControllerBase{
         return Ok(response);
     }    
 
-    // PATCH: api/actors/{id}
+    // PATCH: api/users/{id}
     [HttpPatch("{id}")]
     public async Task<IActionResult> Patch(string id, [FromBody] JsonPatchDocument patchDoc)
     {

@@ -4,10 +4,10 @@ POST {{host}}/users
 Content-Type: application/json
 
 {
-    "firstname" : "Jackson", 
+    "firstname" : "Roger", 
     "lastname":"Vera",
-    "email":"kevin123@gmail.com",
+    "email":"roger123@gmail.com",
     "password":"123123asd",
     "birthday": "2002-06-10",
-    "role":"ADMIN"
+    "role":"USER"
 }
