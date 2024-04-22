@@ -5,6 +5,7 @@ using Cinemax.Domain.Seat.Entities;
 using MediatR;
 using Cinemax.Domain.User.Entities;
 using Cinemax.Domain.ProjectionAggregate;
+using Cinemax.Domain.PaymentType.Entities;
 
 namespace Cinemax.Application.Tickets.Commands.Confirm;
 public class ConfirmTicketCommandHandler : IRequestHandler<ConfirmTicketCommand, TicketResult>
@@ -13,13 +14,15 @@ public class ConfirmTicketCommandHandler : IRequestHandler<ConfirmTicketCommand,
     private readonly IUserRepository _UserRepository;
     private readonly IProjectionRepository _ProjectionRepository;
     private readonly ISeatRepository _SeatRepository;
+    private readonly IPaymentTypeRepository _PaymentTypeRepository;
 
-    public ConfirmTicketCommandHandler(ITicketRepository TicketRepository, IUserRepository UserRepository, IProjectionRepository ProjectionRepository, ISeatRepository _seatRepository)
+    public ConfirmTicketCommandHandler(ITicketRepository TicketRepository, IUserRepository UserRepository, IProjectionRepository ProjectionRepository, ISeatRepository _seatRepository, IPaymentTypeRepository PaymentTypeRepository)
     {
         _TicketRepository = TicketRepository;
         _UserRepository = UserRepository;
         _ProjectionRepository = ProjectionRepository;
         _SeatRepository = _seatRepository;
+        _PaymentTypeRepository = PaymentTypeRepository;
     }
     
     public async Task<TicketResult> Handle(ConfirmTicketCommand command, CancellationToken cancellationToken)
@@ -64,12 +67,29 @@ public class ConfirmTicketCommandHandler : IRequestHandler<ConfirmTicketCommand,
             existingUser,
             existingProjection
         );
-        
+
+        ticket.PaymentTypeId = command.PaymentTypeId;
+
+        if(_PaymentTypeRepository.GetById(command.PaymentTypeId) is not PaymentType paymentType)
+        {
+            throw new Exception($"PaymentType '{command.PaymentTypeId}' does not exist in the database");
+        }
+
+        if(paymentType.Name == "points" && existingUser.Points < 20)
+        {
+            throw new Exception($"User '{command.UserId}' does not have enough points to pay the ticket");
+        }
+
+        if(paymentType.Name == "points")
+        {
+            existingUser.Points -= 20;
+        }
+
+        existingUser.Points += 5;
+    
         existingTicket.UserId = command.UserId;
         existingTicket.TicketStatus = TicketStatus.paid;
         _TicketRepository.Update(existingTicket);
-
-        //_UserRepository.UpdatePointMinus(command.UserId);
 
         return new TicketResult(ticket);
     }

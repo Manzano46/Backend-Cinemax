@@ -16,8 +16,8 @@ public class GetProjectionQueryHandler : IRequestHandler<GetProjectionQueryFilte
     public async Task<List<ProjectionResult>> Handle(GetProjectionQueryFilters command, CancellationToken cancellationToken)
     {
         List<Projection> projections = await _ProjectionRepository.GetByAsync(
-            p => p.Date.CompareTo(command.DateInit)>=0 && 
-                 p.Date.CompareTo(command.DateEnd)<=0 && 
+            p => p.Date.CompareTo(command.DateInit.ToUniversalTime())>=0 && 
+                 p.Date.CompareTo(command.DateEnd.ToUniversalTime())<=0 && 
                  p.Price >= command.MinPrice && 
                  p.Price <= command.MaxPrice);
 

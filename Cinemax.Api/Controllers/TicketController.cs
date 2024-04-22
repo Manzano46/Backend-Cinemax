@@ -18,6 +18,8 @@ using Cinemax.Application.Extras.Queries.Validate;
 using Microsoft.AspNetCore.JsonPatch;
 using Cinemax.Application.Tickets.Commands.Update;
 using Cinemax.Application.Tickets.Queries.GetBestSection;
+using Cinemax.Domain.PaymentType.Entities;
+using Cinemax.Domain.PaymentType.ValueObjects;
 
 namespace Cinemax.Api.Controllers;
 
@@ -67,7 +69,8 @@ public class TicketController : ControllerBase{
         foreach(var confirmTicketRequest in confirmTicketsRequest.ConfirmTicketsRequests){
             var command = _mapper.Map<ConfirmTicketCommand>(confirmTicketRequest);
 
-            ConfirmTicketCommand command1 = new(command.SeatId, command.UserId, command.ProjectionId, DateTime.UtcNow);
+            ConfirmTicketCommand command1 = new(command.SeatId, command.UserId, command.ProjectionId, DateTime.UtcNow, PaymentTypeId.Create(new(paymentTypeid)));
+
             TicketResult TicketResult = await _mediator.Send(command1);
 
             var response = _mapper.Map<TicketResponse>(TicketResult);

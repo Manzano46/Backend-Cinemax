@@ -1,4 +1,5 @@
 using Cinemax.Application.Tickets.Common;
+using Cinemax.Domain.PaymentType.ValueObjects;
 using Cinemax.Domain.ProjectionAggregate.ValueObjects;
 using Cinemax.Domain.Seat.ValueObjects;
 using Cinemax.Domain.TicketAggregate.Entities;
@@ -10,5 +11,6 @@ public record ConfirmTicketCommand(
     SeatId  SeatId,
     UserId UserId,
     ProjectionId ProjectionId,
-    DateTime Date
+    DateTime Date,
+    PaymentTypeId PaymentTypeId
 ) : IRequest<TicketResult>;
