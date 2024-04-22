@@ -15,7 +15,17 @@ public class ProjectionRepository : Repository<Projection, ProjectionId>, IProje
     {
         return _cinemaxDbContext.Seats.Where(s => s.RoomId == roomId);
     }
-    
+
+    public override IEnumerable<Projection> GetAll()
+    {
+        return _cinemaxDbContext.Projections.Include(r => r.Movie).Include(r => r.Room);
+    }
+
+    public override Projection? GetById(ProjectionId id)
+    {
+        return _cinemaxDbContext.Projections.Include(r => r.Movie).Include(r => r.Room).SingleOrDefault(m => m.Id == id);
+    }
+
     public override void Delete(ProjectionId id)
     {
         var Projection = _cinemaxDbContext.Projections.SingleOrDefault(m => m.Id == id);

@@ -21,6 +21,10 @@ using Cinemax.Application.Tickets.Queries.GetBestSection;
 using Cinemax.Domain.TicketAggregate.ValueObjects;
 using DinkToPdf;
 using Cinemax.Infrastructure;
+using Cinemax.Domain.PaymentType.Entities;
+using Cinemax.Domain.PaymentType.ValueObjects;
+using Cinemax.Domain.TicketAggregate.Entities;
+using Cinemax.Application.Tickets.Queries.Refund;
 
 namespace Cinemax.Api.Controllers;
 
@@ -72,7 +76,8 @@ public class TicketController : ControllerBase{
         foreach(var confirmTicketRequest in confirmTicketsRequest.ConfirmTicketsRequests){
             var command = _mapper.Map<ConfirmTicketCommand>(confirmTicketRequest);
 
-            ConfirmTicketCommand command1 = new(command.SeatId, command.UserId, command.ProjectionId, DateTime.UtcNow);
+            ConfirmTicketCommand command1 = new(command.SeatId, command.UserId, command.ProjectionId, DateTime.UtcNow, PaymentTypeId.Create(new(paymentTypeid)));
+
             TicketResult TicketResult = await _mediator.Send(command1);
 
             var response = _mapper.Map<TicketResponse>(TicketResult);
@@ -213,5 +218,19 @@ public class TicketController : ControllerBase{
         var actorResult = await _mediator.Send(command);
 
         return Ok(actorResult);
+    }
+
+    // POST: api/tickets/refund/{id}
+    [HttpPost("refund/{id}")]
+    //[Authorize(Roles = "ADMIN,USER")]
+    public async Task<IActionResult> Refund(string id)
+    {
+        var ticketId = TicketId.Create(new(id));
+        var command = new RefundTicketQuery(ticketId);
+        var TicketResult = await _mediator.Send(command);
+
+        var response = _mapper.Map<TicketResponse>(TicketResult);
+
+        return Ok(response);
     }
 }

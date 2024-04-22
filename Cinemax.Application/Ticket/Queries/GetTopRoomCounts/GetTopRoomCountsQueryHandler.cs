@@ -15,7 +15,7 @@ public class GetTopRoomCountsHandler : IRequestHandler<GetTopRoomCountsQuery, IE
     public async Task<IEnumerable<RoomTicketCount>> Handle(GetTopRoomCountsQuery command, CancellationToken cancellationToken)
     {
         await Task.CompletedTask;
-        var result = await _TicketRepository.GetTopRoomCountsAsync(command.StartDate, command.EndDate, command.Top)!;
+        var result = await _TicketRepository.GetTopRoomCountsAsync(command.StartDate.ToUniversalTime(), command.EndDate.ToUniversalTime(), command.Top)!;
         return result ?? new List<RoomTicketCount>();
     }
 }

@@ -8,5 +8,5 @@ Content-Type: application/json
     "name": "MAXI",
     "height": "6",
     "width": "4",
-    "roomtypes":["2ea81b90-d16d-427e-9976-2d4efdde28a4", "1ffeb34f-d2de-4bd1-ae48-2bdbe3fadbd6"]
+    "roomtypes":["d8a9a7dd-ac10-466c-b20d-6da7a270b5cf"]
 }
