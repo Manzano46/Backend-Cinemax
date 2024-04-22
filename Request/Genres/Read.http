@@ -3,5 +3,3 @@
 GET  {{host}}/genres
 Content-Type: application/json
 
-{
-}

@@ -15,16 +15,6 @@ public record UserResponse(
     List<CardResponse> Cards
 );
 
-public record UserResponseCore(
-    string Id,
-    string FirstName, 
-    string LastName,
-    string Email,
-    string Password,
-    DateOnly BirthDay,
-    int Points
-);
-
 public record AuthenticationResponse(
     string Id,
     string FirstName, 
@@ -36,6 +26,15 @@ public record AuthenticationResponse(
     RoleResponse Role,
     List<CardResponse> Cards,
     string Token
+);
+public record UserResponseCore(
+    string Id,
+    string FirstName, 
+    string LastName,
+    string Email,
+    string Password,
+    DateOnly BirthDay,
+    int Points
 );
 
 public record AuthenticationResponseCore(

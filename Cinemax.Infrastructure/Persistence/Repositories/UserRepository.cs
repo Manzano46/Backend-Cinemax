@@ -15,4 +15,14 @@ public class UserRepository : Repository<User,UserId> , IUserRepository{
     {
         return _cinemaxDbContext.Users.Include(r=> r.Role).SingleOrDefault(u => u.Email == email);
     }
+
+    public override IEnumerable<User> GetAll()
+    {
+        return _cinemaxDbContext.Users.Include(r=> r.Role).Include(r => r.Cards).Include(r => r.Tickets);
+    }
+
+    public override User? GetById(UserId id)
+    {
+        return _cinemaxDbContext.Users.Include(r=> r.Role).Include(r => r.Cards).Include(r => r.Tickets).SingleOrDefault(u => u.Id == id);
+    }
 }

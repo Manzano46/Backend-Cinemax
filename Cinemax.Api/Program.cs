@@ -5,7 +5,10 @@ using Cinemax.Api;
 var builder = WebApplication.CreateBuilder(args);
 { 
     builder.Services.AddApplication().AddInfrastructure(builder.Configuration).AddPresentation();
-    builder.Services.AddControllers().AddNewtonsoftJson();
+    builder.Services.AddControllers().AddNewtonsoftJson(options =>
+    {
+        options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+    });
 
     // Add CORS services
     builder.Services.AddCors(options =>

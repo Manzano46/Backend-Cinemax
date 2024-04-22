@@ -16,17 +16,15 @@ Content-Type: application/json
   "duration": "01:45:00",
   "premiere": "2023-12-25T05:00:00.000Z",
   "countries": [
-    "9976841c-de98-4be1-bf5a-a8169f3a3296"
+    "0704ddce-5b55-47c5-9971-84c24c2252ff"
   ],
   "actors": [
-    "78648254-4c6a-4244-b309-714b3a586208"
+    "9fb92e6f-6cf1-4780-b52d-4e0766a5fd57"
   ],
   "directors": [
-    "bc913455-a9a6-4074-b693-5a7de0a0bdd2"
+    "85d9f9d7-c439-4e19-a998-5716ea35d70d"
   ],
   "genres": [
-    "56be0e11-1efc-4fbb-8a19-bb35f512947a",
-    "b6605af1-7aa2-4a80-a561-bd1bd69c94ff",
-    "b4c4d34b-41d7-4543-8b1e-f250af7314f1"
+    "8b63cd03-e037-492c-ae1a-4443353764c9"
   ]
 }
