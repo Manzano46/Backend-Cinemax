@@ -10,7 +10,7 @@ using Cinemax.Domain.TicketAggregate.Entities;
 using ZXing.QrCode;
 using DinkToPdfColorMode = DinkToPdf.ColorMode;
 
-
+namespace Cinemax.Infrastructure;
 public class TicketProvider
 {
     private readonly IConverter _converter;
@@ -20,8 +20,10 @@ public class TicketProvider
         _converter = converter;
     }
 
-    public byte[] GenerateTicket(string text, string htmlTemplate, string cinemaxLogo, Ticket ticket)
+    public byte[] GenerateTicket(string htmlTemplate, string cinemaxLogo, Ticket ticket)
 {
+    string text = "id : " + ticket.Id.ToString() + " " + "userId : " + ticket.UserId.ToString() + " " + "seatId : " + ticket.SeatId.ToString() + " " +"projectionId : " + ticket.ProjectionId.ToString() + " " + "date : " + ticket.Date.ToString("dd/MM/yyyy HH:mm");
+
     var qrCodeImage = GenerateQRCode(text);
     var qrCodeBase64 = Convert.ToBase64String(qrCodeImage);
     var htmlWithQrCode = htmlTemplate
@@ -35,6 +37,7 @@ public class TicketProvider
         .Replace("{{precio}}", ticket.Projection.Price.ToString())
         .Replace("{{qr}}", $"data:image/png;base64,{qrCodeBase64}");
     var pdf = GeneratePdf(htmlWithQrCode);
+
     return pdf;
 }
 

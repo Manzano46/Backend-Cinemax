@@ -18,6 +18,9 @@ using Cinemax.Application.Extras.Queries.Validate;
 using Microsoft.AspNetCore.JsonPatch;
 using Cinemax.Application.Tickets.Commands.Update;
 using Cinemax.Application.Tickets.Queries.GetBestSection;
+using Cinemax.Domain.TicketAggregate.ValueObjects;
+using DinkToPdf;
+using Cinemax.Infrastructure;
 
 namespace Cinemax.Api.Controllers;
 
@@ -59,11 +62,13 @@ public class TicketController : ControllerBase{
     //[Authorize(Roles = "ADMIN,USER")] 
     public async Task<IActionResult> Confirm(ConfirmTicketsRequest confirmTicketsRequest, string paymentTypeid)
     {
-
+        var pdfTools = new PdfTools();
+        var _converter = new SynchronizedConverter(pdfTools);
+        var ticketProvider = new TicketProvider(_converter);
         var query = new ValidateQuery(confirmTicketsRequest.ConfirmTicketsRequests.Count(), confirmTicketsRequest.ConfirmTicketsRequests[0].UserId, paymentTypeid);
         await _mediator.Send(query);
 
-        List<TicketResponse> responses = new List<TicketResponse>();
+        List<Tuple<TicketResponse,byte[]>> responses = new List<Tuple<TicketResponse,byte[]>>();
         foreach(var confirmTicketRequest in confirmTicketsRequest.ConfirmTicketsRequests){
             var command = _mapper.Map<ConfirmTicketCommand>(confirmTicketRequest);
 
@@ -71,7 +76,11 @@ public class TicketController : ControllerBase{
             TicketResult TicketResult = await _mediator.Send(command1);
 
             var response = _mapper.Map<TicketResponse>(TicketResult);
-            responses.Add(response);
+
+            byte[] ticketPdf = ticketProvider.GenerateTicket(@"..\..\..\Cinemax.Infrastructure\Services\TicketProvider\TicketTemplate.html", @"..\..\..\Cinemax.Infrastructure\Services\TicketProvider\cinemax.png", TicketResult.Ticket);
+
+
+            responses.Add(new Tuple<TicketResponse,byte[]>(response,ticketPdf));
 
         }
 
