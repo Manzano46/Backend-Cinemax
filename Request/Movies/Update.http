@@ -6,8 +6,13 @@ Content-Type: application/json-patch+json
 
 [
     {
-        "op": "replace",
-        "path": "/Description",
-        "value": "wonka 4"
+        "op": "remove",
+        "path": "/genres",
+        "value": "8b63cd03-e037-492c-ae1a-4443353764c9"
+    },
+    {
+        "op": "add",
+        "path": "/genres",
+        "value": "2ceadd7d-cf50-4969-b542-d04b177553a8"
     }
 ]

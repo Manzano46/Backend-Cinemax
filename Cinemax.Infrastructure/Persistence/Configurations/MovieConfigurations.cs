@@ -35,5 +35,23 @@ public class MovieConfigurations : IEntityTypeConfiguration<Movie>
             .HasMaxLength(200);
         builder.Property(m => m.ImagenURL)
         .HasMaxLength(200);
+
+        /*
+        builder.HasMany(m => m.Actors)
+                .WithMany(m => m.Movies)
+                .UsingEntity(m => m.ToTable("MovieActor"));
+                
+        builder.HasMany(m => m.Directors)
+                .WithMany(m => m.Movies)
+                .UsingEntity(m => m.ToTable("MovieDirector"));
+        
+        builder.HasMany(m => m.Genres)
+                .WithMany(m => m.Movies)
+                .UsingEntity(m => m.ToTable("MovieGenre"));
+        
+        builder.HasMany(m => m.Countries)
+                .WithMany(m => m.Movies)
+                .UsingEntity(m => m.ToTable("MovieCountry"));
+        */
     }
 }
