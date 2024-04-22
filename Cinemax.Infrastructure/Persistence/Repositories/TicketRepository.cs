@@ -13,13 +13,31 @@ public class TicketRepository : Repository<Ticket,TicketId>, ITicketRepository{
     public TicketRepository(CinemaxDbContext cinemaxDbContext) : base(cinemaxDbContext){
         _cinemaxDbContext = cinemaxDbContext;
     }
+    
+    public void UpdateDataBase()
+{
+    var tenMinutesAgo = DateTime.UtcNow.AddMinutes(-10);
+
+    var tickets = _cinemaxDbContext.Tickets
+        .Where(t => t.TicketStatus == TicketStatus.reserved && t.Date <= tenMinutesAgo)
+        .ToList();
+
+    foreach (var ticket in tickets)
+    {
+        ticket.TicketStatus = TicketStatus.available;
+    }
+
+    _cinemaxDbContext.SaveChanges();
+}
+/*
     public void UpdateDataBase(){
         _cinemaxDbContext.Tickets
             .Where(t => t.TicketStatus == TicketStatus.reserved && EF.Functions.DateDiffMinute(t.Date,DateTime.UtcNow) > 10)
             .ExecuteUpdate(t => t.SetProperty(ticket => ticket.TicketStatus, TicketStatus.available));
 
         _cinemaxDbContext.SaveChanges();
-    }
+    }*/
+
     public override Ticket? GetById(TicketId TicketId)
     {
         UpdateDataBase();
