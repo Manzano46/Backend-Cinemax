@@ -233,4 +233,22 @@ public class TicketController : ControllerBase{
 
         return Ok(response);
     }
+
+    // GET: api/ticketPDF/{id}
+    [HttpGet("ticketPDF/{id}")]
+    //[Authorize(Roles = "ADMIN")] 
+    public async Task<IActionResult> GetPDF(string id)
+    {
+        GetTicketRequest getTicketRequest = new(id);
+        var query = _mapper.Map<GetTicketQuery>(getTicketRequest);
+
+        TicketResult TicketResult = await _mediator.Send(query);
+
+        var pdfTools = new PdfTools();
+        var _converter = new SynchronizedConverter(pdfTools);
+        var ticketProvider = new TicketProvider(_converter);
+        byte[] ticketPdf = ticketProvider.GenerateTicket(@"..\..\..\Cinemax.Infrastructure\Services\TicketProvider\TicketTemplate.html", @"..\..\..\Cinemax.Infrastructure\Services\TicketProvider\cinemax.png", TicketResult.Ticket);
+
+        return Ok(ticketPdf);
+    }
 }

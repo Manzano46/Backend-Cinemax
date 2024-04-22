@@ -1,7 +1,5 @@
 using System;
 using System.IO;
-using System.Drawing;
-using System.Drawing.Imaging;
 using ZXing;
 using ZXing.Common;
 using DinkToPdf;
@@ -9,6 +7,7 @@ using DinkToPdf.Contracts;
 using Cinemax.Domain.TicketAggregate.Entities;
 using ZXing.QrCode;
 using DinkToPdfColorMode = DinkToPdf.ColorMode;
+using QRCoder;
 
 namespace Cinemax.Infrastructure;
 public class TicketProvider
@@ -41,6 +40,7 @@ public class TicketProvider
     return pdf;
 }
 
+/*
     private byte[] GenerateQRCode(string text)
     {
         var qrWriter = new BarcodeWriterPixelData
@@ -74,6 +74,16 @@ public class TicketProvider
 
         return memoryStream.ToArray();
         
+    }*/
+
+    public byte[] GenerateQRCode(string text)
+    {
+        QRCodeGenerator qrGenerator = new QRCodeGenerator();
+        QRCodeData qrCodeData = qrGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.Q);
+        PngByteQRCode qrCode = new PngByteQRCode(qrCodeData);
+        byte[] qrCodeAsPngByteArr = qrCode.GetGraphic(20);
+
+        return qrCodeAsPngByteArr;
     }
 
     private byte[] GeneratePdf(string html)
