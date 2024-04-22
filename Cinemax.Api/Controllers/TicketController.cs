@@ -17,6 +17,7 @@ using Cinemax.Application.Tickets.Queries.GetTopRoomCounts;
 using Cinemax.Application.Extras.Queries.Validate;
 using Microsoft.AspNetCore.JsonPatch;
 using Cinemax.Application.Tickets.Commands.Update;
+using Cinemax.Application.Tickets.Queries.GetBestSection;
 
 namespace Cinemax.Api.Controllers;
 
@@ -174,6 +175,16 @@ public class TicketController : ControllerBase{
         var roomCounts = await _mediator.Send(new GetTopRoomCountsQuery(startDate,endDate,limit));
         return Ok(roomCounts);
     }
+
+    [HttpGet("sections")]
+    //[Authorize(Roles = "ADMIN,USER")] 
+    public async Task<IActionResult> GetBestSections()
+    {
+        var query = new GetBestSectionQuery();
+        var bestSections = await _mediator.Send(query);
+        return Ok(bestSections);
+    }
+
 
     // PATCH: api/actors/{id}
     [HttpPatch("{id}")]

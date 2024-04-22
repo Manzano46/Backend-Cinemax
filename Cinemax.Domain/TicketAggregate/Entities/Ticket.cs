@@ -66,3 +66,10 @@ public class Ticket : Entity<TicketId>{
 
 }
 
+
+public record SectionTicketCount
+{
+    public string SectionName { get; init; } = "";
+    public int TicketCount { get; init; }
+    public int Sales { get; init; }
+}

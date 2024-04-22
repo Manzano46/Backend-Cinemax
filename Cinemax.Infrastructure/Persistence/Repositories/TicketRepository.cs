@@ -103,4 +103,37 @@ public class TicketRepository : Repository<Ticket,TicketId>, ITicketRepository{
             .Take(limit)
             .ToListAsync();
     }
+
+    public async Task<List<SectionTicketCount>> GetSectionTicketCountsAsync()
+    {
+        UpdateDataBase();
+        return await _cinemaxDbContext.Tickets
+            .Where(t => t.TicketStatus == TicketStatus.paid)
+            .GroupBy(t => new { Interval = GetTimePeriod(t.Projection.Date.Hour) })
+            .Select(g => new SectionTicketCount { SectionName = g.Key.Interval, TicketCount = g.Count(), Sales = g.Sum(t => t.Projection.Price) })
+            .OrderByDescending(x => x.Sales)
+            .Take(5)
+            .ToListAsync();
+    }
+
+    private string GetTimePeriod(int hour)
+    {
+        if (hour >= 6 && hour < 12)
+        {
+            return "6 AM - 12 PM";
+        }
+        else if (hour >= 12 && hour < 18)
+        {
+            return "12 PM - 6 PM";
+        }
+        else if (hour >= 18 && hour < 24)
+        {
+            return "6 PM - 12 AM";
+        }
+        else
+        {
+            return "12 AM - 6 AM";
+        }
+    }
 }
+

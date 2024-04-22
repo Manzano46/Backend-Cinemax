@@ -4,6 +4,7 @@ using Cinemax.Application.Movies.Common;
 using Cinemax.Application.Movies.Queries.Get;
 using Cinemax.Application.Movies.Queries.Read;
 using Cinemax.Contracts.Movies;
+using Cinemax.Domain.ProjectionAggregate.Entities;
 using MapsterMapper;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -95,7 +96,7 @@ public class MovieController : ControllerBase{
 
     // PATCH: api/actors/{id}
     [HttpPatch("{id}")]
-    public async Task<IActionResult> Patch(string id, [FromBody] JsonPatchDocument patchDoc)
+    public async Task<IActionResult> Patch(string id, [FromBody] JsonPatchDocument<Movie> patchDoc)
     {
         if (patchDoc == null)
         {

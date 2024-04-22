@@ -15,4 +15,5 @@ public interface ITicketRepository: IRepository<Ticket, TicketId>{
     IEnumerable<Ticket>? GetTicketsReservedByUser(UserId userId);
     Task<List<RoomTicketCount>>? GetTopRoomCountsAsync(DateTime startDate, DateTime endDate,int limit);
     Task<List<TopMovie>>? GetTopMoviesAsync(DateTime startDate, DateTime endDate,int limit);
+    Task<List<SectionTicketCount>> GetSectionTicketCountsAsync();
 }
