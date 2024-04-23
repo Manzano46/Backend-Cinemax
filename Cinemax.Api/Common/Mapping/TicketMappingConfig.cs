@@ -29,7 +29,7 @@ public class TicketMappingConfig : IRegister
             .Map(dest => dest.Seat, src => src.Ticket.Seat)
             .Map(dest => dest.User, src => src.Ticket.User)
             .Map(dest => dest.Projection, src => src.Ticket.Projection)
-            .Map(dest => dest.PaymentTypeId, src => src.Ticket.PaymentTypeId.Value != null ? src.Ticket.PaymentTypeId.Value.ToString() : "Vacio")
+            .Map(dest => dest.PaymentTypeId, src => src.Ticket.PaymentTypeId.Value)
             .Map(dest => dest.PaymentType, src => src.Ticket.PaymentType);
         
         config.NewConfig<CreateTicketRequest, CreateTicketCommand>()

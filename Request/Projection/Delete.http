@@ -1,5 +1,5 @@
 @host = http://localhost:5250
-@id = b1536a11-461c-464f-b7e3-2d10aff8bece
+@id = f8110626-ec13-466d-8104-bb322f380544
 DELETE  {{host}}/projections/{{id}}
 Content-Type: application/json
 //Authorization: Bearer {{token}}

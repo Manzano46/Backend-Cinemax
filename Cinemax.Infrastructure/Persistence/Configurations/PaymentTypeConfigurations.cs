@@ -26,7 +26,9 @@ public class PaymentTypeConfigurations : IEntityTypeConfiguration<PaymentType>
         builder.HasMany(m => m.Tickets)
             .WithOne(t => t.PaymentType)
             .HasForeignKey(t => t.PaymentTypeId)
+            .IsRequired(false)
             .OnDelete(DeleteBehavior.Restrict);
 
+         
     }
 }

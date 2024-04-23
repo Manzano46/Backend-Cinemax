@@ -3,5 +3,3 @@
 GET  {{host}}/projections
 Content-Type: application/json
 
-{
-}

@@ -3,5 +3,3 @@
 GET  {{host}}/tickets
 Content-Type: application/json
 
-{
-}
