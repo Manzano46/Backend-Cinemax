@@ -57,18 +57,6 @@ public class ConfirmTicketCommandHandler : IRequestHandler<ConfirmTicketCommand,
             throw new Exception($"Time to confirm ticket has expired");
         }
 
-        Ticket ticket = Ticket.Create(
-            command.SeatId,
-            command.UserId,
-            command.ProjectionId,
-            command.Date,
-            TicketStatus.paid,
-            existingSeat,
-            existingUser,
-            existingProjection
-        );
-
-        ticket.PaymentTypeId = command.PaymentTypeId;
 
         if(_PaymentTypeRepository.GetById(command.PaymentTypeId) is not PaymentType paymentType)
         {
@@ -87,10 +75,12 @@ public class ConfirmTicketCommandHandler : IRequestHandler<ConfirmTicketCommand,
 
         existingUser.Points += 5;
     
+        existingTicket.Date = command.Date;
+        existingTicket.PaymentTypeId = command.PaymentTypeId;
         existingTicket.UserId = command.UserId;
         existingTicket.TicketStatus = TicketStatus.paid;
         _TicketRepository.Update(existingTicket);
 
-        return new TicketResult(ticket);
+        return new TicketResult(existingTicket);
     }
 }
