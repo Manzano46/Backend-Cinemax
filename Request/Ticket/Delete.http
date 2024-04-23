@@ -1,6 +1,6 @@
 @host = http://localhost:5250
-@id = 6496288d-e834-4bc0-a145-b1d92387f6f5
-DELETE  {{host}}/tickets/{{id}}
+@id = 2e0f20fa-7bf9-4362-bbbd-160859952b7e
+POST  {{host}}/tickets/refund/{{id}}
 Content-Type: application/json
 //Authorization: Bearer {{token}}
 

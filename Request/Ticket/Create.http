@@ -1,8 +1,8 @@
 @host = http://localhost:5250
 @token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0NmIwODE1Mi05NTg0LTQyYWMtYjFjMi05YjA0ZTI3YjhiOWEiLCJnaXZlbl9uYW1lIjoia2V2aW4iLCJmYW1pbHlfbmFtZSI6Im1hbnphbm8iLCJqdGkiOiIyYjJlNGE3Ny00NjllLTQwNTItYjNiYy1iZmRmYTA0NmUyNjciLCJleHAiOjE3MTA3NzMyMzcsImlzcyI6IkNpbmVtYXgiLCJhdWQiOiJDaW5lbWF4In0.5Z03bGEJ9xmAQat46-ahq0Hq8xE-VFnl4yqVv5M7smo
-@seatid = d9839723-c898-47f3-bb69-59fcf4f83464
-@userid = 23d72268-0102-4d02-8608-6caea4641184
-@projectionid = 84609bd6-2e16-4792-9cec-d1883d885ffe
+@seatid = f7b5c6dd-f886-4118-ac92-cc626481e6e5
+@userid = 6674ad85-cf7f-48fa-ba5b-0d5cb3abbf45
+@projectionid = 2ffb58f3-559a-43d6-99d0-481f27dd2724
 POST {{host}}/tickets/create
 Content-Type: application/json
 //Authorization: Bearer {{token}}
