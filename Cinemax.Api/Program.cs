@@ -1,6 +1,9 @@
 using Cinemax.Infrastructure;
 using Cinemax.Application;
 using Cinemax.Api;
+using DinkToPdf;
+using DinkToPdf.Contracts;
+using System.Runtime.InteropServices;
 
 var builder = WebApplication.CreateBuilder(args);
 { 
@@ -19,6 +22,8 @@ var builder = WebApplication.CreateBuilder(args);
                               .AllowAnyHeader());
     });
 }
+
+builder.Services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
 
 var app = builder.Build();
 {

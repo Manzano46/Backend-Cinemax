@@ -1,5 +1,5 @@
 @host = http://localhost:5250
 
-GET  {{host}}/tickets/reserved
+GET  {{host}}/tickets
 Content-Type: application/json
 

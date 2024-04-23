@@ -19,12 +19,14 @@ public class TicketRepository : Repository<Ticket,TicketId>, ITicketRepository{
         var tenMinutesAgo = DateTime.UtcNow.AddMinutes(-10);
 
         var tickets = _cinemaxDbContext.Tickets
-            .Where(t => t.TicketStatus == TicketStatus.reserved && t.Date >= tenMinutesAgo)
+            .Where(t => t.TicketStatus == TicketStatus.reserved && t.Date <= tenMinutesAgo)
             .ToList();
 
         foreach (var ticket in tickets)
         {
             ticket.TicketStatus = TicketStatus.available;
+            ticket.UserId = null!;
+            ticket.PaymentTypeId = null!;
         }
 
         _cinemaxDbContext.SaveChanges();

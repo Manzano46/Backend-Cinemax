@@ -8,6 +8,9 @@ using Cinemax.Domain.TicketAggregate.Entities;
 using ZXing.QrCode;
 using DinkToPdfColorMode = DinkToPdf.ColorMode;
 using QRCoder;
+using System.Runtime.Loader;
+using System.Reflection;
+
 
 namespace Cinemax.Infrastructure;
 public class TicketProvider
@@ -88,6 +91,9 @@ public class TicketProvider
 
     private byte[] GeneratePdf(string html)
     {
+        /*
+        var _converter = new SynchronizedConverter(new PdfTools());
+
         var globalSettings = new GlobalSettings
         {
             ColorMode = DinkToPdfColorMode.Color,
@@ -109,5 +115,7 @@ public class TicketProvider
         };
 
         return _converter.Convert(pdf);
+        */
+        return [0];
     }
 }
