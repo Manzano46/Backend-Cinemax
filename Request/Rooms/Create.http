@@ -5,8 +5,8 @@ Content-Type: application/json
 //Authorization: Bearer {{token}}
 
 {
-    "name": "MAXI",
+    "name": "MAXIxx",
     "height": "6",
     "width": "4",
-    "roomtypes":["d8a9a7dd-ac10-466c-b20d-6da7a270b5cf"]
+    "roomtypes":["ff4ccea8-f9bf-477d-ad67-0cca8914ea7b"]
 }

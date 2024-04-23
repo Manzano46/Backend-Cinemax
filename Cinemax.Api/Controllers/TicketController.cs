@@ -54,8 +54,8 @@ public class TicketController : ControllerBase{
             TicketResult TicketResult = await _mediator.Send(command1);
 
             var response = _mapper.Map<TicketResponse>(TicketResult);
-            responses.Add(response);
 
+            responses.Add(response);
         }
 
         return Ok(responses);

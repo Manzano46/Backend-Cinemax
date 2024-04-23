@@ -15,20 +15,20 @@ public class TicketRepository : Repository<Ticket,TicketId>, ITicketRepository{
     }
     
     public void UpdateDataBase()
-{
-    var tenMinutesAgo = DateTime.UtcNow.AddMinutes(-10);
-
-    var tickets = _cinemaxDbContext.Tickets
-        .Where(t => t.TicketStatus == TicketStatus.reserved && t.Date <= tenMinutesAgo)
-        .ToList();
-
-    foreach (var ticket in tickets)
     {
-        ticket.TicketStatus = TicketStatus.available;
-    }
+        var tenMinutesAgo = DateTime.UtcNow.AddMinutes(-10);
 
-    _cinemaxDbContext.SaveChanges();
-}
+        var tickets = _cinemaxDbContext.Tickets
+            .Where(t => t.TicketStatus == TicketStatus.reserved && t.Date >= tenMinutesAgo)
+            .ToList();
+
+        foreach (var ticket in tickets)
+        {
+            ticket.TicketStatus = TicketStatus.available;
+        }
+
+        _cinemaxDbContext.SaveChanges();
+    }
 /*
     public void UpdateDataBase(){
         _cinemaxDbContext.Tickets

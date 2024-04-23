@@ -1,11 +1,10 @@
 @host = http://localhost:5250
 @token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0NmIwODE1Mi05NTg0LTQyYWMtYjFjMi05YjA0ZTI3YjhiOWEiLCJnaXZlbl9uYW1lIjoia2V2aW4iLCJmYW1pbHlfbmFtZSI6Im1hbnphbm8iLCJqdGkiOiIyYjJlNGE3Ny00NjllLTQwNTItYjNiYy1iZmRmYTA0NmUyNjciLCJleHAiOjE3MTA3NzMyMzcsImlzcyI6IkNpbmVtYXgiLCJhdWQiOiJDaW5lbWF4In0.5Z03bGEJ9xmAQat46-ahq0Hq8xE-VFnl4yqVv5M7smo
-@seatid = e897d608-bc33-4a86-abde-f7f5f207de1a
-@userid = fdbda4fc-89c7-4941-a4d8-8053af079bc7
-@roomid = 7a5be538-2840-44fb-a7dc-73217f6b92d6
-@movieid = 802672f3-6d93-4db3-9a3a-20a1e6254100
-@projectionid = 2fe68513-c58c-42a0-b85f-cce73110e826
-POST {{host}}/tickets/confirm
+@seatid = 089bf1df-8f6a-4f1f-8dd4-257afd2ee4d4
+@userid = 23d72268-0102-4d02-8608-6caea4641184
+@projectionid = 84609bd6-2e16-4792-9cec-d1883d885ffe
+@paymentType = c941b33c-4099-44a2-9272-7a86f379fa8e
+POST {{host}}/tickets/confirm/{{paymentType}}
 Content-Type: application/json
 //Authorization: Bearer {{token}}
 

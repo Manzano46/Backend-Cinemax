@@ -1,5 +1,5 @@
 @host = http://localhost:5250
-@id = 91c0676d-825b-4097-ba54-913d5f8d0c8d
+@id = c2737e26-2f71-4a57-a7e1-e85203e8c7c5
 GET  {{host}}/rooms/{{id}}
 Content-Type: application/json
 //Authorization: Bearer {{token}}

@@ -83,9 +83,7 @@ public class ConfirmTicketCommandHandler : IRequestHandler<ConfirmTicketCommand,
         if(paymentType.Name == "points")
         {
             existingUser.Points -= 20;
-        }
-
-        existingUser.Points += 5;
+        }else  existingUser.Points += 5;
     
         existingTicket.UserId = command.UserId;
         existingTicket.TicketStatus = TicketStatus.paid;
