@@ -41,48 +41,48 @@ public class TicketRepository : Repository<Ticket,TicketId>, ITicketRepository{
     public override Ticket? GetById(TicketId TicketId)
     {
         UpdateDataBase();
-        return _cinemaxDbContext.Tickets.Include(t => t.Seat).Include(t=>t.User).Include(t=>t.Projection).SingleOrDefault(Ticket => Ticket.Id == TicketId);
+        return _cinemaxDbContext.Tickets.Include(t => t.Seat).Include(t=>t.User).Include(t=>t.Projection).Include(t => t.PaymentType).Include(t => t.Card).SingleOrDefault(Ticket => Ticket.Id == TicketId);
     }
 
     public Ticket? GetTicketByKeys(SeatId seatId, UserId userId, ProjectionId projectionId, TicketStatus ticketStatus){
         UpdateDataBase();
-        return _cinemaxDbContext.Tickets.Include(t => t.Seat).Include(t=>t.User).Include(t=>t.Projection).SingleOrDefault(Ticket => Ticket.SeatId == seatId && Ticket.UserId == userId && Ticket.ProjectionId == projectionId && Ticket.TicketStatus == ticketStatus); 
+        return _cinemaxDbContext.Tickets.Include(t => t.Seat).Include(t=>t.User).Include(t=>t.Projection).Include(t => t.PaymentType).Include(t => t.Card).SingleOrDefault(Ticket => Ticket.SeatId == seatId && Ticket.UserId == userId && Ticket.ProjectionId == projectionId && Ticket.TicketStatus == ticketStatus); 
     }
 
     public IEnumerable<Ticket>? GetTicketByProjection(ProjectionId projectionId){
         UpdateDataBase();
-        return _cinemaxDbContext.Tickets.Include(t => t.Seat).Include(t=>t.User).Include(t=>t.Projection).Where(t => t.ProjectionId == projectionId); 
+        return _cinemaxDbContext.Tickets.Include(t => t.Seat).Include(t=>t.User).Include(t=>t.Projection).Include(t => t.PaymentType).Include(t => t.Card).Where(t => t.ProjectionId == projectionId); 
     }
 
 
     public override IEnumerable<Ticket> GetAll()
     {
         UpdateDataBase();
-        return _cinemaxDbContext.Tickets.Include(t => t.Seat).Include(t=>t.User).Include(t=>t.Projection);
+        return _cinemaxDbContext.Tickets.Include(t => t.Seat).Include(t=>t.User).Include(t=>t.Projection).Include(t => t.PaymentType).Include(t => t.Card);
     }
 
     public Ticket? GetTicketByKeysNoUser(SeatId seatId, ProjectionId projectionId, TicketStatus ticketStatus)
     {
         UpdateDataBase();
-        return _cinemaxDbContext.Tickets.Include(t => t.Seat).Include(t=>t.User).Include(t=>t.Projection).SingleOrDefault(Ticket => Ticket.SeatId == seatId && Ticket.ProjectionId == projectionId && Ticket.TicketStatus == ticketStatus); 
+        return _cinemaxDbContext.Tickets.Include(t => t.Seat).Include(t=>t.User).Include(t=>t.Projection).Include(t => t.PaymentType).Include(t => t.Card).SingleOrDefault(Ticket => Ticket.SeatId == seatId && Ticket.ProjectionId == projectionId && Ticket.TicketStatus == ticketStatus); 
     }
 
     public IEnumerable<Ticket>? GetTicketsReserved()
     {
         UpdateDataBase();
-        return _cinemaxDbContext.Tickets.Include(t => t.Seat).Include(t=>t.User).Include(t=>t.Projection).Where(Ticket => Ticket.TicketStatus != TicketStatus.available); 
+        return _cinemaxDbContext.Tickets.Include(t => t.Seat).Include(t=>t.User).Include(t=>t.Projection).Include(t => t.PaymentType).Include(t => t.Card).Where(Ticket => Ticket.TicketStatus != TicketStatus.available); 
     }
 
     public IEnumerable<Ticket>? GetTicketsReservedByUser(UserId userId)
     {
         UpdateDataBase();
-        return _cinemaxDbContext.Tickets.Include(t => t.Seat).Include(t=>t.User).Include(t=>t.Projection).Where(Ticket => Ticket.UserId != userId); 
+        return _cinemaxDbContext.Tickets.Include(t => t.Seat).Include(t=>t.User).Include(t=>t.Projection).Include(t => t.PaymentType).Include(t => t.Card).Where(Ticket => Ticket.UserId != userId); 
     }
     public async Task<List<RoomTicketCount>> GetTopRoomCountsAsync(DateTime startDate, DateTime endDate,int limit)
     {
         UpdateDataBase();
         return await _cinemaxDbContext.Tickets
-            .Include(t => t.Projection.Room)
+            .Include(t => t.Projection.Room).Include(t => t.PaymentType).Include(t => t.Card)
             .Where(t => t.Date >= startDate && t.Date <= endDate && t.TicketStatus == TicketStatus.paid)
             .GroupBy(t => new { t.Projection.Room.Id, t.Projection.Room.Name })
             .Select(g => new RoomTicketCount { RoomName = g.Key.Name, TicketCount = g.Count(), Sales = g.Sum(t => t.Projection.Price) })
@@ -95,7 +95,7 @@ public class TicketRepository : Repository<Ticket,TicketId>, ITicketRepository{
     {
         UpdateDataBase();
         return await _cinemaxDbContext.Tickets
-            .Include(t => t.Projection.Movie)
+            .Include(t => t.Projection.Movie).Include(t => t.PaymentType).Include(t => t.Card)
             .Where(t => t.Date >= startDate && t.Date <= endDate)
             .GroupBy(t => new { t.Projection.Movie.Id, t.Projection.Movie.Name })
             .Select(g => new TopMovie { Name = g.Key.Name, Count = g.Count() })
@@ -107,7 +107,7 @@ public class TicketRepository : Repository<Ticket,TicketId>, ITicketRepository{
     public async Task<List<SectionTicketCount>> GetSectionTicketCountsAsync()
     {
         UpdateDataBase();
-        return await _cinemaxDbContext.Tickets
+        return await _cinemaxDbContext.Tickets.Include(t => t.PaymentType).Include(t => t.Card)
             .Where(t => t.TicketStatus == TicketStatus.paid)
             .GroupBy(t => new { Interval = GetTimePeriod(t.Projection.Date.Hour) })
             .Select(g => new SectionTicketCount { SectionName = g.Key.Interval, TicketCount = g.Count(), Sales = g.Sum(t => t.Projection.Price) })

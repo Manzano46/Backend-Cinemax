@@ -25,9 +25,9 @@ public class Ticket : Entity<TicketId>{
 
     public ProjectionId ProjectionId {get; set;}
     public virtual Projection Projection {get; set;}
-    public CardId? CardId {get; set;}
+    public CardId CardId {get; set;} = null!;
     public virtual Card.Entities.Card? Card {get; set;}
-    public PaymentTypeId? PaymentTypeId {get; set;}
+    public PaymentTypeId PaymentTypeId {get; set;} = null!;
     public virtual PaymentType.Entities.PaymentType? PaymentType {get; set;}
     public DateTime Date {get; set;}
     public TicketStatus TicketStatus {get; set;}    

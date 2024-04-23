@@ -49,7 +49,7 @@ public class CreateTicketCommandHandler : IRequestHandler<CreateTicketCommand, T
             throw new Exception($"Seat '{command.SeatId}' is not available");
         }
 
-        
+        existingTicket.Date = command.Date;        
         existingTicket.UserId = command.UserId!;
         existingTicket.TicketStatus = TicketStatus.reserved;
         _TicketRepository.Update(existingTicket);
