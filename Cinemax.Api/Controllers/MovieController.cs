@@ -80,6 +80,20 @@ public class MovieController : ControllerBase{
         return Ok(response);
     }
 
+    // GET: api/movies/filter/
+    /*[HttpGet("filter")]
+    public async Task<IActionResult> Filter(string params)
+    {
+        GetMovieByNameRequest getMovieRequest = new(name);
+        var query = _mapper.Map<GetMovieByNameQuery>(getMovieRequest);
+
+        MovieResult MovieResult = await _mediator.Send(query);
+
+        var response = _mapper.Map<MovieResponse>(MovieResult);
+
+        return Ok(response);
+    }*/
+
     // DELETE: api/movies/{id}
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(string id)
