@@ -81,15 +81,12 @@ public class TicketController : ControllerBase{
 
             var response = _mapper.Map<TicketResponse>(TicketResult);
 
-            byte[] ticketPdf = ticketProvider.GenerateTicket(@"..\..\..\Cinemax.Infrastructure\Services\TicketProvider\TicketTemplate.html", @"..\..\..\Cinemax.Infrastructure\Services\TicketProvider\cinemax.png", TicketResult.Ticket);
+            byte[] ticketPdf = ticketProvider.GenerateTicket("./../Cinemax.Infrastructure/Services/TicketProvider/TicketTemplate.html", "./../Cinemax.Infrastructure/Services/TicketProvider/cinemax.png", "./../Cinemax.Infrastructure/Services/TicketProvider/backdrop.png", TicketResult.Ticket);
 
 
             responses.Add(new Tuple<TicketResponse,byte[]>(response,ticketPdf));
 
         }
-
-        // poner puntos
-        
 
         return Ok(responses);
     }
@@ -243,8 +240,11 @@ public class TicketController : ControllerBase{
 
         TicketResult TicketResult = await _mediator.Send(query);
         var ticketProvider = new TicketProvider();
-        byte[] ticketPdf = ticketProvider.GenerateTicket(@"..\..\..\Cinemax.Infrastructure\Services\TicketProvider\TicketTemplate.html", @"..\..\..\Cinemax.Infrastructure\Services\TicketProvider\cinemax.png", TicketResult.Ticket);
-
+        string htmlTemplatePath = "./../Cinemax.Infrastructure/Services/TicketProvider/TicketTemplate.html";
+        string htmlTemplate = System.IO.File.ReadAllText(htmlTemplatePath);
+        string logoPath = "./../Cinemax.Infrastructure/Services/TicketProvider/cinemax.png";
+        string backPath = "./../Cinemax.Infrastructure/Services/TicketProvider/backdrop.png";
+        byte[] ticketPdf = ticketProvider.GenerateTicket(htmlTemplate, logoPath , backPath,  TicketResult.Ticket);
         return Ok(ticketPdf);
     }
 

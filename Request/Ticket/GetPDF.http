@@ -1,5 +1,5 @@
 @host = http://localhost:5250
-@id = f0ff4266-d3d4-4c2c-8015-10fb56c68d3e
+@id = f46f77d6-1113-453c-87cb-09f5d5ed0f76
 GET  {{host}}/tickets/ticketPDF/{{id}}
 Content-Type: application/json
 //Authorization: Bearer {{token}}

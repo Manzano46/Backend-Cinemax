@@ -9,24 +9,43 @@ using System.Reflection.Metadata;
 namespace Cinemax.Infrastructure;
 public class TicketProvider
 {
-    public byte[] GenerateTicket(string htmlTemplate, string cinemaxLogo, Ticket ticket)
+    public byte[] GenerateTicket(string htmlTemplate, string cinemaxLogo, string backdroppath, Ticket ticket)
 {
-    string text = "id : " + ticket.Id.ToString() + " " + "userId : " + (ticket.UserId?.ToString() ?? "NULL") + " " + "seatId : " + ticket.SeatId.ToString() + " " +"projectionId : " + ticket.ProjectionId.ToString() + " " + "date : " + ticket.Date.ToString("dd/MM/yyyy HH:mm");
-
+    string text = "id : " + ticket.Id.Value.ToString() + " " + "userId : " + (ticket.UserId?.Value.ToString() ?? "NULL") + " " + "seatId : " + ticket.SeatId.Value.ToString() + " " +"projectionId : " + ticket.ProjectionId.Value.ToString() + " " + "date : " + ticket.Date.ToString("dd/MM/yyyy HH:mm");
+    byte[] logoBytes = System.IO.File.ReadAllBytes(cinemaxLogo);
+    string logoBase64 = Convert.ToBase64String(logoBytes);
+    byte[] backBytes = System.IO.File.ReadAllBytes(backdroppath);
+    string backBase64 = Convert.ToBase64String(backBytes);
+    
     var qrCodeImage = GenerateQRCode(text);
     var qrCodeBase64 = Convert.ToBase64String(qrCodeImage);
     var htmlWithQrCode = htmlTemplate
-        .Replace("{{cinemaxLogo}}", $"data:image/png;base64,{cinemaxLogo}")
+        .Replace("{{backdrop}}", $"data:image/png;base64,{backBase64}")
+        .Replace("{{cinemaxLogo}}", $"data:image/png;base64,{logoBase64}")
         .Replace("{{sala}}", ticket.Projection.Room.Name )
         .Replace("{{asiento}}",(char) (ticket.Seat.Row + 65) + ticket.Seat.Colum.ToString() )
         .Replace("{{fecha}}", ticket.Date.ToString("dd/MM/yyyy"))
         .Replace("{{hora}}", ticket.Date.ToString("HH:mm"))
-        .Replace("{{id}}", ticket.Id.ToString())
+        .Replace("{{id}}", ticket.Id.Value.ToString())
         .Replace("{{pelicula}}", ticket.Projection.Movie.Name)
         .Replace("{{precio}}", ticket.Projection.Price.ToString())
         .Replace("{{qr}}", $"data:image/png;base64,{qrCodeBase64}");
     
-    return ConvertHtmlToPdf(htmlWithQrCode);
+    var pdf = ConvertHtmlToPdf(htmlWithQrCode);
+    SavePdfToFile(pdf, "ticket.pdf");
+    return pdf;
+}
+
+public void SavePdfToFile(byte[] pdfBytes, string fileName)
+{
+    // Obtén la ruta a la carpeta donde se está ejecutando tu aplicación.
+    var applicationFolder = AppDomain.CurrentDomain.BaseDirectory;
+
+    // Crea la ruta completa al archivo.
+    var filePath = Path.Combine(applicationFolder, fileName);
+
+    // Escribe los bytes en el archivo.
+    File.WriteAllBytes(filePath, pdfBytes);
 }
 
 /*
