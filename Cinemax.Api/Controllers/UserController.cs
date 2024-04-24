@@ -29,7 +29,7 @@ public class UserController : ControllerBase{
 
     // GET: api/Users
     [HttpGet]
-    //[Authorize(Roles = "ADMIN")] 
+    [Authorize(Roles = "ADMIN,SUPERADMIN")] 
     public async Task<IActionResult> Read()
     {
         var command = new ReadUsersQuery();
@@ -43,11 +43,12 @@ public class UserController : ControllerBase{
     
     // DELETE: api/Users/{id}
     [HttpDelete("{id}")]
-    //[Authorize(Roles = "ADMIN")] 
+    [Authorize(Roles = "ADMIN,SUPERADMIN")] 
     public async Task<IActionResult> Delete(string id)
     {
+        string idFromUser = User.FindFirst("sub")?.Value!;
         UserId UserId = UserId.Create(new (id));
-        var command = new DeleteUserCommand(UserId);
+        var command = new DeleteUserCommand(UserId,idFromUser);
         UserResult UserResult = await _mediator.Send(command);
         var response = _mapper.Map<UserResponse>(UserResult);
         return Ok(response);
@@ -55,7 +56,7 @@ public class UserController : ControllerBase{
 
     // GET: api/Users/{id}
     [HttpGet("{id}")]
-    //[Authorize(Roles = "ADMIN")] 
+    [Authorize(Roles = "ADMIN,SUPERADMIN")] 
     public async Task<IActionResult> Get(string id)
     {
         GetUserRequest getUserRequest = new(id);
@@ -78,7 +79,7 @@ public class UserController : ControllerBase{
     }
 
     [HttpPost()]
-    //[Authorize(Roles = "ADMIN")] 
+    [Authorize(Roles = "ADMIN,SUPERADMIN")]
     public async Task<IActionResult> Create(CreateUserRequest createUserRequest){
         var command = _mapper.Map<CreateUserCommand>(createUserRequest);
         AuthenticationResult authResult = await _mediator.Send(command);
@@ -99,6 +100,7 @@ public class UserController : ControllerBase{
 
     // PATCH: api/users/{id}
     [HttpPatch("{id}")]
+    [Authorize(Roles = "USER,ADMIN,SUPERADMIN")] 
     public async Task<IActionResult> Patch(string id, [FromBody] JsonPatchDocument patchDoc)
     {
         if (patchDoc == null)
@@ -111,7 +113,9 @@ public class UserController : ControllerBase{
             return BadRequest(ModelState);
         }
 
-        var command = new UpdateUserCommand(id, patchDoc);
+        string idFromUser = User.FindFirst("sub")?.Value!;
+
+        var command = new UpdateUserCommand(id, patchDoc,idFromUser);
         var actorResult = await _mediator.Send(command);
 
         return Ok(actorResult);

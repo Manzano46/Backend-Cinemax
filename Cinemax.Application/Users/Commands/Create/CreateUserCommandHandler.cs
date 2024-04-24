@@ -42,10 +42,13 @@ public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, Authe
         });
 
         Role existingRole = _RoleRepository.GetByName(command.Role.Name)!;
-            if (existingRole is null)
-            {
-                throw new Exception($"Role '{command.Role.Name}' does not exist in the database");
-            }
+        if (existingRole is null)
+        {
+            throw new Exception($"Role '{command.Role.Name}' does not exist in the database");
+        }
+        if(existingRole.Name == "SUPERADMIN"){
+            throw new Exception("You cant create that kind of user");
+        }
 
         User user = User.Create(
             command.FirstName,

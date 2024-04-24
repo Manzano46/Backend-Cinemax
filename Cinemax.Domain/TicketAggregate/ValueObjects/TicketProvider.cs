@@ -11,12 +11,12 @@ public class TicketProvider
 {
     public byte[] GenerateTicket(string htmlTemplate, string cinemaxLogo, string backdroppath, Ticket ticket)
 {
-    string text = "id : " + ticket.Id.Value.ToString() + " " + "userId : " + ticket.UserId.Value.ToString() + " " + "seatId : " + ticket.SeatId.Value.ToString() + " " +"projectionId : " + ticket.ProjectionId.Value.ToString() + " " + "date : " + ticket.Date.ToString("dd/MM/yyyy HH:mm");
+    string text = "id : " + ticket.Id.Value.ToString() + " " + "userId : " + (ticket.UserId?.Value.ToString() ?? "NULL") + " " + "seatId : " + ticket.SeatId.Value.ToString() + " " +"projectionId : " + ticket.ProjectionId.Value.ToString() + " " + "date : " + ticket.Date.ToString("dd/MM/yyyy HH:mm");
     byte[] logoBytes = System.IO.File.ReadAllBytes(cinemaxLogo);
     string logoBase64 = Convert.ToBase64String(logoBytes);
     byte[] backBytes = System.IO.File.ReadAllBytes(backdroppath);
     string backBase64 = Convert.ToBase64String(backBytes);
-
+    
     var qrCodeImage = GenerateQRCode(text);
     var qrCodeBase64 = Convert.ToBase64String(qrCodeImage);
     var htmlWithQrCode = htmlTemplate

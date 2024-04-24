@@ -1,6 +1,7 @@
 using Cinemax.Application.Common.Interfaces.Persistence;
 using Cinemax.Application.Tickets.Common;
 using Cinemax.Domain.PaymentType.Entities;
+using Cinemax.Domain.ProjectionAggregate;
 using Cinemax.Domain.User.Entities;
 using MediatR;
 
@@ -10,17 +11,20 @@ public class RefundTicketQueryHandler : IRequestHandler<RefundTicketQuery, Ticke
     private readonly ITicketRepository _TicketRepository;
     private readonly IUserRepository _userRepository;
     private readonly IPaymentTypeRepository _PaymentTypeRepository;
+    private readonly IProjectionRepository _projectionRepository;
 
-    public RefundTicketQueryHandler(ITicketRepository TicketRepository, IUserRepository userRepository, IPaymentTypeRepository PaymentTypeRepository)
+    public RefundTicketQueryHandler(ITicketRepository TicketRepository, IUserRepository userRepository, IPaymentTypeRepository PaymentTypeRepository, IProjectionRepository projectionRepository)
     {
         _TicketRepository = TicketRepository;
         _userRepository = userRepository;
         _PaymentTypeRepository = PaymentTypeRepository;
+        _projectionRepository = projectionRepository;
     }
     public async Task<TicketResult> Handle(RefundTicketQuery command, CancellationToken cancellationToken)
     {
         await Task.CompletedTask;
         var ticket = _TicketRepository.GetById(command.TicketId);
+        
         if (ticket is null)
         {
             throw new Exception($"Ticket '{command.TicketId}' does not exist in the database");
@@ -32,6 +36,15 @@ public class RefundTicketQueryHandler : IRequestHandler<RefundTicketQuery, Ticke
         if(_PaymentTypeRepository.GetById(ticket.PaymentTypeId) is not PaymentType existingPaymentType)
         {
             throw new Exception($"PaymentType '{ticket.PaymentTypeId}' does not exist in the database");
+        }
+        if(_projectionRepository.GetById(ticket.ProjectionId) is not Projection projection)
+        {
+            throw new Exception($"Projection {ticket.ProjectionId} does not exist in the database");
+        }
+
+        if((DateTime.UtcNow - projection.Date).TotalHours <= 2 || DateTime.UtcNow > projection.Date)
+        {
+            throw new Exception("Time expired to refund");
         }
 
         if(existingPaymentType.Name == "points"){

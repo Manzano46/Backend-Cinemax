@@ -14,7 +14,8 @@ public enum TicketStatus
 {
     available,
     reserved,
-    paid
+    paid,
+    expired
 }
 public class Ticket : Entity<TicketId>{
     public SeatId SeatId {get; set;}
