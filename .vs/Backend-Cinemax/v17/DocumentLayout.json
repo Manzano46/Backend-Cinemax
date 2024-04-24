@@ -1,22 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\",
+  "WorkspaceRootPath": "C:\\Users\\53552\\Desktop\\Comp. Science\\3er a\u00F1o\\Ingenier\u00EDa de Software\\clon kevin\\Backend-Cinemax\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1C078BE2-812C-46A5-A009-25E536193C92}|Cinemax.Infrastructure\\Cinemax.Infrastructure.csproj|c:\\users\\admin\\documents\\programming\\proyecto de is\\backend-cinemax\\cinemax.infrastructure\\persistence\\configurations\\seatconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C078BE2-812C-46A5-A009-25E536193C92}|Cinemax.Infrastructure\\Cinemax.Infrastructure.csproj|solutionrelative:cinemax.infrastructure\\persistence\\configurations\\seatconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\53552\\Desktop\\Comp. Science\\3er a\u00F1o\\Ingenier\u00EDa de Software\\clon kevin\\Backend-Cinemax\\Cinemax.Domain\\TicketAggregate\\ValueObjects\\TicketProvider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Cinemax.Domain\\TicketAggregate\\ValueObjects\\TicketProvider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FEACF9D0-4728-4DD1-A304-383B0876DD0F}|Cinemax.Domain\\Cinemax.Domain.csproj|c:\\users\\admin\\documents\\programming\\proyecto de is\\backend-cinemax\\cinemax.domain\\seat\\entities\\seat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FEACF9D0-4728-4DD1-A304-383B0876DD0F}|Cinemax.Domain\\Cinemax.Domain.csproj|solutionrelative:cinemax.domain\\seat\\entities\\seat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\53552\\Desktop\\Comp. Science\\3er a\u00F1o\\Ingenier\u00EDa de Software\\clon kevin\\Backend-Cinemax\\Cinemax.Infrastructure\\Persistence\\Configurations\\SeatConfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Cinemax.Infrastructure\\Persistence\\Configurations\\SeatConfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C078BE2-812C-46A5-A009-25E536193C92}|Cinemax.Infrastructure\\Cinemax.Infrastructure.csproj|c:\\users\\admin\\documents\\programming\\proyecto de is\\backend-cinemax\\cinemax.infrastructure\\persistence\\repositories\\seatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C078BE2-812C-46A5-A009-25E536193C92}|Cinemax.Infrastructure\\Cinemax.Infrastructure.csproj|solutionrelative:cinemax.infrastructure\\persistence\\repositories\\seatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\53552\\Desktop\\Comp. Science\\3er a\u00F1o\\Ingenier\u00EDa de Software\\clon kevin\\Backend-Cinemax\\Cinemax.Domain\\Seat\\Entities\\Seat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Cinemax.Domain\\Seat\\Entities\\Seat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{79CC9203-AAFC-4614-9E86-72D5E4BE47CD}|Cinemax.Application\\Cinemax.Application.csproj|c:\\users\\admin\\documents\\programming\\proyecto de is\\backend-cinemax\\cinemax.application\\room\\commands\\create\\createroomcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{79CC9203-AAFC-4614-9E86-72D5E4BE47CD}|Cinemax.Application\\Cinemax.Application.csproj|solutionrelative:cinemax.application\\room\\commands\\create\\createroomcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\53552\\Desktop\\Comp. Science\\3er a\u00F1o\\Ingenier\u00EDa de Software\\clon kevin\\Backend-Cinemax\\Cinemax.Infrastructure\\Persistence\\Repositories\\SeatRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Cinemax.Infrastructure\\Persistence\\Repositories\\SeatRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\53552\\Desktop\\Comp. Science\\3er a\u00F1o\\Ingenier\u00EDa de Software\\clon kevin\\Backend-Cinemax\\Cinemax.Application\\Room\\Commands\\Create\\CreateRoomCommandHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Cinemax.Application\\Room\\Commands\\Create\\CreateRoomCommandHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,19 +30,28 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TicketProvider.cs",
+              "DocumentMoniker": "C:\\Users\\53552\\Desktop\\Comp. Science\\3er a\u00F1o\\Ingenier\u00EDa de Software\\clon kevin\\Backend-Cinemax\\Cinemax.Domain\\TicketAggregate\\ValueObjects\\TicketProvider.cs",
+              "RelativeDocumentMoniker": "Cinemax.Domain\\TicketAggregate\\ValueObjects\\TicketProvider.cs",
+              "ToolTip": "C:\\Users\\53552\\Desktop\\Comp. Science\\3er a\u00F1o\\Ingenier\u00EDa de Software\\clon kevin\\Backend-Cinemax\\Cinemax.Domain\\TicketAggregate\\ValueObjects\\TicketProvider.cs*",
+              "RelativeToolTip": "Cinemax.Domain\\TicketAggregate\\ValueObjects\\TicketProvider.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T20:04:30.321Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Seat.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Domain\\Seat\\Entities\\Seat.cs",
+              "DocumentMoniker": "C:\\Users\\53552\\Desktop\\Comp. Science\\3er a\u00F1o\\Ingenier\u00EDa de Software\\clon kevin\\Backend-Cinemax\\Cinemax.Domain\\Seat\\Entities\\Seat.cs",
               "RelativeDocumentMoniker": "Cinemax.Domain\\Seat\\Entities\\Seat.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Domain\\Seat\\Entities\\Seat.cs",
+              "ToolTip": "C:\\Users\\53552\\Desktop\\Comp. Science\\3er a\u00F1o\\Ingenier\u00EDa de Software\\clon kevin\\Backend-Cinemax\\Cinemax.Domain\\Seat\\Entities\\Seat.cs",
               "RelativeToolTip": "Cinemax.Domain\\Seat\\Entities\\Seat.cs",
               "ViewState": "AQIAABAAAAAAAAAAAAA5wAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -46,24 +59,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "SeatConfigurations.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\Persistence\\Configurations\\SeatConfigurations.cs",
+              "DocumentMoniker": "C:\\Users\\53552\\Desktop\\Comp. Science\\3er a\u00F1o\\Ingenier\u00EDa de Software\\clon kevin\\Backend-Cinemax\\Cinemax.Infrastructure\\Persistence\\Configurations\\SeatConfigurations.cs",
               "RelativeDocumentMoniker": "Cinemax.Infrastructure\\Persistence\\Configurations\\SeatConfigurations.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\Persistence\\Configurations\\SeatConfigurations.cs",
+              "ToolTip": "C:\\Users\\53552\\Desktop\\Comp. Science\\3er a\u00F1o\\Ingenier\u00EDa de Software\\clon kevin\\Backend-Cinemax\\Cinemax.Infrastructure\\Persistence\\Configurations\\SeatConfigurations.cs",
               "RelativeToolTip": "Cinemax.Infrastructure\\Persistence\\Configurations\\SeatConfigurations.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAgwBkAAAAnAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-31T04:56:36.88Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "SeatRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\Persistence\\Repositories\\SeatRepository.cs",
+              "DocumentMoniker": "C:\\Users\\53552\\Desktop\\Comp. Science\\3er a\u00F1o\\Ingenier\u00EDa de Software\\clon kevin\\Backend-Cinemax\\Cinemax.Infrastructure\\Persistence\\Repositories\\SeatRepository.cs",
               "RelativeDocumentMoniker": "Cinemax.Infrastructure\\Persistence\\Repositories\\SeatRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Infrastructure\\Persistence\\Repositories\\SeatRepository.cs",
+              "ToolTip": "C:\\Users\\53552\\Desktop\\Comp. Science\\3er a\u00F1o\\Ingenier\u00EDa de Software\\clon kevin\\Backend-Cinemax\\Cinemax.Infrastructure\\Persistence\\Repositories\\SeatRepository.cs",
               "RelativeToolTip": "Cinemax.Infrastructure\\Persistence\\Repositories\\SeatRepository.cs",
               "ViewState": "AQIAABUAAAAAAAAAAAAYwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -71,15 +84,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "CreateRoomCommandHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Application\\Room\\Commands\\Create\\CreateRoomCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\53552\\Desktop\\Comp. Science\\3er a\u00F1o\\Ingenier\u00EDa de Software\\clon kevin\\Backend-Cinemax\\Cinemax.Application\\Room\\Commands\\Create\\CreateRoomCommandHandler.cs",
               "RelativeDocumentMoniker": "Cinemax.Application\\Room\\Commands\\Create\\CreateRoomCommandHandler.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\Programming\\Proyecto de IS\\Backend-Cinemax\\Cinemax.Application\\Room\\Commands\\Create\\CreateRoomCommandHandler.cs",
+              "ToolTip": "C:\\Users\\53552\\Desktop\\Comp. Science\\3er a\u00F1o\\Ingenier\u00EDa de Software\\clon kevin\\Backend-Cinemax\\Cinemax.Application\\Room\\Commands\\Create\\CreateRoomCommandHandler.cs",
               "RelativeToolTip": "Cinemax.Application\\Room\\Commands\\Create\\CreateRoomCommandHandler.cs",
               "ViewState": "AQIAADAAAAAAAAAAAAAAwBEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-31T04:38:19.016Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
             }
           ]
         }

@@ -25,6 +25,7 @@ using Cinemax.Domain.PaymentType.Entities;
 using Cinemax.Domain.PaymentType.ValueObjects;
 using Cinemax.Domain.TicketAggregate.Entities;
 using Cinemax.Application.Tickets.Queries.Refund;
+using Cinemax.Application.Tickets.Queries.GetTopMovies;
 
 namespace Cinemax.Api.Controllers;
 
@@ -66,9 +67,7 @@ public class TicketController : ControllerBase{
     //[Authorize(Roles = "ADMIN,USER")] 
     public async Task<IActionResult> Confirm(ConfirmTicketsRequest confirmTicketsRequest, string paymentTypeid)
     {
-        var pdfTools = new PdfTools();
-        var _converter = new SynchronizedConverter(pdfTools);
-        var ticketProvider = new TicketProvider(_converter);
+        var ticketProvider = new TicketProvider();
         var query = new ValidateQuery(confirmTicketsRequest.ConfirmTicketsRequests.Count(), confirmTicketsRequest.ConfirmTicketsRequests[0].UserId, paymentTypeid);
         await _mediator.Send(query);
 
@@ -243,12 +242,19 @@ public class TicketController : ControllerBase{
         var query = _mapper.Map<GetTicketQuery>(getTicketRequest);
 
         TicketResult TicketResult = await _mediator.Send(query);
-
-        var pdfTools = new PdfTools();
-        var _converter = new SynchronizedConverter(pdfTools);
-        var ticketProvider = new TicketProvider(_converter);
+        var ticketProvider = new TicketProvider();
         byte[] ticketPdf = ticketProvider.GenerateTicket(@"..\..\..\Cinemax.Infrastructure\Services\TicketProvider\TicketTemplate.html", @"..\..\..\Cinemax.Infrastructure\Services\TicketProvider\cinemax.png", TicketResult.Ticket);
 
         return Ok(ticketPdf);
     }
+
+    // GET: api/tickets/topMovies/{startDate}/{endDate}/{limit}
+    [HttpGet("topMovies/{startDate}/{endDate}/{limit}")]
+    //[Authorize(Roles = "ADMIN,USER")] 
+    public async Task<IActionResult> GetTopMovies(DateTime startDate,DateTime endDate,int limit)
+    {
+        var Movies = await _mediator.Send(new GetTopMoviesQuery(startDate,endDate,limit));
+        return Ok(Movies);
+    }
+
 }
