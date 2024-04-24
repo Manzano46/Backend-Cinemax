@@ -6,7 +6,7 @@ Content-Type: application/json
 //Authorization: Bearer {{token}}
 
 {
-  "name": "Wonka2",
+  "name": "Wonka1",
   "description": "<p>&lt;p&gt;El aspirante a mago, inventor y chocolatero Willy Wonka llega en barco a una ciudad europea anónima para cumplir su sueño de abrir su tienda de chocolates en las Galerías Gourmet. Decide quedarse en una lavandería propiedad de la tortuosa señora Scrubbit y su secuaz Bleacher. A pesar de las advertencias de Noodle, una huérfana que se aloja en Scrubbit's, de leer la letra pequeña , el analfabeto Wonka firma voluntariamente su contrato, lo que le obliga a pagar cargos excesivos durante su estancia. Un confiado Wonka acude a las Galerías Gourmet a vender sus \\\"hoverchocs\\\" que hacen volar a quienes los comen. Los tres principales chocolateros de las Galerías, el Sr. Slugworth, el Sr. Prodnose y el Sr. Fickelgruber, se burlan de los chocolates de Wonka y llaman al jefe de policía para confiscar sus ganancias del día.&lt;/p&gt;</p>",
   "summary": "Armado únicamente con muchos sueños y ganas de aventura, el joven chocolatero Willy Wonka conoce a los oompa-loompas y se dispone a cambiar el mundo.",
   "trailerURL": "http://youtube.com",

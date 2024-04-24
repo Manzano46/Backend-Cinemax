@@ -42,7 +42,7 @@ public class RefundTicketQueryHandler : IRequestHandler<RefundTicketQuery, Ticke
             throw new Exception($"Projection {ticket.ProjectionId} does not exist in the database");
         }
 
-        if((DateTime.UtcNow - projection.Date).TotalHours <= 2 || DateTime.UtcNow > projection.Date)
+        if((projection.Date - DateTime.UtcNow).TotalHours <= 2 || DateTime.UtcNow > projection.Date)
         {
             throw new Exception("Time expired to refund");
         }

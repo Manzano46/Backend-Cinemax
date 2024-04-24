@@ -107,9 +107,9 @@ public class TicketRepository : Repository<Ticket,TicketId>, ITicketRepository{
         UpdateDataBase();
         return await _cinemaxDbContext.Tickets
             .Include(t => t.Projection.Movie).Include(t => t.PaymentType).Include(t => t.Card)
-            .Where(t => t.Date.ToUniversalTime() >= startDate.ToUniversalTime() && t.Date.ToUniversalTime() <= endDate.ToUniversalTime())
+            .Where(t => t.Date.ToUniversalTime() >= startDate.ToUniversalTime() && t.Date.ToUniversalTime() <= endDate.ToUniversalTime() && t.TicketStatus == TicketStatus.paid)
             .GroupBy(t => new { t.Projection.Movie.Id, t.Projection.Movie.Name })
-            .Select(g => new TopMovie { Name = g.Key.Name, Count = g.Count() })
+            .Select(g => new TopMovie { Name = g.Key.Name, Count = g.Count(),TotalPrice = g.Sum(t => t.Projection.Price)})
             .OrderByDescending(x => x.Count)
             .Take(limit)
             .ToListAsync();
