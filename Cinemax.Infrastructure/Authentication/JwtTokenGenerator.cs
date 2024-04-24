@@ -28,7 +28,7 @@ public class JwtTokenGenerator : IJwtTokenGenerator
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
             new Claim(JwtRegisteredClaimNames.Birthdate, user.BirthDay.ToString()),
             new Claim(JwtRegisteredClaimNames.Email, user.Email),
-            new Claim(ClaimTypes.Role, user.Role.Name.ToString())
+            new Claim(ClaimTypes.Role, user.Role.Name.ToString()),
         };
 
         var securityToken = new JwtSecurityToken(claims: claims, signingCredentials: signingCredentials, issuer: _jwtSettings.Issuer, audience: _jwtSettings.Audience, expires: _dateTimeProvider.UtcNow.AddMinutes(_jwtSettings.ExpiryMinutes));

@@ -29,6 +29,15 @@ public class TicketRepository : Repository<Ticket,TicketId>, ITicketRepository{
             ticket.PaymentTypeId = null!;
         }
 
+        var tickets2 = _cinemaxDbContext.Tickets
+            .Where(t => t.TicketStatus == TicketStatus.paid && t.Date > _cinemaxDbContext.Projections.SingleOrDefault(p => p.Id == t.Id)!.Date)
+            .ToList();
+        
+        foreach (var ticket in tickets2)
+        {
+            ticket.TicketStatus = TicketStatus.expired; 
+        }
+
         _cinemaxDbContext.SaveChanges();
     }
 /*

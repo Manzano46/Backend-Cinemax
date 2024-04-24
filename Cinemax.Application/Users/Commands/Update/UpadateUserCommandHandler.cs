@@ -21,9 +21,17 @@ public class UpdateUserCommandHandler : IRequestHandler<UpdateUserCommand, UserR
         var userId = UserId.Create(new (command.Id));
         var User = _UserRepository.GetById(userId);
 
+        var userFromId = UserId.Create(new (command.idfrom));
+        var userFrom = _UserRepository.GetById(userFromId);
+
         if (User is null)
         {
             throw new Exception("User with given Id does not exist");
+        }
+
+        if(userFrom is null)
+        {
+            throw new Exception("User not found or invalid token");
         }
 
         try
@@ -34,6 +42,11 @@ public class UpdateUserCommandHandler : IRequestHandler<UpdateUserCommand, UserR
         {
             throw new Exception("An error occurred while updating the User", ex);
         }
+
+        if(userId != userFromId && userFrom.Role.Name != "SUPERADMIN" && User.Role.Name != "USER")
+        {
+            throw new Exception("You can't modify an admin");
+        } 
         
         _UserRepository.Update(User);
 

@@ -1,13 +1,13 @@
 @host = http://localhost:5250
 
-POST {{host}}/users
+POST {{host}}/users/register
 Content-Type: application/json
 
 {
-    "firstname" : "Roger", 
+    "firstname" : "kevin", 
     "lastname":"Vera",
-    "email":"roger123@gmail.com",
+    "email":"roubuger123@gmail.com",
     "password":"123123asd",
     "birthday": "2002-06-10",
-    "role":"USER"
+    "role":"SUPERADMIN"
 }
