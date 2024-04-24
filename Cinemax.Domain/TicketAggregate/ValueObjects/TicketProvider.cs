@@ -11,7 +11,7 @@ public class TicketProvider
 {
     public byte[] GenerateTicket(string htmlTemplate, string cinemaxLogo, Ticket ticket)
 {
-    string text = "id : " + ticket.Id.ToString() + " " + "userId : " + ticket.UserId.ToString() + " " + "seatId : " + ticket.SeatId.ToString() + " " +"projectionId : " + ticket.ProjectionId.ToString() + " " + "date : " + ticket.Date.ToString("dd/MM/yyyy HH:mm");
+    string text = "id : " + ticket.Id.ToString() + " " + "userId : " + (ticket.UserId?.ToString() ?? "NULL") + " " + "seatId : " + ticket.SeatId.ToString() + " " +"projectionId : " + ticket.ProjectionId.ToString() + " " + "date : " + ticket.Date.ToString("dd/MM/yyyy HH:mm");
 
     var qrCodeImage = GenerateQRCode(text);
     var qrCodeBase64 = Convert.ToBase64String(qrCodeImage);
